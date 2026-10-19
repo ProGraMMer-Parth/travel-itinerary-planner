@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link class="" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#380d00", "surface": "#f7fbf1", "error": "#ba1a1a", "on-primary-fixed": "#002115", "surface-container-highest": "#e0e4da", "on-primary-container": "#90b9a4", "primary-fixed-dim": "#a6d0ba", "primary-container": "#244a3a", "surface-container-lowest": "#ffffff", "secondary-fixed": "#ffdbce", "background": "#f7fbf1", "on-surface": "#191d17", "outline": "#717974", "surface-tint": "#406655", "on-surface-variant": "#414844", "inverse-on-surface": "#eff2e8", "primary": "#0b3325", "on-background": "#191d17", "tertiary-fixed-dim": "#c0c9be", "on-tertiary-container": "#a9b2a8", "secondary": "#924a2e", "error-container": "#ffdad6", "tertiary-fixed": "#dce5da", "surface-bright": "#f7fbf1", "surface-dim": "#d8dbd2", "on-error": "#ffffff", "on-primary": "#ffffff", "tertiary-container": "#3d453d", "outline-variant": "#c1c8c2", "on-secondary-container": "#78361b", "on-error-container": "#93000a", "on-primary-fixed-variant": "#284e3e", "primary-fixed": "#c2ecd6", "surface-container-high": "#e6e9e0", "surface-variant": "#e0e4da", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#753419", "inverse-primary": "#a6d0ba", "surface-container": "#ecefe6", "tertiary": "#272f28", "on-tertiary-fixed-variant": "#404941", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "secondary-container": "#fea17e", "secondary-fixed-dim": "#ffb59a", "on-secondary": "#ffffff", "surface-container-low": "#f2f5eb" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "margin": "3rem", "gutter": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "label-md": [ "DM Sans" ], "headline-lg-mobile": [ "DM Serif Display" ], "title-md": [ "DM Sans" ], "body-md": [ "DM Sans" ], "headline-md": [ "DM Serif Display" ], "label-sm": [ "DM Sans" ], "display-hero": [ "DM Serif Display" ], "headline-lg": [ "DM Serif Display" ], "body-sm": [ "DM Sans" ], "body-lg": [ "DM Sans" ], "display-hero-mobile": [ "DM Serif Display" ], "headline-sm": [ "DM Serif Display" ], "title-lg": [ "DM Sans" ] }, "fontSize": { "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" } ], "display-hero-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-sm": [ "22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" } ], "title-lg": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/50 shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm text-primary group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a><nav class="hidden lg:flex items-center gap-space-xs xl:gap-space-sm" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg px-space-md py-space-sm"><a class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="my-trips" href="#">My Trips</a><a class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="trip-history" href="#">Trip History</a><a class="px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="how-it-works" href="#">How It Works</a></nav></div><div class="flex items-center gap-space-sm md:gap-space-md"><a aria-label="Notifications" class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors relative flex items-center justify-center" data-path="notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></span></a><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm font-title-md text-title-md text-on-surface hover:text-primary transition-colors" data-path="authentication" href="#">Sign In</a><a class="inline-flex items-center justify-center h-11 px-space-md md:px-space-lg bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md rounded-lg shadow-sm hover:shadow transition-all active:scale-[0.98]" data-path="plan-my-trip" href="#">Plan My Trip</a><div class="flex items-center pl-space-xs border-l border-outline-variant/60 gap-space-sm"><a class="flex items-center p-0.5 rounded-full ring-1 ring-outline-variant hover:ring-primary transition-all" data-path="profile-settings" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UsSr6t6C52dVEaFwN9xnyz3KgQ9PSvWH-ZXQC-d4rGFCcTdfzB9ZC7fO1BgiO6DqMzMbHNLnfgd25co-pSVYYvznp5R8MEHH4xLP1n7MhMk8do6Hqd-bxUsJvx_jL9k_v0jnfM1svmXgvFpV-Z7rz826lxJWWmWuEyKTd7r9-TnNWZcj1oahM0CMO6AwHJ7hw_xl7eJMowHN04EaDk6UPVMOIRXLKpqgYQbb2ebPGuoGAmoQHZJ0xk3JA2"/></a><button aria-label="Toggle Mobile Menu" class="lg:hidden p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" type="button"><span class="material-symbols-outlined">menu</span></button></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Editorial Header & Scope Banner -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-lg pb-space-md w-full">
+<div class="flex flex-col gap-space-sm max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary text-label-md font-label-md uppercase tracking-wider self-start">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        SYSTEM RESILIENCE &amp; EMPTY STATE CATALOG
+      </div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-hero text-primary font-normal tracking-tight">
+        Error &amp; Empty States
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+        A cohesive library of resilient states and welcoming fallbacks engineered to guide travelers gracefully through unpopulated views, interrupted pipelines, and network disruptions.
+      </p>
+</div>
+<!-- Quick Stats Metric Pills -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm mt-space-lg">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Total States</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-primary">09</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standardized</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">Empty Canvas</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-primary-container text-on-primary-container">05</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Welcoming</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">System Faults</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-secondary">04</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resilient</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline">A11y Compliance</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-primary">100%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ARIA Verified</span>
+</div>
+</div>
+</div>
+<!-- Filter Tab Bar Segmented Control -->
+<div class="mt-space-lg flex flex-wrap items-center justify-between gap-space-md pb-space-sm">
+<div class="inline-flex p-1 rounded-xl bg-surface-container gap-1 self-start">
+<button class="px-space-md py-2 rounded-lg font-title-md text-body-md text-on-primary bg-primary-container shadow-sm transition-all flex items-center gap-1.5 active:scale-95" id="tab-all" onclick="filterCatalog('all')">
+<span>All States</span>
+<span class="px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest text-primary">9</span>
+</button>
+<button class="px-space-md py-2 rounded-lg font-title-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5 active:scale-95" id="tab-empty" onclick="filterCatalog('empty')">
+<span>Empty States</span>
+<span class="px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-on-surface">5</span>
+</button>
+<button class="px-space-md py-2 rounded-lg font-title-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5 active:scale-95" id="tab-error" onclick="filterCatalog('error')">
+<span>Error States</span>
+<span class="px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-on-surface">4</span>
+</button>
+</div>
+<a class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container transition-colors shadow-sm font-title-md text-body-md" href="#interactive-simulator">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Interactive Canvas Sandbox</span>
+</a>
+</div>
+</section>
+<!-- Showcase Cards Masonry / Grid Container -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin pb-space-xl w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md" id="catalog-grid">
+<!-- STATE 1: No Trips Created Yet (Empty State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="empty">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              EMPTY STATE • TRIPS
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('trip-empty')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-primary-container mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Your next adventure starts here</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              You haven't planned a trip yet. Create your first itinerary and start exploring.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Navigating to AI Trip Architect...')">
+<span>Plan a trip</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Opening Destination Catalog...')">
+                Explore destinations
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Appears in: My Trips dashboard when user voyage count is 0</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Primary Intent: First-time onboarding</span>
+<span class="font-label-sm text-primary font-semibold">ARIA: status</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 2: No Saved Destinations (Empty State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="empty">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              EMPTY STATE • BOOKMARKS
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('bookmarks-empty')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">bookmark_add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Your next favorite place is out there</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              Save destinations that catch your eye and return to them whenever you're ready to plan.
+            </p>
+<button class="inline-flex items-center justify-center h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Browsing Curated Destinations...')">
+              Explore destinations
+            </button>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Appears in: Saved Destinations when traveler wishlist is empty</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Target: Discovery encouragement</span>
+<span class="font-label-sm text-primary font-semibold">ARIA: status</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 3: No Search Results (Empty State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="empty">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              EMPTY STATE • SEARCH
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('search-empty')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary-container mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">travel_explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">No destinations found</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              Try another destination name or adjust your search filters to discover options.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Filters reset to default.')">
+                Clear search filters
+              </button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Listing all regions.')">
+                Explore all
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Notice: Catalog has 120+ active curated regions.</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Filter Context: Active queries</span>
+<span class="font-label-sm text-primary font-semibold">ARIA: region</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 4: No Notifications (Empty State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="empty">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wide">
+              EMPTY STATE • ALERTS
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('alerts-empty')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-outline mb-space-md relative shadow-sm">
+<span class="material-symbols-outlined text-[28px]">notifications_none</span>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[12px]">check</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">You're all caught up</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-sm">
+              Important trip reminders, schedule alerts, and booking updates will appear here.
+            </p>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Synchronized just now
+            </div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Appears in: Notifications flyout &amp; Activity Center</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Visual Tone: Calming &amp; unobtrusive</span>
+<span class="font-label-sm text-primary font-semibold">ARIA: status</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 5: No Archived Trips (Empty State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="empty">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              EMPTY STATE • ARCHIVES
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('archives-empty')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">inventory_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Nothing archived yet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              Trips you archive will stay safely stored here until you decide to restore or remove them.
+            </p>
+<button class="inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Switching to completed trips tab.')">
+              View completed trips
+            </button>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Strictly hidden when active archived items are present.</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Behavior: Conditional persistence</span>
+<span class="font-label-sm text-primary font-semibold">ARIA: status</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 6: Itinerary Generation Failed (Error State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="error">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              ERROR STATE • GENERATION
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('generation-error')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">auto_fix_normal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">We couldn't finish your itinerary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              Something interrupted the planning process. Your preferences have been preserved so you can resume smoothly.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 px-space-md bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateRetry(this)">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Try again</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Returning to custom preferences.')">
+                Back to trip details
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Preserves traveler inputs (dates, party, budget, pacing).</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Retry Pipeline: Safe idempotency</span>
+<span class="font-label-sm text-secondary font-semibold">ARIA: alert</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 7: Network Connection Unavailable (Error State) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="error">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              ERROR STATE • CONNECTIVITY
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('network-error')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-md relative shadow-sm">
+<span class="material-symbols-outlined text-[28px]">wifi_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">You're temporarily offline</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              Check your connection and try again when you're back online. Your offline records remain accessible.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="checkConnection(this)">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Try again</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Loading local IndexedDB travel guides...')">
+                View offline guides
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span>
+<span>Listens to window.navigator.onLine events.</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Handling: Offline cache fallback</span>
+<span class="font-label-sm text-secondary font-semibold">ARIA: alert</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 8: Requested Trip Cannot Be Found (Error State 404) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="error">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-wide">
+              ERROR STATE • ROUTING / 404
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('notfound-error')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-surface-container flex items-center justify-center text-primary-container mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">wrong_location</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">We couldn't find this trip</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              It may have been deleted, moved, or you may not have authorization to view this itinerary.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Heading to user journeys overview...')">
+                Go to My Trips
+              </button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Returning to sanctuary home.')">
+                Back to Home
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Zero itinerary data or route existence confirmed.</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Security Rule: Sanitized routing</span>
+<span class="font-label-sm text-secondary font-semibold">ARIA: alert</span>
+</div>
+</div>
+</div>
+</article>
+<!-- STATE 9: Unexpected Application Error (Error State 500) -->
+<article class="state-card flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow overflow-hidden" data-category="error">
+<div class="p-space-lg flex flex-col flex-1">
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide">
+              ERROR STATE • SYSTEM EXCEPTION
+            </span>
+<button class="text-on-surface-variant hover:text-primary text-label-md font-label-md flex items-center gap-1" onclick="triggerPreview('exception-error')">
+<span>Fullscreen</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Component Mock Preview Box -->
+<div class="rounded-xl bg-surface-container-low p-space-lg flex flex-col items-center text-center my-auto">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[28px]">healing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Something didn't go as planned</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-lg">
+              An unexpected issue occurred on our end. You can retry your last step or return safely to home.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-xs w-full justify-center">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 px-space-md bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateRetry(this)">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Try again</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-body-sm rounded-lg shadow-sm transition-all active:scale-95" onclick="simulateToast('Navigating back home safely.')">
+                Go to Home
+              </button>
+</div>
+</div>
+<!-- Metadata Footer -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Strictly zero stack traces or API keys exposed.</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Log Level: Sentry Trace #9842</span>
+<span class="font-label-sm text-secondary font-semibold">ARIA: alert</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Interactive Sandbox & Full Page Modal Simulator Section -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin pb-space-xl w-full" id="interactive-simulator">
+<div class="rounded-3xl bg-surface-container p-space-lg md:p-space-xl relative overflow-hidden">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-2 text-label-sm font-label-sm text-secondary uppercase tracking-widest font-semibold mb-1">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+            Interactive Canvas Simulator
+          </div>
+<h2 class="font-headline-md text-headline-md text-primary">Live Full-Page Experience Preview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Select any state below to view how it takes over a user's viewport inside the application layout with true scale and typography.
+          </p>
+</div>
+<!-- Simulator State Chooser -->
+<div class="flex items-center gap-space-xs w-full lg:w-auto">
+<label class="sr-only" for="stateSelector">Choose a state to simulate</label>
+<div class="relative w-full sm:w-72">
+<select class="w-full h-11 px-4 pr-10 bg-surface-container-lowest rounded-lg font-title-md text-body-md text-primary shadow-sm appearance-none focus:outline-none" id="stateSelector" onchange="renderSimulatorState(this.value)">
+<option value="trip-empty">Empty State: No Trips Created Yet</option>
+<option value="bookmarks-empty">Empty State: No Saved Destinations</option>
+<option value="search-empty">Empty State: No Search Results Found</option>
+<option value="alerts-empty">Empty State: No Notifications Pending</option>
+<option value="archives-empty">Empty State: No Archived Trips</option>
+<option value="generation-error">Error State: Generation Interrupted</option>
+<option value="network-error">Error State: Device Offline</option>
+<option value="notfound-error">Error State: 404 Journey Not Found</option>
+<option value="exception-error">Error State: 500 Unexpected Exception</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[20px]">
+              expand_more
+            </span>
+</div>
+<button class="h-11 px-space-md bg-primary-container hover:bg-primary text-on-primary rounded-lg font-title-md text-body-md shadow-sm transition-all whitespace-nowrap flex items-center gap-2 active:scale-95" onclick="openCurrentFullscreenModal()">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+<span class="hidden sm:inline">Launch Fullscreen Modal</span>
+</button>
+</div>
+</div>
+<!-- Embedded Mock Browser Canvas -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden">
+<!-- Mock Browser Chrome Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span>
+</div>
+<div class="px-space-md py-1 rounded-md bg-surface-container-lowest text-label-sm font-label-sm text-outline max-w-sm truncate flex items-center gap-1.5 shadow-sm" id="sim-url">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>https://tripgenius.ai/my-trips</span>
+</div>
+<div class="text-label-sm font-label-sm text-outline flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span>
+<span>Canvas Emulation (1440 × 680)</span>
+</div>
+</div>
+<!-- Render Target Area -->
+<div class="min-h-[480px] p-space-lg md:p-space-xl flex flex-col items-center justify-center text-center bg-background transition-opacity duration-200" id="simulator-canvas">
+<!-- Dynamically populated via renderSimulatorState() -->
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Implementation Guidelines Card for Engineers -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin pb-space-xl w-full">
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg md:p-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md pb-space-sm">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[24px]">integration_instructions</span>
+<span>Architectural Implementation Spec &amp; A11y Standards</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm font-semibold">WCAG 2.1 AA Compliant</span>
+<span class="px-2 py-1 rounded-md bg-surface-container text-on-surface-variant text-label-sm font-label-sm">SSR &amp; Hydration Safe</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-title-md text-body-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+            Accessibility &amp; Assistive Tech
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Empty states use <code class="px-1 py-0.5 rounded bg-surface-container text-primary font-mono text-[12px]">role="status"</code> with polite announcements. Error events switch dynamically to <code class="px-1 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-mono text-[12px]">role="alert"</code> and <code class="px-1 py-0.5 rounded bg-surface-container font-mono text-[12px]">aria-live="assertive"</code>.
+          </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-title-md text-body-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">history</span>
+            State Preservation Contract
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Generation failure and connectivity drops retain client drafts in volatile memory or local storage. User never suffers lost form entries or erased itinerary inputs on retry.
+          </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-title-md text-body-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+            Zero-Leak Security Boundary
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            404 and 500 error boundaries intercept uncaught exceptions before client paint. Raw stack traces, PostgreSQL identifiers, and Claude/OpenAI prompt tokens are permanently expunged.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Fullscreen Modal Overlay Container (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="fullscreen-modal">
+<div class="bg-background rounded-3xl w-full max-w-4xl max-h-[90vh] shadow-2xl flex flex-col overflow-hidden relative">
+<!-- Modal Top Toolbar -->
+<div class="px-space-lg py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-primary uppercase">
+            Viewport Simulation
+          </span>
+<span class="font-title-md text-body-sm text-on-surface" id="modal-title-chip">No Trips Created Yet</span>
+</div>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" onclick="closeFullscreenModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body Canvas -->
+<div class="flex-1 overflow-y-auto p-space-xl flex flex-col items-center justify-center min-h-[460px] text-center" id="modal-content">
+<!-- Rendered state goes here -->
+</div>
+</div>
+</div>
+<!-- Toast Notification Primitive for Interactive Clicks -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-2 font-body-sm text-body-sm transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none" id="global-toast">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span id="toast-message">Action executed</span>
+</div>
+</div>
+<script>
+  // State Definitions Dictionary
+  const stateCatalog = {
+    'trip-empty': {
+      title: 'Your next adventure starts here',
+      url: 'https://tripgenius.ai/my-trips',
+      desc: "You haven't planned a trip yet. Create your first itinerary and start exploring.",
+      icon: 'explore',
+      iconBg: 'bg-tertiary-fixed',
+      iconColor: 'text-primary-container',
+      primaryAction: 'Plan a trip',
+      primaryIcon: 'arrow_forward',
+      secondaryAction: 'Explore destinations',
+      badge: 'EMPTY STATE • TRIPS',
+      type: 'empty'
+    },
+    'bookmarks-empty': {
+      title: 'Your next favorite place is out there',
+      url: 'https://tripgenius.ai/saved-destinations',
+      desc: "Save destinations that catch your eye and return to them whenever you're ready to plan.",
+      icon: 'bookmark_add',
+      iconBg: 'bg-secondary-fixed',
+      iconColor: 'text-secondary',
+      primaryAction: 'Explore destinations',
+      primaryIcon: null,
+      secondaryAction: null,
+      badge: 'EMPTY STATE • BOOKMARKS',
+      type: 'empty'
+    },
+    'search-empty': {
+      title: 'No destinations found',
+      url: 'https://tripgenius.ai/explore?q=atlantis',
+      desc: 'Try another destination name or adjust your search filters to discover options.',
+      icon: 'travel_explore',
+      iconBg: 'bg-surface-container',
+      iconColor: 'text-primary-container',
+      primaryAction: 'Clear search filters',
+      primaryIcon: null,
+      secondaryAction: 'Explore all destinations',
+      badge: 'EMPTY STATE • SEARCH',
+      type: 'empty'
+    },
+    'alerts-empty': {
+      title: "You're all caught up",
+      url: 'https://tripgenius.ai/notifications',
+      desc: 'Important trip reminders, schedule alerts, and booking updates will appear here.',
+      icon: 'notifications_none',
+      iconBg: 'bg-surface-container-high',
+      iconColor: 'text-outline',
+      primaryAction: null,
+      primaryIcon: null,
+      secondaryAction: null,
+      badge: 'EMPTY STATE • ALERTS',
+      type: 'empty'
+    },
+    'archives-empty': {
+      title: 'Nothing archived yet',
+      url: 'https://tripgenius.ai/trip-history?tab=archived',
+      desc: 'Trips you archive will stay safely stored here until you decide to restore or remove them.',
+      icon: 'inventory_2',
+      iconBg: 'bg-surface-container',
+      iconColor: 'text-on-surface-variant',
+      primaryAction: null,
+      primaryIcon: null,
+      secondaryAction: 'View completed trips',
+      badge: 'EMPTY STATE • ARCHIVES',
+      type: 'empty'
+    },
+    'generation-error': {
+      title: "We couldn't finish your itinerary",
+      url: 'https://tripgenius.ai/plan-my-trip/synthesis',
+      desc: 'Something interrupted the planning process. Your preferences have been preserved so you can resume smoothly.',
+      icon: 'auto_fix_normal',
+      iconBg: 'bg-secondary-fixed',
+      iconColor: 'text-secondary',
+      primaryAction: 'Try again',
+      primaryIcon: 'sync',
+      secondaryAction: 'Back to trip details',
+      badge: 'ERROR STATE • GENERATION',
+      type: 'error'
+    },
+    'network-error': {
+      title: "You're temporarily offline",
+      url: 'https://tripgenius.ai/my-trips/offline-mode',
+      desc: "Check your connection and try again when you're back online. Your offline records remain accessible.",
+      icon: 'wifi_off',
+      iconBg: 'bg-secondary-fixed',
+      iconColor: 'text-secondary',
+      primaryAction: 'Try again',
+      primaryIcon: 'refresh',
+      secondaryAction: 'View offline saved guides',
+      badge: 'ERROR STATE • CONNECTIVITY',
+      type: 'error'
+    },
+    'notfound-error': {
+      title: "We couldn't find this trip",
+      url: 'https://tripgenius.ai/trips/unknown-voyage-992',
+      desc: 'It may have been deleted, moved, or you may not have authorization to view this itinerary.',
+      icon: 'wrong_location',
+      iconBg: 'bg-surface-container',
+      iconColor: 'text-primary-container',
+      primaryAction: 'Go to My Trips',
+      primaryIcon: null,
+      secondaryAction: 'Back to Home',
+      badge: 'ERROR STATE • ROUTING / 404',
+      type: 'error'
+    },
+    'exception-error': {
+      title: "Something didn't go as planned",
+      url: 'https://tripgenius.ai/orchestrator/fault',
+      desc: 'An unexpected issue occurred on our end. You can retry your last step or return safely to home.',
+      icon: 'healing',
+      iconBg: 'bg-secondary-fixed',
+      iconColor: 'text-secondary',
+      primaryAction: 'Try again',
+      primaryIcon: 'refresh',
+      secondaryAction: 'Go to Home',
+      badge: 'ERROR STATE • SYSTEM EXCEPTION',
+      type: 'error'
+    }
+  };
+
+  let currentSimulatorKey = 'trip-empty';
+
+  // Build the Inner HTML representation for canvas and modal
+  function generateStateHtml(key) {
+    const item = stateCatalog[key];
+    if (!item) return '';
+
+    const roleAttr = item.type === 'error' ? 'role="alert" aria-live="assertive"' : 'role="status" aria-live="polite"';
+
+    let actionButtonsHtml = '';
+    if (item.primaryAction && item.secondaryAction) {
+      actionButtonsHtml = `
+        <div class="flex flex-col sm:flex-row items-center gap-space-sm mt-space-md">
+          <button onclick="simulateToast('Triggered primary: ${item.primaryAction}')" class="inline-flex items-center justify-center gap-2 h-11 px-space-lg ${item.type === 'error' ? 'bg-secondary text-on-secondary hover:bg-on-secondary-container' : 'bg-primary-container text-on-primary hover:bg-primary'} font-title-md text-title-md rounded-lg shadow-sm transition-all active:scale-95">
+            ${item.primaryIcon ? `<span class="material-symbols-outlined text-[18px]">${item.primaryIcon}</span>` : ''}
+            <span>${item.primaryAction}</span>
+          </button>
+          <button onclick="simulateToast('Triggered secondary: ${item.secondaryAction}')" class="inline-flex items-center justify-center h-11 px-space-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-title-md rounded-lg shadow-sm transition-all active:scale-95">
+            <span>${item.secondaryAction}</span>
+          </button>
+        </div>
+      `;
+    } else if (item.primaryAction) {
+      actionButtonsHtml = `
+        <div class="mt-space-md">
+          <button onclick="simulateToast('Triggered primary: ${item.primaryAction}')" class="inline-flex items-center justify-center gap-2 h-11 px-space-lg ${item.type === 'error' ? 'bg-secondary text-on-secondary hover:bg-on-secondary-container' : 'bg-primary-container text-on-primary hover:bg-primary'} font-title-md text-title-md rounded-lg shadow-sm transition-all active:scale-95">
+            ${item.primaryIcon ? `<span class="material-symbols-outlined text-[18px]">${item.primaryIcon}</span>` : ''}
+            <span>${item.primaryAction}</span>
+          </button>
+        </div>
+      `;
+    } else if (item.secondaryAction) {
+      actionButtonsHtml = `
+        <div class="mt-space-md">
+          <button onclick="simulateToast('Triggered secondary: ${item.secondaryAction}')" class="inline-flex items-center justify-center h-11 px-space-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-title-md text-title-md rounded-lg shadow-sm transition-all active:scale-95">
+            <span>${item.secondaryAction}</span>
+          </button>
+        </div>
+      `;
+    }
+
+    return `
+      <div ${roleAttr} class="flex flex-col items-center max-w-md mx-auto text-center animate-fade-in">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-3xl ${item.iconBg} flex items-center justify-center ${item.iconColor} mb-space-md shadow-sm">
+          <span class="material-symbols-outlined text-[36px] md:text-[44px]">${item.icon}</span>
+        </div>
+        <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-space-xs font-semibold">
+          ${item.badge}
+        </span>
+        <h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-space-xs font-normal">
+          ${item.title}
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm leading-relaxed mb-space-sm">
+          ${item.desc}
+        </p>
+        ${actionButtonsHtml}
+      </div>
+    `;
+  }
+
+  // Render selection inside the interactive sandbox canvas
+  function renderSimulatorState(key) {
+    currentSimulatorKey = key;
+    const canvas = document.getElementById('simulator-canvas');
+    const urlSpan = document.getElementById('sim-url');
+    const item = stateCatalog[key];
+
+    if (canvas && item) {
+      canvas.style.opacity = '0.3';
+      setTimeout(() => {
+        canvas.innerHTML = generateStateHtml(key);
+        if (urlSpan) {
+          urlSpan.innerHTML = `
+            <span class="material-symbols-outlined text-[14px]">lock</span>
+            <span>${item.url}</span>
+          `;
+        }
+        canvas.style.opacity = '1';
+      }, 150);
+    }
+  }
+
+  // Segmented control filtering logic
+  function filterCatalog(category) {
+    const cards = document.querySelectorAll('.state-card');
+    const tabs = {
+      all: document.getElementById('tab-all'),
+      empty: document.getElementById('tab-empty'),
+      error: document.getElementById('tab-error')
+    };
+
+    // Update active tab styles
+    Object.keys(tabs).forEach(k => {
+      const btn = tabs[k];
+      if (k === category) {
+        btn.className = 'px-space-md py-2 rounded-lg font-title-md text-body-md text-on-primary bg-primary-container shadow-sm transition-all flex items-center gap-1.5 active:scale-95';
+        const pill = btn.querySelector('span:last-child');
+        if (pill) pill.className = 'px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest text-primary';
+      } else {
+        btn.className = 'px-space-md py-2 rounded-lg font-title-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1.5 active:scale-95';
+        const pill = btn.querySelector('span:last-child');
+        if (pill) pill.className = 'px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-highest text-on-surface';
+      }
+    });
+
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Fullscreen Modal controller
+  function triggerPreview(key) {
+    const modal = document.getElementById('fullscreen-modal');
+    const content = document.getElementById('modal-content');
+    const titleChip = document.getElementById('modal-title-chip');
+    const selector = document.getElementById('stateSelector');
+
+    if (modal && content && stateCatalog[key]) {
+      content.innerHTML = generateStateHtml(key);
+      if (titleChip) titleChip.innerText = stateCatalog[key].title;
+      if (selector) selector.value = key;
+      currentSimulatorKey = key;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function openCurrentFullscreenModal() {
+    triggerPreview(currentSimulatorKey);
+  }
+
+  function closeFullscreenModal() {
+    const modal = document.getElementById('fullscreen-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  // Retry Animation microinteraction
+  function simulateRetry(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) {
+      icon.classList.add('animate-spin');
+    }
+    btn.disabled = true;
+    simulateToast('Synthesizing retry sequence...');
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      btn.disabled = false;
+      simulateToast('Retried successfully: State reconciled.');
+    }, 1200);
+  }
+
+  function checkConnection(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon) icon.classList.add('animate-spin');
+    btn.disabled = true;
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      btn.disabled = false;
+      simulateToast(navigator.onLine ? 'Connection restored! Live sync enabled.' : 'Still offline. Serving cached assets.');
+    }, 1000);
+  }
+
+  // Lightweight Toast Dispatcher
+  function simulateToast(msg) {
+    const toast = document.getElementById('global-toast');
+    const toastMsg = document.getElementById('toast-message');
+    if (toast && toastMsg) {
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-16', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2800);
+    }
+  }
+
+  // Keyboard accessibility: ESC to dismiss modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeFullscreenModal();
+    }
+  });
+
+  // Initialize interactive canvas default on mount
+  document.addEventListener('DOMContentLoaded', () => {
+    renderSimulatorState('trip-empty');
+  });
+</script></main><footer class="w-full bg-surface-container-low border-t border-outline-variant mt-margin"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter lg:gap-space-xl"><div class="md:col-span-5 flex flex-col justify-between space-y-space-md"><div class="space-y-space-sm"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/><p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm italic font-headline-sm">"Your journey. Your way. Thoughtfully planned."</p><p class="font-body-sm text-body-sm text-outline max-w-sm">Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p></div><div class="pt-space-sm"><span class="font-label-md text-label-md uppercase text-on-surface-variant font-semibold tracking-wider block mb-space-xs">Stay Inspired</span><div class="flex max-w-md gap-space-xs"><input class="h-11 px-space-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container flex-1" placeholder="Enter your email" type="email"/><button class="h-11 px-space-md bg-secondary text-on-secondary font-title-md text-title-md rounded-lg hover:bg-on-secondary-container transition-colors" type="button">Subscribe</button></div></div></div><div class="md:col-span-3 space-y-space-md"><span class="font-label-md text-label-md uppercase text-on-surface font-semibold tracking-wider block">Curated Destinies</span><ul class="space-y-space-sm"><li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Kyoto Heritage Walks</a></li><li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Amalfi Coastal Sanctuaries</a></li><li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Oaxaca Culinary Trail</a></li><li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Reykjavik Winter Solitude</a></li><li class="font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Provence Lavender Routes</a></li></ul></div><div class="md:col-span-4 space-y-space-md"><span class="font-label-md text-label-md uppercase text-on-surface font-semibold tracking-wider block">Platform &amp; Logistics</span><div class="grid grid-cols-2 gap-space-sm font-body-md text-body-md"><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">AI Trip Architect</a><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">Shared Guides</a><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="saved-destinations" href="#">Saved Notebooks</a><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="trip-history" href="#">Archive Log</a><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">Methodology</a><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="help-center" href="#">Concierge Support</a></div><div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/70 mt-space-md"><div class="flex items-center gap-space-xs text-primary font-title-md text-title-md"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span>Intelligent Travel Engine</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Dynamically harmonizing transit friction, circadian pacing, and local gastronomy.</p></div></div></div><div class="border-t border-outline-variant/60 mt-margin pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-outline">© 2025 Trip Genius AI Inc. All rights reserved. Crafted with editorial care.</p><div class="flex gap-space-lg font-body-sm text-body-sm text-outline"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Ethics in AI</a></div></div></div></footer>
+</body></html>

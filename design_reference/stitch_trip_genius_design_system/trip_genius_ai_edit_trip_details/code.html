@@ -1,0 +1,836 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "on-surface-variant": "#414844", "secondary": "#924a2e", "surface-container-lowest": "#ffffff", "surface-container-highest": "#e0e4da", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#c0c9be", "tertiary-container": "#3d453d", "primary-fixed-dim": "#a6d0ba", "on-secondary": "#ffffff", "surface-container-low": "#f2f5eb", "inverse-primary": "#a6d0ba", "inverse-on-surface": "#eff2e8", "primary-container": "#244a3a", "error-container": "#ffdad6", "surface-variant": "#e0e4da", "surface": "#f7fbf1", "error": "#ba1a1a", "secondary-fixed-dim": "#ffb59a", "secondary-container": "#fea17e", "background": "#f7fbf1", "tertiary-fixed": "#dce5da", "on-tertiary-fixed-variant": "#404941", "on-primary-fixed": "#002115", "surface-dim": "#d8dbd2", "on-primary-container": "#90b9a4", "on-secondary-fixed-variant": "#753419", "surface-bright": "#f7fbf1", "inverse-surface": "#2e322b", "surface-container-high": "#e6e9e0", "on-primary-fixed-variant": "#284e3e", "tertiary": "#272f28", "outline-variant": "#c1c8c2", "on-surface": "#191d17", "surface-container": "#ecefe6", "on-primary": "#ffffff", "on-tertiary-container": "#a9b2a8", "on-background": "#191d17", "on-secondary-fixed": "#380d00", "on-tertiary-fixed": "#151d17", "surface-tint": "#406655", "outline": "#717974", "primary": "#0b3325", "secondary-fixed": "#ffdbce", "primary-fixed": "#c2ecd6", "on-secondary-container": "#78361b", "on-error": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "margin": "3rem" }, "fontFamily": { "headline-sm": [ "DM Serif Display" ], "title-lg": [ "DM Sans" ], "display-hero": [ "DM Serif Display" ], "label-sm": [ "DM Sans" ], "headline-md": [ "DM Serif Display" ], "title-md": [ "DM Sans" ], "body-lg": [ "DM Sans" ], "headline-lg-mobile": [ "DM Serif Display" ], "label-md": [ "DM Sans" ], "body-md": [ "DM Sans" ], "body-sm": [ "DM Sans" ], "headline-lg": [ "DM Serif Display" ], "display-hero-mobile": [ "DM Serif Display" ] }, "fontSize": { "headline-sm": [ "22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" } ], "title-lg": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "headline-md": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "display-hero-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Trip Genius AI official corrected brand wordmark: Travel-route flourish on capital T with cleanly positioned terracotta arrow at the trajectory tip without cutting into or distorting the T, and balanced spacing between 'Trip Genius' in deep forest green and 'AI' in terracotta without overlap." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U7cduos_XW9a-id8yN_-2diiYPSAzK1Wh04K52hdYKenGz0IOxwhNG31iF7dUMTkyIEpVLUR4GeEq2DJ0--3ZtmofeUaTug7qpk86HY7wsQKTN1oLv7Vwl-CvWS3HJyhnezVMHaAElLmaaHB_WudJCBiRLdvoyPO0hmrGL3AQcL70IirPfhJ4e5FaD-eQHLIQpZpnxMOvMNrQnWX4ipO1Te2PupFptTROmIU55Qrx-uEopanbBUY8VRGQq"></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-md py-space-xs font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="explore-destinations" href="#">Explore Destinations</a><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="my-trips" href="#">My Trips</a><a class="px-space-md py-space-xs font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-lg" data-path="how-it-works" href="#">How It Works</a></nav></div><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex px-space-md py-space-xs font-title-md text-title-md text-primary hover:bg-tertiary-fixed hover:text-on-tertiary-fixed rounded-lg transition-colors" data-path="sign-in" href="#">Sign In</a><a class="inline-flex items-center justify-center px-space-lg py-space-xs font-title-md text-title-md text-on-primary bg-primary hover:bg-primary-container hover:text-on-primary transition-all rounded-lg shadow-sm active:scale-95" data-path="plan-my-trip" href="#">Plan My Trip</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- BREADCRUMBS & CONTEXT STATUS BAR -->
+<section class="w-full bg-surface-container-low/70 py-space-sm px-gutter">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="my-trips" href="#">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span class="">My Trips</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Kyoto, Japan</a>
+<span class="text-outline-variant">/</span>
+<span class="font-semibold text-primary">Edit Trip Details</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Unsaved Changes • Draft v2.4
+        </span>
+<button class="text-body-sm font-body-sm text-secondary hover:text-on-secondary-container transition-colors flex items-center gap-0.5" id="undoChangesBtn">
+<span class="material-symbols-outlined text-[15px]">undo</span>
+<span class="">Undo all</span>
+</button>
+</div>
+</div>
+</section>
+<!-- PAGE HEADER & CONTEXT OVERVIEW -->
+<section class="w-full bg-surface px-gutter pt-space-lg pb-space-md">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+          Customize Your Journey
+        </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Autonomous Itinerary Architecture</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Make this trip your own.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-1">
+            Adjust your travel cadence, hone sensory preferences, and calibrate day blocks without losing algorithmic pacing coherence.
+          </p>
+</div>
+<!-- Quick Summary Bar Chip -->
+<div class="bg-surface-container px-space-md py-space-sm rounded-xl flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">map</span>
+<div class="truncate">
+<span class="font-semibold text-primary">A Thoughtful Kyoto Escape</span>
+<span class="text-on-surface-variant mx-1">•</span>
+<span class="text-on-surface-variant">Oct 12 – 16, 2026</span>
+<span class="text-on-surface-variant mx-1">•</span>
+<span class="text-on-surface-variant">2 Guests</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN EDIT WORKSPACE (2-COLUMN EDITORIAL GRID) -->
+<section class="w-full px-gutter py-space-md pb-space-xl bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: PRIMARY FORM & TIMELINE ENGINE (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- SECTION A: CORE TRIP INFORMATION -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-label-md">01</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Core Trip Information</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Identity, geopolitical perimeter, and group envelope.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Required Data</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Trip Name -->
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+<span class="">Trip Title</span>
+<span class="font-body-sm text-body-sm text-outline">Visible across all shared tickets</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">edit_note</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all" type="text" value="A Thoughtful Kyoto Escape">
+</div>
+</div>
+<!-- Destination -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Destination</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-secondary text-[20px]">location_on</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all" type="text" value="Kyoto, Japan">
+<span class="absolute right-3 inline-flex items-center text-label-sm font-label-sm text-primary-container bg-primary-fixed px-2 py-0.5 rounded">Verified Region</span>
+</div>
+</div>
+<!-- Starting Point -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Transit Hub of Entry <span class="text-outline text-body-sm font-normal">(Optional)</span></label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">flight_land</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all" type="text" value="Osaka Kansai Airport (KIX)">
+</div>
+</div>
+<!-- Date Range & Duration -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Calendar Schedule</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">calendar_today</span>
+<input class="w-full pl-9 pr-2 py-2.5 bg-surface-container-low rounded-lg text-body-sm font-body-sm text-on-surface outline-none focus:ring-1 focus:ring-primary" type="text" value="Oct 12, 2026">
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">event</span>
+<input class="w-full pl-9 pr-2 py-2.5 bg-surface-container-low rounded-lg text-body-sm font-body-sm text-on-surface outline-none focus:ring-1 focus:ring-primary" type="text" value="Oct 16, 2026">
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">timelapse</span>
+                Duration calculated: 5 Days / 4 Nights
+              </p>
+</div>
+<!-- Travellers Steppers -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Travel Party &amp; Breakdown</label>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-1.5 rounded-lg">
+<!-- Adults Stepper -->
+<div class="flex-1 flex items-center justify-between px-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Adults</span>
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title-md text-title-md font-bold text-primary w-4 text-center">2</span>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<!-- Children Stepper -->
+<div class="flex-1 flex items-center justify-between px-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface">Children</span>
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest opacity-50 cursor-not-allowed text-on-surface flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-title-md text-title-md font-bold text-primary w-4 text-center">0</span>
+<button class="w-7 h-7 rounded-md bg-surface-container-lowest hover:bg-surface-container text-on-surface flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Budget & Tier Allocation -->
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-title-md text-title-md text-on-surface">Budget Calibration &amp; Currency</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer">
+<option selected="">USD ($) — US Dollar</option>
+<option>JPY (¥) — Japanese Yen</option>
+<option>EUR (€) — Euro</option>
+<option>GBP (£) — British Pound</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline text-[18px]">unfold_more</span>
+</div>
+<div class="sm:col-span-2 flex items-center justify-between bg-surface-container-low px-4 rounded-lg h-11">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">payments</span>
+<span class="font-title-md text-title-md text-primary">$280 – $450 / day</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Heritage &amp; Comfort Tier</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: TRAVEL PREFERENCES & LOGISTICS -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-label-md">02</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Travel Preferences &amp; Logistics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Movement rhythm, culinary boundaries, and physical accessibility.</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-primary-container bg-tertiary-fixed px-2.5 py-1 rounded-full font-semibold">AI Synchronized</span>
+</div>
+<!-- Pace Selection Cards -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<span class="font-title-md text-title-md text-on-surface">Preferred Travel Pace</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Pace 1 -->
+<div class="group p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex flex-col justify-between gap-3">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-primary text-[24px]">self_improvement</span>
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center"></div>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Slow &amp; Contemplative</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">1–2 core visits, ample teahouse lingering (~5,000 steps/day).</p>
+</div>
+</div>
+<!-- Pace 2 (Selected) -->
+<div class="p-space-md rounded-xl bg-primary text-on-primary transition-all shadow-md flex flex-col justify-between gap-3">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">balance</span>
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-title-md text-title-md text-on-primary font-semibold">Mindful &amp; Balanced</h3>
+<span class="text-[10px] bg-secondary px-1.5 py-0.2 rounded font-bold uppercase tracking-wider">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary/80 mt-1">3–4 curated highlights, scenic pedestrian arcs (~8,500 steps/day).</p>
+</div>
+</div>
+<!-- Pace 3 -->
+<div class="group p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex flex-col justify-between gap-3">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-secondary text-[24px]">sprint</span>
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center"></div>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Vibrant &amp; Thorough</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High-density cultural circuit, sunrise to dusk (~15,000+ steps/day).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Curated Interests Multi-Select Pills -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-title-md text-title-md text-on-surface">Curated Focus Themes</label>
+<div class="flex flex-wrap gap-space-xs">
+<!-- Selected -->
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary text-body-sm font-body-sm flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">temple_buddhist</span>
+                Historic Zen &amp; Shrines
+                <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<!-- Selected -->
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary text-body-sm font-body-sm flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">palette</span>
+                Artisan Crafts &amp; Pottery
+                <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<!-- Selected -->
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary text-body-sm font-body-sm flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">ramen_dining</span>
+                Kaiseki &amp; Street Food
+                <span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<!-- Unselected -->
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">local_cafe</span>
+                Kissa Coffee Culture
+              </button>
+<!-- Unselected -->
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">forest</span>
+                Nature Trails &amp; Bamboo Glades
+              </button>
+<!-- Unselected -->
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-body-sm font-body-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">auto_stories</span>
+                Literary Kyoto &amp; Bookshops
+              </button>
+</div>
+</div>
+<!-- Accommodation Archetype -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-title-md text-title-md text-on-surface">Lodging Typology</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<label class="p-space-sm rounded-xl bg-primary-container text-on-primary flex items-center gap-space-sm cursor-pointer shadow-sm">
+<input checked="" class="accent-secondary-container w-4 h-4" name="lodging" type="radio">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold leading-tight">Machiya / Ryokan</span>
+<span class="font-body-sm text-body-sm text-on-primary-container text-[12px]">Tatami &amp; wooden heritage</span>
+</div>
+</label>
+<label class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-space-sm cursor-pointer transition-colors">
+<input class="accent-primary w-4 h-4" name="lodging" type="radio">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold leading-tight">Boutique Hotel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Design-forward &amp; quiet</span>
+</div>
+</label>
+<label class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-space-sm cursor-pointer transition-colors">
+<input class="accent-primary w-4 h-4" name="lodging" type="radio">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold leading-tight">Modern Residence</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Pristine kitchenette suite</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Dietary & Accessibility Toggles -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-2">
+<!-- Dietary -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Dietary Framework</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed text-body-sm font-body-sm flex items-center gap-1">
+                  Pescatarian <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-low text-on-surface text-body-sm font-body-sm flex items-center gap-1">
+                  No Red Meat <span class="material-symbols-outlined text-[14px] text-outline">add</span>
+</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-low text-on-surface text-body-sm font-body-sm flex items-center gap-1">
+                  Nut Allergy Alert <span class="material-symbols-outlined text-[14px] text-outline">add</span>
+</span>
+</div>
+</div>
+<!-- Accessibility -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-on-surface">Physical Accessibility Requirements</label>
+<div class="space-y-1.5">
+<label class="flex items-center gap-2 cursor-pointer text-body-sm font-body-sm text-on-surface">
+<input checked="" class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="">Minimal steep staircases (hillside temple bypasses)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer text-body-sm font-body-sm text-on-surface">
+<input class="accent-primary rounded w-4 h-4" type="checkbox">
+<span class="">Elevator access required at subway interchanges</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Curator Notes Textarea -->
+<div class="flex flex-col gap-1.5 pt-2">
+<label class="font-title-md text-title-md text-on-surface flex items-center justify-between">
+<span class="">Personal Curator Directives</span>
+<span class="font-body-sm text-body-sm text-outline">Special requests passed to AI engine</span>
+</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-xl text-body-md font-body-md text-on-surface outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" rows="2">Prefers quiet morning temple visits before regional tour buses arrive. Evening culinary reservations prioritized along Kamo River or Pontocho alleyways.</textarea>
+</div>
+</div>
+<!-- SECTION C: YOUR DAILY PLAN (INTERACTIVE ACCORDIONS) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-label-md">03</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Your Daily Plan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Expand days to edit scheduled stops, reorder activities, or append custom notes.</p>
+</div>
+</div>
+<button class="inline-flex items-center gap-1 text-label-md font-label-md text-secondary hover:text-on-secondary-container transition-colors self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+              Reorder All Days
+            </button>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<!-- DAY 1: COLLAPSED -->
+<div class="bg-surface-container-low rounded-xl p-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex flex-col items-center justify-center font-semibold text-label-sm shadow-xs">
+<span class="text-[10px] uppercase text-outline">Day</span>
+<span class="text-title-md leading-none">01</span>
+</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Arrival &amp; First Impressions</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Oct 12</span>
+<span class="">•</span>
+<span class="">2 activities</span>
+<span class="">•</span>
+<span class="">Gion Check-in &amp; Evening Walk</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-primary rounded-lg text-body-sm font-body-sm hover:bg-surface-container-high transition-colors">Edit Day</button>
+<button class="text-outline hover:text-on-surface p-1">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- DAY 2: EXPANDED FULL INTERACTIVE ITINERARY -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<!-- Header Bar of Day 2 -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-primary text-on-primary flex flex-col items-center justify-center font-semibold text-label-sm shadow-sm">
+<span class="text-[10px] uppercase text-on-primary/70">Day</span>
+<span class="text-title-md leading-none">02</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Temples &amp; Traditions</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded-full">Expanded</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Oct 13, 2026</span>
+<span class="">•</span>
+<span class="">4 Curated Stops</span>
+<span class="">•</span>
+<span class="">Eastern Kyoto / Higashiyama</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-primary rounded-lg text-body-sm font-body-sm hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tune</span> Configure Day
+                  </button>
+<button class="text-primary hover:text-on-surface p-1">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Day 2 Timeline Rail -->
+<div class="space-y-space-sm pl-2 sm:pl-4 relative">
+<!-- Stop 1: Cultural / Kennin-ji -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm transition-transform hover:scale-[1.005]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab mt-1 select-none">drag_indicator</span>
+<div class="w-1.5 self-stretch bg-primary rounded-full"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold">08:30 AM</span>
+<span class="font-title-md text-title-md text-on-surface">Kennin-ji Zen Temple &amp; Moss Courtyards</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant mt-1 flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span> 1h 30m
+                        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">confirmation_number</span> ¥600 (~$4 USD)
+                        </span>
+<span class="">•</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded">Culture / Zen Garden</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Edit activity details">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container transition-colors" title="Remove stop">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Stop 2: Walking Circuit / Machiya Lanes -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm transition-transform hover:scale-[1.005]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab mt-1 select-none">drag_indicator</span>
+<div class="w-1.5 self-stretch bg-primary rounded-full"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold">10:30 AM</span>
+<span class="font-title-md text-title-md text-on-surface">Traditional Machiya Lanes &amp; Shirakawa Canal</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant mt-1 flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span> 1h 45m
+                        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">currency_yen</span> Free Exploration
+                        </span>
+<span class="">•</span>
+<span class="bg-surface-container-high text-on-surface text-label-sm font-label-sm px-2 py-0.5 rounded">Pedestrian Route</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Stop 3: Dining / Soba at Omen -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm transition-transform hover:scale-[1.005]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab mt-1 select-none">drag_indicator</span>
+<div class="w-1.5 self-stretch bg-secondary rounded-full"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-secondary font-bold">12:30 PM</span>
+<span class="font-title-md text-title-md text-on-surface">Hand-Rolled Soba &amp; Seasonal Tempura at Omen</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant mt-1 flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">restaurant</span> 1h 15m
+                        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">payments</span> ¥2,000 (~$13 USD)
+                        </span>
+<span class="">•</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded">Culinary Reservation</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Stop 4: Cultural / Kiyomizu-dera -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm transition-transform hover:scale-[1.005]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab mt-1 select-none">drag_indicator</span>
+<div class="w-1.5 self-stretch bg-primary rounded-full"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold">02:30 PM</span>
+<span class="font-title-md text-title-md text-on-surface">Kiyomizu-dera &amp; Sannenzaka Pottery Kilns</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-on-surface-variant mt-1 flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span> 2h 00m
+                        </span>
+<span class="">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">confirmation_number</span> ¥400 (~$3 USD)
+                        </span>
+<span class="">•</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm px-2 py-0.5 rounded">Pottery &amp; Terraces</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Day 2 Note Display Box -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">sticky_note_2</span>
+<span class=""><strong class="text-on-surface">Note:</strong> Bring slip-on footwear for sacred temple flooring and shoe removal at Kennin-ji.</span>
+</div>
+<button class="text-secondary hover:underline text-label-sm font-label-sm">Edit Note</button>
+</div>
+<!-- Day 2 Control Buttons -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container-high text-primary rounded-lg font-title-md text-title-md text-sm flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_circle</span> Add Activity
+                    </button>
+<button class="px-space-md py-2 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant rounded-lg font-title-md text-title-md text-sm flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">note_add</span> Add Day Note
+                    </button>
+</div>
+<a class="text-body-sm font-body-sm text-secondary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+                    Reorder Activities in Day 2
+                  </a>
+</div>
+</div>
+</div>
+<!-- DAY 3: COLLAPSED -->
+<div class="bg-surface-container-low rounded-xl p-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex flex-col items-center justify-center font-semibold text-label-sm shadow-xs">
+<span class="text-[10px] uppercase text-outline">Day</span>
+<span class="text-title-md leading-none">03</span>
+</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Food &amp; Local Culture</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Oct 14</span>
+<span class="">•</span>
+<span class="">3 activities</span>
+<span class="">•</span>
+<span class="">Nishiki Market, Fermentation Lab &amp; Evening Kaiseki</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-primary rounded-lg text-body-sm font-body-sm hover:bg-surface-container-high transition-colors">Edit Day</button>
+<button class="text-outline hover:text-on-surface p-1">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- DAY 4: COLLAPSED -->
+<div class="bg-surface-container-low rounded-xl p-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex flex-col items-center justify-center font-semibold text-label-sm shadow-xs">
+<span class="text-[10px] uppercase text-outline">Day</span>
+<span class="text-title-md leading-none">04</span>
+</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Nature &amp; Neighbourhoods</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Oct 15</span>
+<span class="">•</span>
+<span class="">3 activities</span>
+<span class="">•</span>
+<span class="">Sagano Scenic Railway &amp; Bamboo Grove Sanctuary</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-primary rounded-lg text-body-sm font-body-sm hover:bg-surface-container-high transition-colors">Edit Day</button>
+<button class="text-outline hover:text-on-surface p-1">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- DAY 5: COLLAPSED -->
+<div class="bg-surface-container-low rounded-xl p-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<span class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex flex-col items-center justify-center font-semibold text-label-sm shadow-xs">
+<span class="text-[10px] uppercase text-outline">Day</span>
+<span class="text-title-md leading-none">05</span>
+</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">A Relaxed Farewell</h3>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Oct 16</span>
+<span class="">•</span>
+<span class="">2 activities</span>
+<span class="">•</span>
+<span class="">Uji Matcha Ceremony &amp; Haruka Express Departure</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-primary rounded-lg text-body-sm font-body-sm hover:bg-surface-container-high transition-colors">Edit Day</button>
+<button class="text-outline hover:text-on-surface p-1">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ADD ANOTHER DAY ACTION -->
+<button class="w-full py-3.5 bg-surface-container-low hover:bg-surface-container-high rounded-xl text-primary font-title-md text-title-md flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle_outline</span>
+<span class="">Add Another Day to Trip</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: STICKY TRIP SUMMARY & PERSISTENT ACTION DOCK (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-24">
+<!-- CARD 1: TRIP AT A GLANCE (Photo & Metadata) -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col">
+<!-- Thumbnail preview with overlay tag -->
+<div class="relative h-44 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Atmospheric wet stone alleyway in Gion Kyoto lined with classic wooden machiya townhouses, traditional paper chochin lanterns glowing amber, paper shoji sliding doors, and distant figure in kimono walking under overcast morning sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ-pL3xqnn1yOXkmNm1bohzYznTSb0jUfNNUbA2WECSWlcXdmx-cJFvjc1iUI_FxbSSIb7JpIm-VAm0i37ypteTieFEEcGJTe1k9xOjlnCVHYXhtWLLl6yq24BagaRciUXgNbVMbYFcFOOC62YiBIIyfYSvpcLP7UPdQFbVHpNTbgiKDfvhZxIsmvP1wbh7VZf3gFuXi_V8HIV9GGe5pFRz36T_6ySkAX02-h2fjMwqzk2XvJ1wqbC5w">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-end justify-between text-on-primary">
+<div>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary-container">Destination Anchor</span>
+<p class="font-headline-sm text-headline-sm leading-tight text-surface-container-lowest">Kyoto, Japan</p>
+</div>
+<span class="text-label-sm font-label-sm bg-primary/80 backdrop-blur-sm px-2 py-0.5 rounded text-white">Autumn 2026</span>
+</div>
+</div>
+<!-- Metrics Matrix -->
+<div class="p-space-md flex flex-col gap-space-sm">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold pb-1">Trip Vital Metrics</h3>
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">calendar_month</span> Duration
+                </span>
+<span class="font-semibold text-on-surface">5 Days / 4 Nights</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">group</span> Travellers
+                </span>
+<span class="font-semibold text-on-surface">2 Adults (Couple)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">account_balance_wallet</span> Target Daily Budget
+                </span>
+<span class="font-semibold text-on-surface">$280 – $450 / day</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">directions_walk</span> Pacing Tier
+                </span>
+<span class="font-semibold text-secondary">Mindful &amp; Balanced</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm py-1">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">checklist</span> Total Activities
+                </span>
+<span class="font-semibold text-on-surface">14 Curated Stops</span>
+</div>
+</div>
+<!-- Dynamic Algorithmic Notice -->
+<div class="mt-space-xs p-space-sm bg-surface-container rounded-xl flex items-start gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">info</span>
+<p class="text-[12px] leading-relaxed">
+<strong class="text-on-surface font-semibold">Regeneration note:</strong> Altering calendar dates or pace may recommend re-evaluating daylight timings and temple gate entry windows.
+              </p>
+</div>
+</div>
+</div>
+<!-- CARD 2: ACTION DOCK & PERSISTENCE CONTROLS -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Commit Changes</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Primary Save Button -->
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]" id="saveChangesBtn">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+<span class="">Save Changes</span>
+</button>
+<!-- Secondary Regenerate Button -->
+<button class="w-full h-11 bg-surface-container-lowest hover:bg-secondary-fixed text-secondary rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 transition-all" id="regenerateBtn">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span class="">Regenerate Itinerary</span>
+</button>
+<p class="text-label-sm font-label-sm text-outline text-center px-2">
+              Requires confirmation: Re-analyzes itinerary stops with updated preferences.
+            </p>
+</div>
+<!-- Pending Changes Indicator -->
+<div class="pt-space-xs flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+              3 field edits pending
+            </span>
+<button class="hover:underline text-on-surface font-medium text-[12px]">View Diff</button>
+</div>
+<!-- Tertiary Dismiss Action -->
+<div class="pt-2 text-center">
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">
+              Cancel &amp; Return to Itinerary
+            </a>
+</div>
+</div>
+<!-- CARD 3: EDITORIAL CURATION TIP -->
+<div class="bg-tertiary-fixed/60 p-space-md rounded-2xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-1">
+<h4 class="font-title-md text-title-md text-primary font-semibold">Kyoto Morning Strategy</h4>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant leading-relaxed text-[13px]">
+              Gion's Shirakawa canal and the Higashiyama hills receive 80% fewer pedestrians before 09:00 AM. Your itinerary is weighted toward dawn walks.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- REGENERATION CONFIRMATION DIALOG (Hidden by default, triggered via JS) -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-xs flex items-center justify-center p-gutter" id="regenModal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Regenerate Itinerary?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          This will use your modified travel pace, curated themes, and budget constraints to recalculate and optimize your 5-day Kyoto schedule. Any customized custom notes will be preserved.
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-title-md text-title-md transition-colors" id="cancelRegenBtn">Cancel</button>
+<button class="px-space-lg py-2 bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-container rounded-lg font-title-md text-title-md transition-colors shadow-sm" id="confirmRegenBtn">Confirm &amp; Re-run AI</button>
+</div>
+</div>
+</div>
+<!-- CLIENT-SIDE MICRO-INTERACTIONS -->
+<script>
+    (function() {
+      const regenBtn = document.getElementById('regenerateBtn');
+      const regenModal = document.getElementById('regenModal');
+      const cancelRegenBtn = document.getElementById('cancelRegenBtn');
+      const confirmRegenBtn = document.getElementById('confirmRegenBtn');
+      const saveBtn = document.getElementById('saveChangesBtn');
+      const undoBtn = document.getElementById('undoChangesBtn');
+
+      if (regenBtn && regenModal) {
+        regenBtn.addEventListener('click', () => {
+          regenModal.classList.remove('hidden');
+        });
+        cancelRegenBtn.addEventListener('click', () => {
+          regenModal.classList.add('hidden');
+        });
+        confirmRegenBtn.addEventListener('click', () => {
+          regenModal.classList.add('hidden');
+          alert('Autonomous itinerary optimization initiated. Recalibrating route schedules...');
+        });
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          const originalText = saveBtn.innerHTML;
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Saving Edits...</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Changes Saved</span>';
+            setTimeout(() => {
+              saveBtn.innerHTML = originalText;
+            }, 2000);
+          }, 600);
+        });
+      }
+
+      if (undoBtn) {
+        undoBtn.addEventListener('click', () => {
+          if (confirm('Revert all unsaved edits to Draft v2.4?')) {
+            window.location.reload();
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-gutter"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-xl"><div><div class="flex items-center gap-space-xs mb-space-sm"><img alt="Trip Genius AI logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U7cduos_XW9a-id8yN_-2diiYPSAzK1Wh04K52hdYKenGz0IOxwhNG31iF7dUMTkyIEpVLUR4GeEq2DJ0--3ZtmofeUaTug7qpk86HY7wsQKTN1oLv7Vwl-CvWS3HJyhnezVMHaAElLmaaHB_WudJCBiRLdvoyPO0hmrGL3AQcL70IirPfhJ4e5FaD-eQHLIQpZpnxMOvMNrQnWX4ipO1Te2PupFptTROmIU55Qrx-uEopanbBUY8VRGQq"><span class="font-title-lg text-title-lg text-primary font-bold">Trip Genius AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Editorial intelligence orchestrating seamless voyages, bespoke cultural circuits, and authentic regional travel itineraries.</p></div><div><h4 class="font-title-md text-title-md text-on-surface mb-space-sm">Navigation</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a></li></ul></div><div><h4 class="font-title-md text-title-md text-on-surface mb-space-sm">AI Ethics &amp; Governance</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="responsible-ai" href="#">Responsible Recommendation Engine</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="data-privacy" href="#">Data Dignity &amp; Traveler Privacy</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="sustainable-travel" href="#">Overtourism Mitigation Protocols</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="algorithmic-transparency" href="#">Algorithmic Transparency</a></li></ul></div><div><h4 class="font-title-md text-title-md text-on-surface mb-space-sm">Dispatch</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Curated seasonal dispatches, regional culinary maps, and autonomous travel notes.</p><div class="flex gap-space-xs"><input class="w-full px-space-sm py-space-xs bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-lg text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Enter your email" type="email"><button class="px-space-md py-space-xs bg-secondary text-on-secondary rounded-lg text-label-md font-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors">Join</button></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant"><div class="">© 2025 Trip Genius AI Inc. Precision travel intelligence.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Ethical AI Framework</a></div></div></div></footer>
+
+</body></html>

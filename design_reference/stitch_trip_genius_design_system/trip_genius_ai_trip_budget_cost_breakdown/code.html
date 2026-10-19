@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Top Utility Context Bar & Editorial Breadcrumbs -->
+<div class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-4">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<nav class="flex items-center flex-wrap gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">My Trips</a>
+<span class="text-outline-variant font-medium">/</span>
+<a class="hover:text-primary transition-colors" href="#">Cultural Heritage &amp; Gardens (Kyoto)</a>
+<span class="text-outline-variant font-medium">/</span>
+<span class="font-title-md text-primary font-semibold">Budget &amp; Expenses</span>
+</nav>
+<div class="flex items-center gap-3 self-stretch md:self-auto justify-end">
+<a class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Itinerary</span>
+</a>
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Budget</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm" onclick="navigator.clipboard?.writeText(window.location.href); alert('Itinerary financial overview link copied.');" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Header Section with Trip Snapshot -->
+<section class="w-full px-margin-mobile md:px-margin pt-8 pb-10">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
+<div class="max-w-3xl flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Financial Planning &amp; Estimates</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-hero text-primary tracking-tight">Trip Budget &amp; Cost Breakdown</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-1">
+          Plan confidently, understand your expenses, and make the most of your travel budget with clear category projections and daily spending pacing.
+        </p>
+</div>
+<!-- Kyoto Trip Pill Card -->
+<div class="w-full lg:w-auto bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center gap-4">
+<img class="w-20 h-20 rounded-lg object-cover flex-shrink-0" data-alt="Traditional wooden machiya houses and atmospheric twilight stone alley of Ninenzaka in Kyoto Japan with mountains in distance under soft pastel skies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDk2p8mKVuWwk7hc9t21PpsJsgZ1tbaGRoA91trox0QAz79tJoqYxzpsmJoSlfjx_JieCa5_pixNYSGpPei6ltew7wbr9AkFpAfgvqhlN6V3yw0ly5rxeYn0ia7KpkuWpjQZiJ1tJkTQd1IJbzoVAiYYPbOC7dLLUqudlUyrSvsryHqX93DC-rzIH-AtsWgCf56PHBPoYHLIlDOSvNvQUbmbbb3eKwZ6DUUDV7Q-_bVk6CwBLU7_Vbmw"/>
+<div class="flex flex-col pr-3">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-primary font-semibold">Kyoto, Japan</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-semibold uppercase tracking-wider">Estimated</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Oct 14 – Oct 20, 2025 • 7 Days, 6 Nights</span>
+<div class="flex items-center gap-3 mt-1.5 font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">group</span> 2 Travelers</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">currency_rupee</span> All in INR (₹)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Metric Summary Cards & Progress -->
+<section class="w-full px-margin-mobile md:px-margin pb-12">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<!-- 4 Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Estimated Total</span>
+<span class="material-symbols-outlined text-[20px] text-primary">account_balance_wallet</span>
+</div>
+<div class="my-4">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-serif" id="stat-estimated-total">₹48,500</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">For entire trip (2 travelers)</p>
+</div>
+<div class="pt-3 bg-surface-container-low -mx-5 -mb-5 px-5 py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold">STATUS</span>
+<span class="font-label-sm text-label-sm text-primary font-bold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Mid-Range Plan
+            </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Per Person</span>
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+</div>
+<div class="my-4">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-serif" id="stat-per-person">₹24,250</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Equal split between 2 travelers</p>
+</div>
+<div class="pt-3 bg-surface-container-low -mx-5 -mb-5 px-5 py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold">SHARE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">50.0% Allocation</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Daily Cadence</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">calendar_today</span>
+</div>
+<div class="my-4">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-serif" id="stat-daily-cadence">₹6,929</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Per day group average (7 days)</p>
+</div>
+<div class="pt-3 bg-surface-container-low -mx-5 -mb-5 px-5 py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold">INDIVIDUAL</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">₹3,465 / day</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Target Ceiling</span>
+<span class="material-symbols-outlined text-[20px] text-primary">verified</span>
+</div>
+<div class="my-4">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-serif" id="stat-target-budget">₹55,000</div>
+<p class="font-body-sm text-body-sm text-primary font-medium mt-1" id="stat-buffer-label">₹6,500 under budget (11.8% buffer)</p>
+</div>
+<div class="pt-3 bg-surface-container-low -mx-5 -mb-5 px-5 py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline font-semibold">RESERVE</span>
+<span class="font-label-sm text-label-sm text-primary font-bold" id="stat-buffer-tag">Healthy Buffer</span>
+</div>
+</div>
+</div>
+<!-- Target Budget Utilization Bar Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-primary font-semibold">Budget Consumption Status</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-label-sm font-label-sm" id="badge-pct">88.2% Utilized</span>
+</div>
+<div class="flex items-center gap-4 text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Estimated: <strong class="text-on-surface font-semibold" id="spent-figure">₹48,500</strong></span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span id="buffer-figure">₹6,500 Buffer Available</span>
+</span>
+</div>
+</div>
+<!-- Meter Track -->
+<div class="w-full bg-surface-container-high h-3.5 rounded-full overflow-hidden flex relative">
+<div class="h-full bg-primary-container transition-all duration-500 rounded-full" id="target-progress-bar" style="width: 88.2%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>₹0</span>
+<span class="text-on-surface-variant">Optimal safety threshold: ₹5,000+</span>
+<span id="target-figure">Target: ₹55,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline-variant italic">
+          All figures represent indicative travel estimates based on mid-range seasonal rates. Verify local reservations before departure.
+        </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Expense Category Breakdown & Visual Donut Chart -->
+<section class="w-full px-margin-mobile md:px-margin pb-14">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Category Diagnostics</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Where Your Money Goes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Proportional distribution of estimated expenses across essential travel dimensions.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: 6 Detailed Categories Breakdown -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between pb-3 bg-surface-container-low -mx-6 -mt-6 p-6 rounded-t-xl">
+<span class="font-title-md text-title-md text-primary font-semibold">Category Breakdown</span>
+<span class="font-label-md text-label-md text-on-surface-variant">6 Primary Segments</span>
+</div>
+<!-- Item 1: Accommodation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Accommodation</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">6 Nights Traditional Machiya (Higashiyama)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-primary font-bold">₹16,000</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">33.0%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 33.0%;"></div>
+</div>
+</div>
+<!-- Item 2: Flights & Intercity -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Flights &amp; Intercity Travel</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">Domestic flights &amp; Haruka Express rail transit</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-primary font-bold">₹10,000</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">20.6%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 20.6%;"></div>
+</div>
+</div>
+<!-- Item 3: Food & Dining -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Food &amp; Dining</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">Kaiseki banquets, ramen, Nishiki Market tastings</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-secondary font-bold">₹8,500</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">17.5%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 17.5%;"></div>
+</div>
+</div>
+<!-- Item 4: Activities & Attractions -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-[#5A7B69]">
+<span class="material-symbols-outlined text-[18px]">temple_buddhist</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Activities &amp; Attractions</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">Shrine passes, bamboo groves, tea ceremony</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-primary font-bold">₹7,000</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">14.4%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-[#5A7B69] h-full rounded-full" style="width: 14.4%;"></div>
+</div>
+</div>
+<!-- Item 5: Local Transportation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-[#BFA88E]">
+<span class="material-symbols-outlined text-[18px]">directions_bus</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Local Transportation</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">Kyoto City Bus day cards, Hankyu &amp; Keihan lines</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-primary font-bold">₹4,000</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">8.2%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-[#BFA88E] h-full rounded-full" style="width: 8.2%;"></div>
+</div>
+</div>
+<!-- Item 6: Miscellaneous -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-[#8E978F]">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Miscellaneous &amp; Reserve</span>
+<span class="block text-body-sm font-body-sm text-on-surface-variant">eSIMs, temple amulets, luggage forwarding</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title-md text-title-md text-primary font-bold">₹3,000</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">6.2%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-[#8E978F] h-full rounded-full" style="width: 6.2%;"></div>
+</div>
+</div>
+<!-- Total Verification Strip -->
+<div class="mt-2 pt-4 bg-surface-container-low -mx-6 -mb-6 px-6 py-4 rounded-b-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Reconciled Total</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-serif">₹48,500 <span class="font-label-sm text-label-sm font-sans text-on-surface-variant font-normal">(100.0%)</span></span>
+</div>
+</div>
+<!-- Right: Donut Chart & Editorial Callout -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col items-center">
+<span class="font-title-md text-title-md text-primary font-semibold self-start mb-2">Proportional Share</span>
+<!-- Inline SVG Donut Chart with Accurate Proportions -->
+<div class="relative w-56 h-56 my-2">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Base Circle -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#E6E9E0" stroke-width="15"></circle>
+<!-- 1. Accommodation: 33.0% -> dash 78.8, gap 159.9 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#244A3A" stroke-dasharray="78.8 159.9" stroke-dashoffset="0" stroke-width="15"></circle>
+<!-- 2. Flights: 20.6% -> dash 49.2 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#0B3325" stroke-dasharray="49.2 189.5" stroke-dashoffset="-78.8" stroke-width="15"></circle>
+<!-- 3. Food: 17.5% -> dash 41.8 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#C87555" stroke-dasharray="41.8 196.9" stroke-dashoffset="-128.0" stroke-width="15"></circle>
+<!-- 4. Activities: 14.4% -> dash 34.4 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#5A7B69" stroke-dasharray="34.4 204.3" stroke-dashoffset="-169.8" stroke-width="15"></circle>
+<!-- 5. Local Transport: 8.2% -> dash 19.6 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#BFA88E" stroke-dasharray="19.6 219.1" stroke-dashoffset="-204.2" stroke-width="15"></circle>
+<!-- 6. Misc: 6.2% -> dash 14.8 -->
+<circle class="transition-all duration-700" cx="50" cy="50" fill="none" r="38" stroke="#8E978F" stroke-dasharray="14.8 223.9" stroke-dashoffset="-223.8" stroke-width="15"></circle>
+</svg>
+<!-- Center Metric -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-primary font-serif font-bold">₹48,500</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Est.</span>
+</div>
+</div>
+<!-- Chart Compact Key Grid -->
+<div class="w-full grid grid-cols-2 gap-x-4 gap-y-2 mt-4 pt-4 border-t-0 bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Accom. (33.0%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Flights (20.6%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Dining (17.5%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#5A7B69]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Activities (14.4%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#BFA88E]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Local Bus/Train (8.2%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#8E978F]"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Misc. (6.2%)</span>
+</div>
+</div>
+</div>
+<!-- Editorial Insight Callout -->
+<div class="bg-surface-container-high rounded-xl p-6 shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-[28px] mt-0.5">lightbulb</span>
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-primary font-semibold">Accommodation Insight</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Accommodation represents your largest investment at <strong>₹16,000 (33.0%)</strong>, reflecting 6 nights in boutique Machiya stays in Higashiyama. This prime location saves 40+ transit minutes each morning.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Daily Cost Breakdown (Seven Days Table) -->
+<section class="w-full px-margin-mobile md:px-margin pb-14">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Daily Cadence Plan</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Daily Cost Breakdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Day-by-day expenditure pacing to keep your journey balanced across travel days.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Mathematically Verified: ₹48,500
+          </span>
+</div>
+</div>
+<!-- Desktop & Tablet Table (Hidden on small mobile) -->
+<div class="hidden md:block bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-4 px-6 font-semibold">Day &amp; Title</th>
+<th class="py-4 px-4 font-semibold text-right">Stay</th>
+<th class="py-4 px-4 font-semibold text-right">Dining</th>
+<th class="py-4 px-4 font-semibold text-right">Transit &amp; Flights</th>
+<th class="py-4 px-4 font-semibold text-right">Activities</th>
+<th class="py-4 px-4 font-semibold text-right">Misc</th>
+<th class="py-4 px-6 font-semibold text-right text-primary">Daily Total</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md font-body-md text-on-surface">
+<!-- Day 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 1 • Oct 14</div>
+<span class="text-body-sm text-on-surface-variant">Arrival &amp; Higashiyama Evening</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,667</td>
+<td class="py-4 px-4 text-right">₹1,100</td>
+<td class="py-4 px-4 text-right font-medium text-primary">₹5,500 <span class="block text-[11px] text-outline font-normal">Flight/Train split</span></td>
+<td class="py-4 px-4 text-right">₹500</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹9,767</td>
+</tr>
+<!-- Day 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/30">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 2 • Oct 15</div>
+<span class="text-body-sm text-on-surface-variant">Southern Foothills &amp; Shrines</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,667</td>
+<td class="py-4 px-4 text-right">₹1,300</td>
+<td class="py-4 px-4 text-right">₹400</td>
+<td class="py-4 px-4 text-right">₹1,500</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹5,867</td>
+</tr>
+<!-- Day 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 3 • Oct 16</div>
+<span class="text-body-sm text-on-surface-variant">Zen Groves &amp; Western Kyoto</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,667</td>
+<td class="py-4 px-4 text-right">₹1,200</td>
+<td class="py-4 px-4 text-right">₹600</td>
+<td class="py-4 px-4 text-right">₹1,600</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹6,067</td>
+</tr>
+<!-- Day 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/30">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 4 • Oct 17</div>
+<span class="text-body-sm text-on-surface-variant">Central Kyoto &amp; Culinary Markets</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,666</td>
+<td class="py-4 px-4 text-right text-secondary font-medium">₹1,600</td>
+<td class="py-4 px-4 text-right">₹400</td>
+<td class="py-4 px-4 text-right">₹1,000</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹5,666</td>
+</tr>
+<!-- Day 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 5 • Oct 18</div>
+<span class="text-body-sm text-on-surface-variant">Historic Palaces &amp; Tea Traditions</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,667</td>
+<td class="py-4 px-4 text-right">₹1,200</td>
+<td class="py-4 px-4 text-right">₹400</td>
+<td class="py-4 px-4 text-right">₹1,400</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹5,667</td>
+</tr>
+<!-- Day 6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/30">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 6 • Oct 19</div>
+<span class="text-body-sm text-on-surface-variant">Artisans &amp; Craft Neighborhoods</span>
+</td>
+<td class="py-4 px-4 text-right">₹2,666</td>
+<td class="py-4 px-4 text-right">₹1,300</td>
+<td class="py-4 px-4 text-right">₹400</td>
+<td class="py-4 px-4 text-right">₹1,000</td>
+<td class="py-4 px-4 text-right text-outline">-</td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹5,366</td>
+</tr>
+<!-- Day 7 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6">
+<div class="font-title-md text-title-md text-primary font-semibold">Day 7 • Oct 20</div>
+<span class="text-body-sm text-on-surface-variant">Morning Temple Stroll &amp; Departure</span>
+</td>
+<td class="py-4 px-4 text-right text-outline">₹0</td>
+<td class="py-4 px-4 text-right">₹800</td>
+<td class="py-4 px-4 text-right font-medium text-primary">₹5,300 <span class="block text-[11px] text-outline font-normal">Return transit</span></td>
+<td class="py-4 px-4 text-right text-outline">₹0</td>
+<td class="py-4 px-4 text-right font-medium">₹3,000 <span class="block text-[11px] text-outline font-normal">Trip reserve/eSIM</span></td>
+<td class="py-4 px-6 text-right font-title-md text-title-md text-primary font-bold">₹10,200</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-surface-container-high font-semibold text-primary">
+<td class="py-4 px-6 font-title-md text-title-md">Total Category Sums</td>
+<td class="py-4 px-4 text-right font-title-md">₹16,000</td>
+<td class="py-4 px-4 text-right font-title-md">₹8,500</td>
+<td class="py-4 px-4 text-right font-title-md">₹14,000</td>
+<td class="py-4 px-4 text-right font-title-md">₹7,000</td>
+<td class="py-4 px-4 text-right font-title-md">₹3,000</td>
+<td class="py-4 px-6 text-right font-headline-sm text-headline-sm font-serif">₹48,500</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- Mobile Stacked Card View (390px / 320px) -->
+<div class="flex flex-col gap-3 md:hidden">
+<!-- Day 1 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 1 • Oct 14</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹9,767</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Arrival &amp; Higashiyama Evening</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,667</strong></span>
+<span>Food: <strong>₹1,100</strong></span>
+<span>Transit/Flight: <strong>₹5,500</strong></span>
+<span>Activities: <strong>₹500</strong></span>
+</div>
+</div>
+<!-- Day 2 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 2 • Oct 15</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹5,867</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Southern Foothills &amp; Shrines</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,667</strong></span>
+<span>Food: <strong>₹1,300</strong></span>
+<span>Transit: <strong>₹400</strong></span>
+<span>Activities: <strong>₹1,500</strong></span>
+</div>
+</div>
+<!-- Day 3 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 3 • Oct 16</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹6,067</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zen Groves &amp; Western Kyoto</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,667</strong></span>
+<span>Food: <strong>₹1,200</strong></span>
+<span>Transit: <strong>₹600</strong></span>
+<span>Activities: <strong>₹1,600</strong></span>
+</div>
+</div>
+<!-- Day 4 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 4 • Oct 17</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹5,666</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Central Kyoto &amp; Culinary Markets</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,666</strong></span>
+<span>Food: <strong>₹1,600</strong></span>
+<span>Transit: <strong>₹400</strong></span>
+<span>Activities: <strong>₹1,000</strong></span>
+</div>
+</div>
+<!-- Day 5 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 5 • Oct 18</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹5,667</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Historic Palaces &amp; Tea Traditions</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,667</strong></span>
+<span>Food: <strong>₹1,200</strong></span>
+<span>Transit: <strong>₹400</strong></span>
+<span>Activities: <strong>₹1,400</strong></span>
+</div>
+</div>
+<!-- Day 6 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 6 • Oct 19</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹5,366</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Artisans &amp; Craft Neighborhoods</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Stay: <strong>₹2,666</strong></span>
+<span>Food: <strong>₹1,300</strong></span>
+<span>Transit: <strong>₹400</strong></span>
+<span>Activities: <strong>₹1,000</strong></span>
+</div>
+</div>
+<!-- Day 7 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-bold">Day 7 • Oct 20</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹10,200</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Morning Temple Stroll &amp; Departure</span>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-2 bg-surface-container-low p-2 rounded-lg">
+<span>Food: <strong>₹800</strong></span>
+<span>Return Transit: <strong>₹5,300</strong></span>
+<span class="col-span-2">Reserve/Misc: <strong>₹3,000</strong></span>
+</div>
+</div>
+<!-- Mobile Summary Card -->
+<div class="bg-surface-container-high rounded-xl p-4 flex items-center justify-between text-primary font-semibold">
+<span>7-Day Verified Grand Total</span>
+<span class="font-headline-sm text-headline-sm font-serif">₹48,500</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Interactive Budget Customizer -->
+<section class="w-full px-margin-mobile md:px-margin pb-14">
+<div class="max-w-7xl mx-auto bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-sm">
+<div class="flex flex-col gap-1 pb-6 border-b-0">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Interactive Sandbox</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Customize Your Budget</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Fine-tune your financial boundaries or test alternative spending allocations in real-time.</p>
+</div>
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6" id="budget-customizer-form" onsubmit="event.preventDefault();">
+<!-- Target Budget Ceiling Input -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<label class="flex flex-col gap-1.5">
+<span class="font-title-md text-title-md text-primary font-semibold">Target Budget Ceiling</span>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-on-surface-variant font-semibold">₹</span>
+<input class="w-full h-11 pl-8 pr-4 bg-surface-container-low rounded-lg text-primary font-title-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" id="input-target-budget" max="150000" min="20000" step="500" type="number" value="55000"/>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Adjust to recompute buffer in real-time against current estimate.</span>
+</label>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Estimated Total:</span>
+<span class="font-bold text-primary" id="calc-estimate-display">₹48,500</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Projected Buffer:</span>
+<span class="font-bold text-secondary" id="calc-buffer-display">₹6,500</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Cost per person:</span>
+<span class="font-bold text-primary" id="calc-person-display">₹24,250</span>
+</div>
+</div>
+</div>
+<!-- Sliders for Categories -->
+<div class="lg:col-span-8 flex flex-col justify-between gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<!-- Accommodation Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Accommodation</span>
+<span class="font-title-md text-primary font-bold" id="val-stay">₹16,000</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container-high rounded-lg cursor-pointer" id="range-stay" max="28000" min="10000" step="500" type="range" value="16000"/>
+<span class="font-label-sm text-label-sm text-outline">Machiya vs Boutique Ryokan</span>
+</div>
+<!-- Food Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Dining Tier</span>
+<span class="font-title-md text-secondary font-bold" id="val-food">₹8,500</span>
+</div>
+<input class="w-full accent-secondary h-2 bg-surface-container-high rounded-lg cursor-pointer" id="range-food" max="18000" min="4000" step="500" type="range" value="8500"/>
+<span class="font-label-sm text-label-sm text-outline">Casual Stalls vs Kaiseki</span>
+</div>
+<!-- Activities Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Attractions</span>
+<span class="font-title-md text-primary font-bold" id="val-activities">₹7,000</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container-high rounded-lg cursor-pointer" id="range-activities" max="15000" min="3000" step="500" type="range" value="7000"/>
+<span class="font-label-sm text-label-sm text-outline">Standard vs Guided Private</span>
+</div>
+</div>
+<!-- Sandbox Action Buttons & Live Notice -->
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all" id="btn-update-budget" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Update Budget</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-11 px-5 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-all" id="btn-reset-budget" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Reset to Estimate</span>
+</button>
+</div>
+<div class="font-body-sm text-body-sm text-outline flex items-center gap-1.5" id="sandbox-notice">
+<span class="material-symbols-outlined text-[16px] text-primary">save</span>
+<span>Budget calculations are stored locally in your session draft.</span>
+</div>
+</div>
+</div>
+</form>
+</div>
+</section>
+<!-- Section 6: Ways to Save on This Trip (Editorial Travel Insights) -->
+<section class="w-full px-margin-mobile md:px-margin pb-16">
+<div class="max-w-7xl mx-auto flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Editorial Intelligence</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Ways to Save on This Trip</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Pragmatic, field-tested recommendations to preserve capital without sacrificing cultural authenticity.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Tip 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">villa</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">Neighborhood Stay Bundling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Stay 6 continuous nights in a single Machiya district (Higashiyama) to unlock consecutive-night discounts and eliminate repeat inter-ward luggage transfer fees.
+            </p>
+</div>
+<div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Potential Saving</span>
+<span class="font-title-md text-title-md text-primary font-bold">~₹2,500 – ₹3,800</span>
+</div>
+</div>
+<!-- Tip 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">train</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">Transit Pass Optimization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Utilize Kansai Area Rail Pass or prepaid IC card bundles for Day 1 and Day 7 airport transfers rather than single-ticket express purchases.
+            </p>
+</div>
+<div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Potential Saving</span>
+<span class="font-title-md text-title-md text-secondary font-bold">~₹1,200</span>
+</div>
+</div>
+<!-- Tip 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">ramen_dining</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold">Lunch-Hour Kaiseki &amp; Stalls</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Reserve premier culinary tastings during midday lunch service (Nishiki Market and Gion Machiyas) where identical tasting menus are priced 35% lower than dinner seatings.
+            </p>
+</div>
+<div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Potential Saving</span>
+<span class="font-title-md text-title-md text-primary font-bold">~₹2,000</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Explicit honesty note: Savings are illustrative suggestions based on historical traveler patterns and do not guarantee live vendor availability or real-time seasonal rates.
+        </p>
+</div>
+</div>
+</section>
+<!-- Section 7: Footer Sticky/Anchored Action Bar -->
+<section class="w-full bg-surface-container-low border-t-0 px-margin-mobile md:px-margin py-8">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 text-primary font-title-md text-title-md font-semibold hover:underline" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Back to Detailed Itinerary</span>
+</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">
+          Edit Trip Parameters
+        </a>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-1.5 h-11 px-5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export Summary (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 h-11 px-5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all" onclick="navigator.clipboard?.writeText(window.location.href); alert('Copied travel breakdown link!');" type="button">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+<span>Share with Companion</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Logic -->
+<script>
+    (function initBudgetSandbox() {
+      const fixedFlights = 10000;
+      const fixedTransit = 4000;
+      const fixedMisc = 3000;
+
+      const stayInput = document.getElementById('range-stay');
+      const foodInput = document.getElementById('range-food');
+      const actInput = document.getElementById('range-activities');
+      const targetInput = document.getElementById('input-target-budget');
+
+      const valStay = document.getElementById('val-stay');
+      const valFood = document.getElementById('val-food');
+      const valAct = document.getElementById('val-activities');
+
+      const statEstimatedTotal = document.getElementById('stat-estimated-total');
+      const statPerPerson = document.getElementById('stat-per-person');
+      const statDailyCadence = document.getElementById('stat-daily-cadence');
+      const statTargetBudget = document.getElementById('stat-target-budget');
+      const statBufferLabel = document.getElementById('stat-buffer-label');
+      const statBufferTag = document.getElementById('stat-buffer-tag');
+
+      const spentFigure = document.getElementById('spent-figure');
+      const bufferFigure = document.getElementById('buffer-figure');
+      const targetFigure = document.getElementById('target-figure');
+      const progressBar = document.getElementById('target-progress-bar');
+      const badgePct = document.getElementById('badge-pct');
+
+      const calcEstimateDisplay = document.getElementById('calc-estimate-display');
+      const calcBufferDisplay = document.getElementById('calc-buffer-display');
+      const calcPersonDisplay = document.getElementById('calc-person-display');
+
+      const resetBtn = document.getElementById('btn-reset-budget');
+      const updateBtn = document.getElementById('btn-update-budget');
+      const notice = document.getElementById('sandbox-notice');
+
+      function formatINR(val) {
+        return '₹' + Math.round(val).toLocaleString('en-IN');
+      }
+
+      function recalculate() {
+        const stay = parseInt(stayInput.value, 10);
+        const food = parseInt(foodInput.value, 10);
+        const act = parseInt(actInput.value, 10);
+        const target = parseInt(targetInput.value, 10) || 55000;
+
+        valStay.textContent = formatINR(stay);
+        valFood.textContent = formatINR(food);
+        valAct.textContent = formatINR(act);
+
+        const currentTotal = stay + food + act + fixedFlights + fixedTransit + fixedMisc;
+        const perPerson = currentTotal / 2;
+        const dailyAverage = currentTotal / 7;
+        const buffer = target - currentTotal;
+        const pctUsed = Math.min(100, Math.max(0, (currentTotal / target) * 100));
+
+        // Updates
+        statEstimatedTotal.textContent = formatINR(currentTotal);
+        statPerPerson.textContent = formatINR(perPerson);
+        statDailyCadence.textContent = formatINR(dailyAverage);
+        statTargetBudget.textContent = formatINR(target);
+        targetFigure.textContent = 'Target: ' + formatINR(target);
+        spentFigure.textContent = formatINR(currentTotal);
+
+        calcEstimateDisplay.textContent = formatINR(currentTotal);
+        calcBufferDisplay.textContent = formatINR(buffer);
+        calcPersonDisplay.textContent = formatINR(perPerson);
+
+        progressBar.style.width = pctUsed.toFixed(1) + '%';
+        badgePct.textContent = pctUsed.toFixed(1) + '% Utilized';
+
+        if (buffer >= 0) {
+          const bufferPct = ((buffer / target) * 100).toFixed(1);
+          statBufferLabel.textContent = formatINR(buffer) + ' under target (' + bufferPct + '% buffer)';
+          statBufferLabel.className = 'font-body-sm text-body-sm text-primary font-medium mt-1';
+          statBufferTag.textContent = 'Healthy Buffer';
+          statBufferTag.className = 'font-label-sm text-label-sm text-primary font-bold';
+          bufferFigure.textContent = formatINR(buffer) + ' Buffer Available';
+          progressBar.className = 'h-full bg-primary-container transition-all duration-300 rounded-full';
+        } else {
+          statBufferLabel.textContent = formatINR(Math.abs(buffer)) + ' OVER TARGET CEILING';
+          statBufferLabel.className = 'font-body-sm text-body-sm text-error font-medium mt-1';
+          statBufferTag.textContent = 'Exceeded Ceiling';
+          statBufferTag.className = 'font-label-sm text-label-sm text-error font-bold';
+          bufferFigure.textContent = formatINR(Math.abs(buffer)) + ' Deficit';
+          progressBar.className = 'h-full bg-error transition-all duration-300 rounded-full';
+        }
+      }
+
+      [stayInput, foodInput, actInput, targetInput].forEach(elem => {
+        if (elem) elem.addEventListener('input', recalculate);
+      });
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+          stayInput.value = 16000;
+          foodInput.value = 8500;
+          actInput.value = 7000;
+          targetInput.value = 55000;
+          recalculate();
+          notice.innerHTML = '<span class="material-symbols-outlined text-[16px] text-primary">check</span> Reset to baseline estimates.';
+        });
+      }
+
+      if (updateBtn) {
+        updateBtn.addEventListener('click', function() {
+          notice.innerHTML = '<span class="material-symbols-outlined text-[16px] text-primary">done_all</span> Custom budget draft updated successfully!';
+          setTimeout(() => {
+            notice.innerHTML = '<span class="material-symbols-outlined text-[16px] text-primary">save</span> Budget calculations are stored locally in your session draft.';
+          }, 3500);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

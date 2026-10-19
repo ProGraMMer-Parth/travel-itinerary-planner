@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)] ring-2 ring-transparent data-[active=true]:ring-secondary data-[active=true]:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Subtle Prototype State Switcher (Reviewer Control Dock) -->
+<aside aria-label="Prototype State Preview Controls" class="w-full bg-surface-container-high/60 py-space-xs px-margin-mobile md:px-margin">
+<div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span aria-hidden="true" class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Reviewer Preview Modes:</span>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="h-8 px-space-sm bg-surface-container-lowest text-primary font-label-sm text-label-sm rounded-lg shadow-sm hover:bg-surface-container-high transition-all" id="btn-state-progress" type="button">
+          Advance Step
+        </button>
+<button class="h-8 px-space-sm bg-surface-container-lowest text-primary font-label-sm text-label-sm rounded-lg shadow-sm hover:bg-surface-container-high transition-all" id="btn-state-success" type="button">
+          Trigger Success
+        </button>
+<button class="h-8 px-space-sm bg-surface-container-lowest text-error font-label-sm text-label-sm rounded-lg shadow-sm hover:bg-error-container hover:text-on-error-container transition-all" id="btn-state-error" type="button">
+          Trigger Error State
+        </button>
+<button class="h-8 px-space-sm bg-primary-container text-on-primary font-label-sm text-label-sm rounded-lg shadow-sm hover:bg-primary transition-all" id="btn-state-reset" type="button">
+          Reset Pipeline
+        </button>
+</div>
+</div>
+</aside>
+<!-- Main Generation Stage Viewport -->
+<section class="w-full py-space-lg md:py-space-xl px-margin-mobile md:px-margin flex justify-center items-start min-h-[calc(100vh-14rem)]">
+<div class="w-full max-w-4xl flex flex-col gap-space-lg">
+<!-- NORMAL / ACTIVE SYNTHESIS PANEL -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_-4px_rgba(37,41,35,0.06)] p-space-md sm:p-space-lg md:p-space-xl flex flex-col gap-space-lg relative overflow-hidden transition-all duration-300" id="panel-generation">
+<!-- Header & Editorial Eyebrow -->
+<header class="flex flex-col gap-space-xs text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-primary w-fit">
+<span class="material-symbols-outlined text-[15px] text-secondary">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Itinerary Synthesis &amp; Logistics</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-space-xs mt-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+              Crafting your next adventure
+            </h1>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Stage <span id="current-stage-num">3</span> of 4</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            We’re putting together a travel plan shaped around your preferences. Balancing transit corridors, authentic pacing, and neighborhood culture.
+          </p>
+</header>
+<!-- Preferences Snapshot Pill Bar -->
+<div aria-label="Submitted trip preferences" class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+              Captured from Plan My Trip
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Session ID: TG-8942-KYO</span>
+</div>
+<!-- Parameter Pills Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-xs">
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Destination</span>
+<span class="font-title-md text-title-md text-on-surface truncate">Kyoto, Japan</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dates</span>
+<span class="font-title-md text-title-md text-on-surface truncate">Oct 14 – 20 (7d)</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Travelers</span>
+<span class="font-title-md text-title-md text-on-surface truncate">2 Adults</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Travel Style</span>
+<span class="font-title-md text-title-md text-on-surface truncate">Culture &amp; Zen</span>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg flex flex-col col-span-2 sm:col-span-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Target Budget</span>
+<span class="font-title-md text-title-md text-on-surface truncate">Moderate (¥35k/d)</span>
+</div>
+</div>
+</div>
+<!-- Honest Live Progress Bar & Pulse Monitor -->
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="72" class="flex flex-col gap-space-xs pt-space-xs" id="live-progress-container" role="progressbar">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="w-2.5 h-2.5 rounded-full bg-secondary inline-block animate-ping"></span>
+<span class="font-medium text-primary">Algorithmic Route Synthesis Active</span>
+</div>
+<span class="font-semibold text-primary" id="progress-percentage-label">72% Completed</span>
+</div>
+<!-- Progress Track -->
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden relative">
+<div class="h-full bg-primary transition-all duration-700 ease-out" id="progress-bar-fill" style="width: 72%;"></div>
+</div>
+<!-- Live Dynamic Log Status (ARIA Live) -->
+<p aria-live="polite" class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-1" id="live-status-announcer">
+<span class="material-symbols-outlined text-[16px] text-secondary">explore</span>
+<span id="live-status-text">Currently organizing Day 3: Arashiyama Bamboo Grove, Tenryu-ji garden, and Katsura riverside walking corridor...</span>
+</p>
+</div>
+<!-- Refined Multi-Stage Pipeline -->
+<ol aria-label="Synthesis pipeline stages" class="flex flex-col gap-space-md pt-space-xs">
+<!-- Stage 1: Completed -->
+<li class="flex items-start gap-space-md group" id="stage-step-1">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-primary font-semibold">1. Reviewing your preferences</h2>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded">Validated</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                Validated mid-autumn peak foliage season in Kansai, calibrated morning jet-lag mitigation, and set balanced walking cadence.
+              </p>
+</div>
+</li>
+<!-- Stage 2: Completed -->
+<li class="flex items-start gap-space-md group" id="stage-step-2">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-primary font-semibold">2. Finding suitable experiences</h2>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded">18 Selected</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                Curated authentic UNESCO heritage sites, Nanzen-ji aqueduct, traditional Uji matcha tea ceremony, and Gion evening dining walks.
+              </p>
+</div>
+</li>
+<!-- Stage 3: In Progress (Active) -->
+<li class="flex items-start gap-space-md group" id="stage-step-3">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center ring-4 ring-tertiary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-primary font-semibold flex items-center gap-2">
+<span>3. Organizing your itinerary</span>
+<span aria-hidden="true" class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</h2>
+<span class="font-label-sm text-label-sm text-on-primary bg-primary px-2 py-0.5 rounded font-medium">In Progress</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-0.5 font-normal">
+                Structuring transit corridors (Hankyu vs. Keihan rail lines), grouping contiguous temple wards, and locking opening hour buffers.
+              </p>
+</div>
+</li>
+<!-- Stage 4: Upcoming / Pending -->
+<li class="flex items-start gap-space-md group opacity-65" id="stage-step-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-on-surface-variant font-semibold">4. Preparing your trip summary</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pending</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                Assembling day-by-day interactive route maps, downloadable offline schedules, and estimated expenditure ledgers.
+              </p>
+</div>
+</li>
+</ol>
+<!-- Generation Panel Footer & Discreet Cancel Trigger -->
+<footer class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md border-t-0 bg-surface-container-low/50 -mx-space-md -mb-space-md sm:-mx-space-xl sm:-mb-space-xl p-space-md sm:px-space-xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Real-time seasonal weather &amp; crowd avoidance algorithms included.</span>
+</div>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors underline-offset-4 hover:underline py-1 px-2 rounded" id="btn-open-cancel" type="button">
+            Cancel generation
+          </button>
+</footer>
+</article>
+<!-- SUCCESS STATE PANEL (Initially Hidden, Toggleable via prototype dock) -->
+<article class="hidden bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_-4px_rgba(37,41,35,0.06)] p-space-md sm:p-space-lg md:p-space-xl flex-col gap-space-lg relative overflow-hidden transition-all duration-300" id="panel-success">
+<div class="w-14 h-14 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">done_all</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary w-fit font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+            Synthesis Complete
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+            Your Kyoto itinerary is ready!
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            We have assembled your custom 7-day cultural immersion: 18 curated destinations, optimized walking loops, and verified reservation windows.
+          </p>
+</div>
+<!-- Snapshot overview card -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">map</span>
+<div>
+<span class="font-title-md text-title-md text-primary block">7 Seamless Days</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Arashiyama, Gion, Higashiyama, Fushimi</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">directions_walk</span>
+<div>
+<span class="font-title-md text-title-md text-primary block">Mindful Rhythm</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Max 8.5 km/day walking corridors</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">account_balance_wallet</span>
+<div>
+<span class="font-title-md text-title-md text-primary block">¥238,000 Total</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Covers entry fees, dining &amp; regional transit</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-space-xl font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary rounded-lg transition-all shadow-sm" data-path="my-trips" href="#">
+<span>View Generated Itinerary</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="w-full sm:w-auto inline-flex items-center justify-center h-12 px-space-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-high hover:bg-surface-container-highest rounded-lg transition-all" id="btn-re-edit" type="button">
+            Adjust Inputs
+          </button>
+</div>
+</article>
+<!-- ERROR STATE PANEL (Initially Hidden, Toggleable via prototype dock) -->
+<article class="hidden bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_-4px_rgba(37,41,35,0.06)] p-space-md sm:p-space-lg md:p-space-xl flex-col gap-space-lg relative overflow-hidden transition-all duration-300" id="panel-error">
+<div class="w-14 h-14 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[30px]">error_outline</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container text-on-error-container w-fit font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+            Synthesis Interrupted
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+            We couldn’t finish your itinerary
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Something interrupted the planning process while validating route density in Higashiyama. Your trip preferences are safely preserved so you can resume immediately without re-entering details.
+          </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">cloud_sync</span>
+            Status code: E_TRANSIT_TIMEOUT_RETRYABLE
+          </span>
+<span class="font-medium text-primary">All parameters preserved</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-12 px-space-xl font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary rounded-lg transition-all shadow-sm" id="btn-try-again" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Try Again</span>
+</button>
+<a class="w-full sm:w-auto inline-flex items-center justify-center h-12 px-space-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-high hover:bg-surface-container-highest rounded-lg transition-all" data-path="plan-my-trip" href="#">
+            Back to Trip Details
+          </a>
+</div>
+</article>
+<!-- SUPPORTING EDITORIAL TRAVEL INSPIRATION CARD -->
+<section aria-labelledby="inspiration-heading" class="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary" id="inspiration-heading">A Little Inspiration While You Wait</span>
+</div>
+<!-- Carousel Controls -->
+<div class="flex items-center gap-1">
+<button aria-label="Previous inspiration note" class="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors" id="btn-prev-quote" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-1.5" id="quote-counter">1 / 3</span>
+<button aria-label="Next inspiration note" class="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface flex items-center justify-center transition-colors" id="btn-next-quote" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Quote Column -->
+<div class="md:col-span-8 flex flex-col gap-space-xs">
+<blockquote class="font-headline-sm text-headline-sm text-primary leading-snug italic font-normal" id="quote-text">
+              “Leave a little room in your schedule for unexpected discoveries — the best tea houses and quiet stone alleyways in Kyoto are rarely on maps.”
+            </blockquote>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold mt-1" id="quote-author">
+              Trip Genius Travel Philosophy • Mindful Pacing
+            </p>
+</div>
+<!-- Editorial Visual Preview Placeholder -->
+<div class="md:col-span-4 h-36 rounded-lg overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Traditional Kyoto stone paved pathway at dusk lined with warm wooden machiya townhouses and soft paper lanterns glowing amber with lush Japanese maple branches framing the scene." id="quote-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkahjKf7JfVCLgky3KxOTvQBRQSzMUqXHvVyPJBWv4HLxtdZxTIvm36IBj_QDasKhbs2mvYjYmmMozqFkISedGr03ogPXAiypr1zoc8g66FtVcKA6s2GnIhIoWAlO5677NescGRCdbgnD6kASrwt77oFaqjkvIEDzAq1fhr9BDH54w3VuwZ2AQ6EhOnhlU5STCUywGZGDTLWhPtBgY33_krKZMTrV1gdME5wLdjIn2Mv7Xp2Q4J7L5jA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent flex items-end p-2.5">
+<span class="font-label-sm text-label-sm text-on-primary">Higashiyama Ward, Kyoto</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<!-- CALM CANCELLATION CONFIRMATION MODAL (Level 4 Elevation) -->
+<div aria-labelledby="cancel-modal-title" aria-modal="true" class="fixed inset-0 z-50 hidden items-center justify-center p-margin-mobile bg-tertiary/40 backdrop-blur-sm" id="modal-cancel" role="dialog">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg md:p-space-xl shadow-[0_20px_40px_-8px_rgba(24,55,44,0.14)] flex flex-col gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">pause_circle</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal" id="cancel-modal-title">
+          Cancel trip generation?
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Your submitted preferences and dates for Kyoto will be preserved in your session. You can re-initiate synthesis anytime without starting from scratch.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-end gap-space-sm pt-space-xs">
+<button class="w-full sm:w-auto h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-high hover:bg-surface-container-highest rounded-lg transition-colors" id="btn-modal-keep" type="button">
+          Keep Generating
+        </button>
+<button class="w-full sm:w-auto h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-error hover:bg-on-error-container rounded-lg transition-colors" id="btn-modal-confirm" type="button">
+          Confirm Cancel
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Logic for Multi-State Demonstration and Quote Carousel -->
+<script>
+    (function() {
+      // DOM Elements
+      const panelGen = document.getElementById('panel-generation');
+      const panelSuccess = document.getElementById('panel-success');
+      const panelError = document.getElementById('panel-error');
+
+      const btnProgress = document.getElementById('btn-state-progress');
+      const btnSuccess = document.getElementById('btn-state-success');
+      const btnError = document.getElementById('btn-state-error');
+      const btnReset = document.getElementById('btn-state-reset');
+      const btnTryAgain = document.getElementById('btn-try-again');
+      const btnReEdit = document.getElementById('btn-re-edit');
+
+      const modalCancel = document.getElementById('modal-cancel');
+      const btnOpenCancel = document.getElementById('btn-open-cancel');
+      const btnModalKeep = document.getElementById('btn-modal-keep');
+      const btnModalConfirm = document.getElementById('btn-modal-confirm');
+
+      const fillBar = document.getElementById('progress-bar-fill');
+      const pctLabel = document.getElementById('progress-percentage-label');
+      const currentStageNum = document.getElementById('current-stage-num');
+      const liveStatusText = document.getElementById('live-status-text');
+
+      const stage3 = document.getElementById('stage-step-3');
+      const stage4 = document.getElementById('stage-step-4');
+
+      // State definitions
+      let currentStage = 3;
+      const stagePercentages = [25, 50, 72, 95];
+      const liveMessages = [
+        'Validating seasonal crowds and temperate climate for mid-October in Kyoto...',
+        'Matching high-reputation private tea masters and quiet gardens in Arashiyama...',
+        'Currently organizing Day 3: Arashiyama Bamboo Grove, Tenryu-ji garden, and Katsura riverside walking corridor...',
+        'Finalizing transit ticket recommendations and morning-to-evening route summaries...'
+      ];
+
+      function showPanel(target) {
+        panelGen.classList.add('hidden');
+        panelSuccess.classList.add('hidden');
+        panelError.classList.add('hidden');
+
+        if (target === 'generation') panelGen.classList.remove('hidden');
+        if (target === 'success') panelSuccess.classList.remove('hidden');
+        if (target === 'error') panelError.classList.remove('hidden');
+      }
+
+      function updateStageDisplay(step) {
+        currentStage = step;
+        currentStageNum.textContent = step;
+        const pct = stagePercentages[step - 1];
+        fillBar.style.width = pct + '%';
+        pctLabel.textContent = pct + '% Completed';
+        liveStatusText.textContent = liveMessages[step - 1];
+
+        // Step 3
+        if (step >= 4) {
+          stage3.innerHTML = `
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+              <span class="material-symbols-outlined text-[18px]">check</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h2 class="font-title-md text-title-md text-primary font-semibold">3. Organizing your itinerary</h2>
+                <span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded">Corridors Locked</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                Optimized rail lines, grouped contiguous temple wards, and verified open dining slots.
+              </p>
+            </div>
+          `;
+          stage4.classList.remove('opacity-65');
+          stage4.innerHTML = `
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center ring-4 ring-tertiary-fixed shadow-sm">
+              <span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h2 class="font-title-md text-title-md text-primary font-semibold flex items-center gap-2">
+                  <span>4. Preparing your trip summary</span>
+                  <span class="w-2 h-2 rounded-full bg-secondary animate-pulse" aria-hidden="true"></span>
+                </h2>
+                <span class="font-label-sm text-label-sm text-on-primary bg-primary px-2 py-0.5 rounded font-medium">Assembling</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface mt-0.5 font-normal">
+                Generating daily visual maps, companion notes, and budget balance sheets.
+              </p>
+            </div>
+          `;
+        } else {
+          stage4.classList.add('opacity-65');
+        }
+      }
+
+      // Reviewer button actions
+      btnProgress.addEventListener('click', () => {
+        showPanel('generation');
+        if (currentStage < 4) {
+          updateStageDisplay(4);
+        } else {
+          showPanel('success');
+        }
+      });
+
+      btnSuccess.addEventListener('click', () => {
+        showPanel('success');
+      });
+
+      btnError.addEventListener('click', () => {
+        showPanel('error');
+      });
+
+      btnReset.addEventListener('click', () => {
+        showPanel('generation');
+        updateStageDisplay(3);
+      });
+
+      btnTryAgain.addEventListener('click', () => {
+        showPanel('generation');
+        updateStageDisplay(3);
+      });
+
+      btnReEdit.addEventListener('click', () => {
+        showPanel('generation');
+        updateStageDisplay(2);
+      });
+
+      // Cancellation Modal handlers
+      btnOpenCancel.addEventListener('click', () => {
+        modalCancel.classList.remove('hidden');
+        modalCancel.classList.add('flex');
+      });
+
+      btnModalKeep.addEventListener('click', () => {
+        modalCancel.classList.add('hidden');
+        modalCancel.classList.remove('flex');
+      });
+
+      btnModalConfirm.addEventListener('click', () => {
+        modalCancel.classList.add('hidden');
+        modalCancel.classList.remove('flex');
+        window.location.hash = '#plan-my-trip';
+      });
+
+      // Inspiration Quotes Carousel
+      const quotes = [
+        {
+          quote: "“Leave a little room in your schedule for unexpected discoveries — the best tea houses and quiet stone alleyways in Kyoto are rarely on maps.”",
+          author: "Trip Genius Travel Philosophy • Mindful Pacing",
+          alt: "Traditional Kyoto stone paved pathway at dusk lined with warm wooden machiya townhouses and soft paper lanterns glowing amber with lush Japanese maple branches framing the scene."
+        },
+        {
+          quote: "“Early mornings belong to the temples; late afternoons belong to the rivers. Time your transitions to avoid rush-hour transit lines.”",
+          author: "Field Notes • Local Transit Strategy",
+          alt: "Serene Kamogawa River bank in Kyoto early morning with light mist drifting over the calm water and solitary willow trees reflecting soft golden light."
+        },
+        {
+          quote: "“Pre-booking the evening Kaiseki in Gion allows you to wander freely during the day without rushing for reservations.”",
+          author: "Culinary Journal • Kansai Regional Guidance",
+          alt: "Exquisite Japanese seasonal Kaiseki dinner presentation in Kyoto with artisanal ceramic bowls, lacquered chopsticks, and delicate autumn leaf accents."
+        }
+      ];
+
+      let quoteIdx = 0;
+      const quoteText = document.getElementById('quote-text');
+      const quoteAuthor = document.getElementById('quote-author');
+      const quoteImg = document.getElementById('quote-image');
+      const quoteCounter = document.getElementById('quote-counter');
+      const btnPrevQuote = document.getElementById('btn-prev-quote');
+      const btnNextQuote = document.getElementById('btn-next-quote');
+
+      function renderQuote(idx) {
+        quoteText.innerHTML = `&ldquo;${quotes[idx].quote.replace(/[“”"]/g, '')}&rdquo;`;
+        quoteAuthor.textContent = quotes[idx].author;
+        quoteImg.setAttribute('data-alt', quotes[idx].alt);
+        quoteCounter.textContent = `${idx + 1} / ${quotes.length}`;
+      }
+
+      btnPrevQuote.addEventListener('click', () => {
+        quoteIdx = (quoteIdx - 1 + quotes.length) % quotes.length;
+        renderQuote(quoteIdx);
+      });
+
+      btnNextQuote.addEventListener('click', () => {
+        quoteIdx = (quoteIdx + 1) % quotes.length;
+        renderQuote(quoteIdx);
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Plan My Trip</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

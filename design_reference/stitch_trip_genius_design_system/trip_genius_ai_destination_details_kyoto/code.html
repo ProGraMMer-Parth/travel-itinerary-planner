@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py- space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#">Plan My Trip</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#">Plan My Trip</a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Top Subtle Background Tint -->
+<div class="w-full bg-surface-container-low/60 pb-16">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-6">
+<!-- Breadcrumbs & Quick Tags -->
+<nav aria-label="Breadcrumb" class="flex flex-wrap items-center justify-between gap-y-2 py-2 mb-6">
+<ol class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<li>
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="explore-destinations" href="#">
+<span>Explore Destinations</span>
+</a>
+</li>
+<li class="flex items-center text-outline/60">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</li>
+<li>
+<span class="hover:text-primary transition-colors cursor-pointer">Japan</span>
+</li>
+<li class="flex items-center text-outline/60">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</li>
+<li class="text-primary font-semibold">Kyoto</li>
+</ol>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Honshu Island
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed/40 font-label-sm text-label-sm text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Curated Guide
+          </span>
+</div>
+</nav>
+<!-- Destination Hero Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-12">
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<!-- Hero Image with subtle editorial stamp -->
+<div class="lg:col-span-7 relative min-h-[380px] lg:min-h-[500px] overflow-hidden">
+<img alt="Atmospheric wooden machiya alley in Kyoto bathed in warm sunrise light" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XvrBwDFf7L5S3GbIkvg1Uti9jStzS8rg2-OPmffFZuCXsNwAL6m_1TgRl40BqTy7qzV3bw_g1IEgvbLLIrFSk2K8AzVelyyTlsAGZIeBv_e8EHSRlmFU3kCRapVXLSYr27_LPjSFz7MtH449n4iLDurJ7WF1MopbETpSlDTNWt4GhhkDSfChCmET4jfWNwfehC0TTDosPyyk6Z1KZlSM4F9jZRA7VC9GUlDcE_bqlTCWl3H5YbyPhozso"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent lg:hidden"></div>
+<div class="absolute bottom-4 left-4 lg:bottom-6 lg:left-6 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface/90 backdrop-blur-md shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">photo_camera</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">Historic Higashiyama Ward</span>
+</div>
+</div>
+<!-- Hero Details Content -->
+<div class="lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col justify-between bg-surface-container-lowest">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+                  Japan • Kansai Region
+                </span>
+<span class="text-outline text-label-sm font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">UNESCO World Heritage City</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+                Kyoto, Japan
+              </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6">
+                Discover timeless temples, traditional machiya streets, peaceful moss gardens, and an unforgettable culinary legacy shaped over a millennium of imperial history.
+              </p>
+<!-- Curated quick specs -->
+<div class="space-y-3 mb-8">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">calendar_month</span>
+<div>
+<span class="font-label-md text-label-md text-primary block">Best Time to Visit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">March–May (Cherry Blossoms) &amp; Oct–Nov (Autumn Foliage)</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider mb-0.5">Recommended Stay</span>
+<span class="font-title-md text-title-md text-primary font-semibold">4–6 Days</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider mb-0.5">Pace</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Mindful &amp; Cultured</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTAs and quick interactions -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 bg-surface-container-lowest">
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all shadow-sm" data-path="plan-my-trip" href="#">
+<span>Plan a Trip Here</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="inline-flex items-center justify-center gap-2 h-11 px-4 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container hover:bg-surface-container-high transition-colors" id="btn-interactive-map" onclick="document.getElementById('map-preview-panel').scrollIntoView({ behavior: 'smooth' })" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Explore on Map</span>
+</button>
+<button aria-label="Save Kyoto to Favorites" class="h-11 w-11 shrink-0 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center justify-center" id="btn-fav" onclick="const icon = this.querySelector('.heart-icon'); const isFav = icon.getAttribute('data-fav') === 'true'; icon.setAttribute('data-fav', !isFav); icon.style.fontVariationSettings = isFav ? '\'FILL\' 0' : '\'FILL\' 1'; icon.classList.toggle('text-secondary', !isFav);" type="button">
+<span class="material-symbols-outlined text-[20px] heart-icon transition-colors" data-fav="false">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Overview & Pillars -->
+<section class="mb-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-5 pr-0 lg:pr-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold block mb-2">Editorial Context</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4 leading-tight">
+              The Cultural Heart of Japan
+            </h2>
+<div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p>
+                Spared the wholesale destruction of mid-century industrialization, Kyoto remains Japan’s architectural sanctuary. Here, the rhythms of life still bend around the seasons: paper shoji screens open to summer breezes, raked moss beds receive autumn leaves, and temple bells ring through chilly mountain mists.
+              </p>
+<p class="font-body-md text-body-md text-on-surface-variant/90">
+                To visit Kyoto is not to check monuments off an itinerary, but to slow your pace. It is early morning walks along canal stone paths, matcha prepared with deliberate precision, and the quiet awe of centuries-old craftsmanship.
+              </p>
+</div>
+<!-- Micro Data Callout -->
+<div class="mt-6 p-4 rounded-xl bg-surface-container flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">temple_buddhist</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold block">17 UNESCO Sites</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Spread across the historic Kamigamo, Uji, and Sagano corridors.</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/40 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-2">Cultural Heritage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Over 1,600 Buddhist temples and 400 Shinto shrines with centuries of living craft, textile weaving, and lacquer traditions.
+                </p>
+</div>
+<div class="pt-4 mt-4 font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold flex items-center gap-1">
+<span>Living Tradition</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/40 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">park</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-2">Nature &amp; Gardens</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Ethereal bamboo groves, moss-covered dry landscape gardens (karesansui), and tranquil mountain footpaths flanking the city.
+                </p>
+</div>
+<div class="pt-4 mt-4 font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold flex items-center gap-1">
+<span>Zen Landscapes</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/40 text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary mb-2">Culinary Mastery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Seasonal Kaiseki dining, delicate tofu specialties, tea ceremonies in Uji, and 400 years of provisions along Nishiki Market.
+                </p>
+</div>
+<div class="pt-4 mt-4 font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold flex items-center gap-1">
+<span>Kyo-Ryori Cuisine</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Highlights / Places Worth Exploring -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold block mb-1">Curated Itinerary Building Blocks</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Places Worth Exploring</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Hand-selected shrines, verandas, and historic walking lanes optimized for intelligent route staging.
+            </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 core recommendations</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Highlight 1: Fushimi Inari Taisha -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all group">
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Fushimi Inari Taisha shrine in Kyoto Japan with endless vibrant vermilion orange torii gates path winding through lush mountain forest in soft morning mist, serene authentic travel photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWDPaZnOOFqg9YyiqaGS9oOe6xvxpKpaZBAffdZPV3n0VanqNfOjxql1jNP5ZfWgaVKBs4K6MDhv1Y3RujzbJ8YlqAr9XMokLk4kh1Mv6Xzh4ojdnHasoJSfCnhZakJWsy5LzUg65OnkTq-F274oWRTe02964YutVQsva2lV5Zw7XEVaGAn7GzWfSijGno_bJ6g90eaEY-K85CQtgHzheRErMBgGwqdUaxR70Mej352pWw0bk1AlSJFA')"></div>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-md font-label-sm text-label-sm font-semibold text-primary">
+                Shinto Shrine &amp; Nature Walk
+              </div>
+<div class="absolute bottom-3 right-3 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-md font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>2–3 Hours</span>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between gap-2 mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Fushimi Inari Taisha</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Southern Kyoto</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                  Iconic mountain trail beneath thousands of vivid vermilion torii gates winding through sacred Mount Inari. Early morning arrival offers silence and dappled forest canopy light.
+                </p>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">wb_twilight</span> Best at Dawn
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Free Entry
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    JR Inari Station Access
+                  </span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 bg-surface-container-lowest">
+<button class="font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors flex items-center gap-1" onclick="alert('Viewing detailed field notes for Fushimi Inari Taisha')" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="add-trip-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm font-semibold text-primary" onclick="this.innerText = 'Added ✓'; this.classList.add('bg-primary', 'text-on-primary');" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Trip</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Highlight 2: Kiyomizu-dera -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all group">
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Kiyomizu-dera wooden temple stage on wooden stilts over green forest canopy in Kyoto Japan with hillside pagoda and city vista in warm afternoon lighting, editorial high quality photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDnLOeh374b8MXlnl8IRdSkgR-XQbvCVrQVvz8WeskZVxp9GFuLaSf2T_fQPaFmJA0XqbSVAsrnS1N6kRFufULpCj1eZhwLQyQLy0wCiTju_-fHGOLTqm9eDryGF7gOxE1p8-XD9r1C8EYFT9mTKUjEw5hH0DHPEW-35h-0dg6Xg3NqlZRxM2XyAc7OyCqXg_qVV0NaxB0eMXuPP1VSzt-VtyUxAWotmJ8m3ramTw28_TDUs-avEzDuQ')"></div>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-md font-label-sm text-label-sm font-semibold text-primary">
+                Historic Temple &amp; Vista
+              </div>
+<div class="absolute bottom-3 right-3 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-md font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>1.5–2 Hours</span>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between gap-2 mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Kiyomizu-dera</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Higashiyama</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                  Historic 8th-century temple famed for its soaring wooden stage perched above lush cherry and maple trees with sweeping panoramic vistas across central Kyoto.
+                </p>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">wb_sunny</span> Golden Hour Vistas
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Otowa Waterfall
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    ¥400 Entry
+                  </span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 bg-surface-container-lowest">
+<button class="font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors flex items-center gap-1" onclick="alert('Viewing detailed field notes for Kiyomizu-dera')" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="add-trip-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm font-semibold text-primary" onclick="this.innerText = 'Added ✓'; this.classList.add('bg-primary', 'text-on-primary');" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Trip</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Highlight 3: Arashiyama Bamboo Grove -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all group">
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Solitary path through Arashiyama bamboo forest in Kyoto Japan, towering emerald green stalks bending slightly with soft atmospheric light and bamboo fencing, quiet serene mood" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7bR1dsjCO6FXWH_jgeF7aqOb7jqQn0NqvHReb465KyZ5_Qa7XUDnDMGXAkaFCQDymy-AjPtG15IkHfJtSUiMazIalA6qY2Xl00lgj_2somvx7-VpIGRrbPpXyGdbIMyO4N6rL9s2vRMP7XoPTZxWwCEZDNT2ifSXT6HjjFxLl3IAJVVGif97emP8T3JnJ4DwaXBaT-_NXWGVpV5ivPh6z2NP6TxNC8d9vWf7i-sIiA-rgjANqBhNnLw')"></div>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-md font-label-sm text-label-sm font-semibold text-primary">
+                Natural Sanctuary
+              </div>
+<div class="absolute bottom-3 right-3 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-md font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>2 Hours</span>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between gap-2 mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Arashiyama Bamboo Grove</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Western Kyoto</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                  Towering green bamboo stalks reaching skyward, rustling peacefully in the breeze. Directly adjacent to the historic Tenryu-ji zen temple and the scenic Katsura Riverbank.
+                </p>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">spa</span> Soundscape Heritage
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Tenryu-ji Adjacent
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Randen Tram Line
+                  </span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 bg-surface-container-lowest">
+<button class="font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors flex items-center gap-1" onclick="alert('Viewing detailed field notes for Arashiyama')" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="add-trip-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm font-semibold text-primary" onclick="this.innerText = 'Added ✓'; this.classList.add('bg-primary', 'text-on-primary');" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Trip</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Highlight 4: Gion & Higashiyama Machiya -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-all group">
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img alt="Preserved traditional wooden machiya townhouses along stone-paved road in Gion and Higashiyama Kyoto" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XvrBwDFf7L5S3GbIkvg1Uti9jStzS8rg2-OPmffFZuCXsNwAL6m_1TgRl40BqTy7qzV3bw_g1IEgvbLLIrFSk2K8AzVelyyTlsAGZIeBv_e8EHSRlmFU3kCRapVXLSYr27_LPjSFz7MtH449n4iLDurJ7WF1MopbETpSlDTNWt4GhhkDSfChCmET4jfWNwfehC0TTDosPyyk6Z1KZlSM4F9jZRA7VC9GUlDcE_bqlTCWl3H5YbyPhozso"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-md font-label-sm text-label-sm font-semibold text-primary">
+                Historic Geisha District
+              </div>
+<div class="absolute bottom-3 right-3 bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-md font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Half Day / Evening</span>
+</div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-center justify-between gap-2 mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Gion &amp; Higashiyama Machiya</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Central East</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+                  Atmospheric stone-paved alleys lined with traditional timber teahouses, glowing paper lanterns, and heritage artisans. Best explored slowly during dusk.
+                </p>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">nightlife</span> Twilight Atmosphere
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Teahouses
+                  </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+                    Shirakawa Canal
+                  </span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 bg-surface-container-lowest">
+<button class="font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors flex items-center gap-1" onclick="alert('Viewing detailed field notes for Gion &amp; Higashiyama')" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="add-trip-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary transition-all font-label-sm text-label-sm font-semibold text-primary" onclick="this.innerText = 'Added ✓'; this.classList.add('bg-primary', 'text-on-primary');" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add to Trip</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Practical Travel Information Section -->
+<section class="mb-16">
+<div class="bg-surface-container-low p-6 md:p-8 lg:p-10 rounded-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold block mb-1">Essential Logistics</span>
+<h2 class="font-headline-md text-headline-md text-primary">Practical Travel Guidance</h2>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">info</span>
+<span class="font-body-sm text-body-sm">Verify local temple opening hours &amp; special night illuminations.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- 1. Seasonal Guidance -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded-md bg-secondary-fixed/40 text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">nature_people</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2">Seasonal Guidance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Spring (Sakura) and Autumn (Momiji) offer breathtaking foliage alongside high traveler volume. Winter presents serene, quiet beauty with crisp temple gardens and fewer crowds.
+              </p>
+</div>
+<!-- 2. Local Transport -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded-md bg-primary-fixed/40 text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">directions_subway</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2">Local Transit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Comprehensive Kyoto City Bus and two subway lines. Contactless IC cards (ICOCA, Suica, Pasmo) are universally accepted. Central districts are best explored on foot or rental bicycle.
+              </p>
+</div>
+<!-- 3. Indicative Daily Budget -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded-md bg-surface-container-highest text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2">Indicative Daily Budget</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                ¥12,000 – ¥28,000 ($80 – $185 USD) daily covers comfortable mid-range travel: entrance fees, local transit, casual lunch, and an atmospheric dinner.
+              </p>
+</div>
+<!-- 4. Cultural Etiquette -->
+<div class="bg-surface-container-lowest p-5 rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded-md bg-secondary-fixed/40 text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">front_hand</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2">Cultural Etiquette</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Strict photography restrictions exist in private Gion residential alleys. Always slip off footwear at traditional temple thresholds and carry small cash coins for entry tokens.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Geographic Context & Interactive Map Panel -->
+<section class="mb-16" id="map-preview-panel">
+<div class="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold block mb-1">Geographic Overview</span>
+<h3 class="font-title-lg text-title-lg text-primary">Kyoto Prefecture Topography</h3>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">35.0116° N, 135.7681° E</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<div class="w-full h-80 rounded-lg bg-cover bg-center overflow-hidden shadow-inner relative flex items-end p-4" data-location="Kyoto, Japan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0H3xBdutFnsSfXFtGKwDh492hdxLLeNzzw7JY2LzuAWRsSUYZVCUSufKVM9KQlDvbSvLkFFu4tm-_1Kg70tRPLs4bd907M4XM92FWgZUykCdI025qnIShS5XeUam1upZ61RgYiPJZQMZJ-St12AaY8-hLebvjo8Rc3ezK9cGc-kxNzt7YNV2JllVz92WyFjLrQbQz5cqQxhOZUoJPTfj3Pk2sNHvwEBcpjfJ6M8qGBJSdqwPgu-8Y7g')">
+<div class="bg-surface/90 backdrop-blur-md px-4 py-3 rounded-lg shadow-sm max-w-sm">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Kyoto Basin</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Bounded by the Higashiyama, Kitayama, and Nishiyama mountain chains, funneling cool valley breezes and seasonal colors.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trip Planning Call to Action -->
+<section class="mb-6">
+<div class="bg-primary text-on-primary rounded-xl p-8 md:p-12 lg:p-16 relative overflow-hidden shadow-md">
+<!-- Subtle decorative graphic element -->
+<div class="absolute -right-12 -bottom-12 w-80 h-80 rounded-full bg-primary-container/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container/10 font-label-sm text-label-sm uppercase tracking-wider text-inverse-primary mb-4">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+              AI Route Optimization
+            </span>
+<h2 class="font-display-hero text-headline-lg md:text-display-hero text-on-primary mb-4 leading-tight">
+              Make Kyoto your next journey.
+            </h2>
+<p class="font-body-lg text-body-lg text-inverse-primary/90 leading-relaxed mb-8">
+              Build a personalized itinerary tailored to your travel dates, preferred pace, culinary interests, and aesthetic style.
+            </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-secondary hover:bg-secondary/90 active:scale-[0.98] transition-all shadow-md" data-path="plan-my-trip" href="#">
+<span>Plan My Trip</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center h-12 px-6 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary/90 bg-transparent hover:bg-primary-container/60 transition-colors" data-path="explore-destinations" href="#">
+                Browse Other Regions
+              </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer>
+</body></html>

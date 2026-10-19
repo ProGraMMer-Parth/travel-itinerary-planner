@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-highest text-primary font-bold" data-path="notifications" href="#">Notifications</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden pb-space-xl">
+<!-- Ambient organic backdrop blur accent -->
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-primary-fixed-dim/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 -left-20 w-80 h-80 bg-secondary-fixed/25 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-5xl mx-auto px-margin-mobile md:px-margin w-full flex flex-col pt-space-lg">
+<!-- Editorial Page Header -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg pb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Activity &amp; Alerts</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm" id="unread-pill-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span id="unread-pill-text">3 unread notifications</span>
+</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-primary tracking-tight">Notifications</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Stay up to date with your trips, plans, and travel companions.</p>
+</div>
+<!-- Controls: Mark Read & Settings -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center justify-center gap-2 h-11 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-all active:scale-[0.98] shadow-sm" id="mark-all-read-btn">
+<span class="material-symbols-outlined text-[18px] text-primary">done_all</span>
+<span>Mark all as read</span>
+</button>
+<button aria-label="Notification Preferences" class="inline-flex items-center justify-center gap-2 h-11 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-all active:scale-[0.98] shadow-sm" id="open-settings-btn">
+<span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+<span class="hidden sm:inline">Settings</span>
+</button>
+</div>
+</section>
+<!-- Interactive Filter Bar -->
+<nav aria-label="Notification filters" class="w-full flex items-center gap-space-xs overflow-x-auto pb-space-sm pt-space-xs scrollbar-none">
+<button class="filter-chip inline-flex items-center gap-2 px-4 h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm" data-filter="all">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-on-primary text-[11px] font-semibold" id="count-all">6</span>
+</button>
+<button class="filter-chip inline-flex items-center gap-2 px-4 h-9 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all shadow-sm" data-filter="unread">
+<span>Unread</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-primary text-[11px] font-semibold" id="count-unread">3</span>
+</button>
+<button class="filter-chip inline-flex items-center gap-2 px-4 h-9 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all shadow-sm" data-filter="trips">
+<span>Trips</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-semibold" id="count-trips">2</span>
+</button>
+<button class="filter-chip inline-flex items-center gap-2 px-4 h-9 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all shadow-sm" data-filter="collaboration">
+<span>Collaboration</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-semibold" id="count-collab">2</span>
+</button>
+<button class="filter-chip inline-flex items-center gap-2 px-4 h-9 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all shadow-sm" data-filter="account">
+<span>Account</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px] font-semibold" id="count-account">1</span>
+</button>
+</nav>
+<!-- Main Feed Container -->
+<main class="w-full flex flex-col gap-space-xl mt-space-md" id="notifications-container">
+<!-- GROUP: TODAY -->
+<section class="notification-group flex flex-col gap-space-sm" data-group="today">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Today</h2>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant group-count">3 updates</span>
+</div>
+<div class="flex flex-col gap-space-sm items-flow">
+<!-- 1. Jaipur Trip Reminder (Unread, Trips) -->
+<article class="notif-item relative group w-full bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="trips" data-id="notif-1" data-status="unread">
+<div class="flex items-start gap-space-md">
+<!-- Activity bar accent -->
+<div class="w-1 self-stretch rounded-full bg-primary shrink-0"></div>
+<!-- Icon Avatar -->
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim/40 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<!-- Content Body -->
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">Your trip to Jaipur is coming up</h3>
+<span class="unread-dot w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+<!-- Overflow Action Menu Trigger -->
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_read</span>
+<span>Mark as read</span>
+</button>
+<button class="mute-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">notifications_off</span>
+<span>Mute trip alerts</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">Trip Reminder</span>
+<span>•</span>
+<span>20 minutes ago</span>
+<span>•</span>
+<span>Amber Fort &amp; Old City</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Your trip starts in 3 days. Review your itinerary and make sure your travel details are ready.</p>
+<div class="pt-space-xs flex items-center gap-space-sm flex-wrap">
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary active:scale-[0.98] transition-all" data-path="my-trips" href="#">
+<span>View itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<button class="toggle-read-inline font-label-md text-label-md text-primary hover:underline px-2 py-1">Mark as read</button>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. Itinerary Collaboration Update (Unread, Collaboration) -->
+<article class="notif-item relative group w-full bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="collaboration" data-id="notif-2" data-status="unread">
+<div class="flex items-start gap-space-md">
+<div class="w-1 self-stretch rounded-full bg-secondary shrink-0"></div>
+<!-- Custom Avatar / Person Icon -->
+<div class="relative w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 mt-0.5 overflow-hidden">
+<span class="font-title-md text-title-md text-primary font-bold">AS</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">A collaborator updated your itinerary</h3>
+<span class="unread-dot w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_read</span>
+<span>Mark as read</span>
+</button>
+<button class="mute-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">notifications_off</span>
+<span>Mute this trip</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-semibold">Collaboration</span>
+<span>•</span>
+<span>1 hour ago</span>
+<span>•</span>
+<span>Shared Jaipur Trip</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Ananya Sharma updated the afternoon activities in your shared Jaipur trip.</p>
+<div class="pt-space-xs flex items-center gap-space-sm flex-wrap">
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all" data-path="my-trips" href="#">
+<span>Review changes</span>
+<span class="material-symbols-outlined text-[16px] text-primary">history</span>
+</a>
+<button class="toggle-read-inline font-label-md text-label-md text-primary hover:underline px-2 py-1">Mark as read</button>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. Collaboration Invitation with Accept/Decline (Unread, Collaboration) -->
+<article class="notif-item relative group w-full bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="collaboration" data-id="notif-3" data-status="unread">
+<div class="flex items-start gap-space-md">
+<div class="w-1 self-stretch rounded-full bg-secondary shrink-0"></div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/40 flex items-center justify-center text-on-secondary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">Your trip invitation is waiting</h3>
+<span class="unread-dot w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+</div>
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_read</span>
+<span>Mark as read</span>
+</button>
+<button class="mute-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">notifications_off</span>
+<span>Mute invitations</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-semibold">Collaboration</span>
+<span>•</span>
+<span>3 hours ago</span>
+<span>•</span>
+<span>Udaipur Expedition</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Rahul Mehta invited you to collaborate on a weekend trip to Udaipur.</p>
+<!-- Dynamic Action Buttons (Accept / Decline state handler) -->
+<div class="invitation-action-container pt-space-xs flex items-center gap-space-sm flex-wrap">
+<button class="accept-invitation-btn inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Accept invitation</span>
+</button>
+<button class="decline-invitation-btn inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all">
+<span>Decline</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- GROUP: YESTERDAY -->
+<section class="notification-group flex flex-col gap-space-sm" data-group="yesterday">
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Yesterday</h2>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant group-count">2 updates</span>
+</div>
+<div class="flex flex-col gap-space-sm items-flow">
+<!-- 4. Itinerary Updated (Read, Trips) -->
+<article class="notif-item relative group w-full bg-surface-container-low rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="trips" data-id="notif-4" data-status="read">
+<div class="flex items-start gap-space-md">
+<div class="w-1 self-stretch rounded-full bg-outline-variant shrink-0"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">Your itinerary has been updated</h3>
+</div>
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_unread</span>
+<span>Mark as unread</span>
+</button>
+<button class="mute-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">notifications_off</span>
+<span>Mute this trip</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">Trip Update</span>
+<span>•</span>
+<span>Yesterday, 4:15 PM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Your saved itinerary includes a revised activity schedule. Review the latest version before travelling.</p>
+<div class="pt-space-xs flex items-center gap-space-sm flex-wrap">
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all" data-path="my-trips" href="#">
+<span>View changes</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. Account Welcome (Read, Account) -->
+<article class="notif-item relative group w-full bg-surface-container-low rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="account" data-id="notif-5" data-status="read">
+<div class="flex items-start gap-space-md">
+<div class="w-1 self-stretch rounded-full bg-outline-variant shrink-0"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">Welcome to Trip Genius AI</h3>
+</div>
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_unread</span>
+<span>Mark as unread</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">Account</span>
+<span>•</span>
+<span>Yesterday, 9:00 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Your account is ready. Start planning a trip tailored to your preferences.</p>
+<div class="pt-space-xs flex items-center gap-space-sm flex-wrap">
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all" data-path="plan-my-trip" href="#">
+<span>Plan a trip</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_back_ios_new</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- GROUP: EARLIER -->
+<section class="notification-group flex flex-col gap-space-sm" data-group="earlier">
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary">Earlier</h2>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant group-count">1 update</span>
+</div>
+<div class="flex flex-col gap-space-sm items-flow">
+<!-- 6. Saved Destination (Read, Trips) -->
+<article class="notif-item relative group w-full bg-surface-container-low rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-all duration-200" data-category="trips" data-id="notif-6" data-status="read">
+<div class="flex items-start gap-space-md">
+<div class="w-1 self-stretch rounded-full bg-outline-variant shrink-0"></div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-space-xs">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold tracking-tight">You saved a new destination</h3>
+</div>
+<div class="relative notif-menu-wrapper shrink-0">
+<button aria-label="Notification actions" class="menu-toggle-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="menu-dropdown hidden absolute right-0 top-9 w-48 bg-surface-container-lowest rounded-lg shadow-xl p-1.5 z-30 flex flex-col">
+<button class="toggle-read-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">mark_chat_unread</span>
+<span>Mark as unread</span>
+</button>
+<button class="delete-btn flex items-center gap-2 px-3 py-2 text-left rounded font-body-sm text-body-sm text-error hover:bg-error-container/30 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-error">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">Saved Destinations</span>
+<span>•</span>
+<span>3 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Jaipur has been added to your saved destinations.</p>
+<div class="pt-space-xs flex items-center gap-space-sm flex-wrap">
+<a class="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all" data-path="explore-destinations" href="#">
+<span>Explore destination</span>
+<span class="material-symbols-outlined text-[16px] text-primary">travel_explore</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Graceful Empty State (Controlled via JS) -->
+<section class="hidden flex flex-col items-center justify-center py-space-xl px-margin-mobile text-center my-space-lg" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-md shadow-inner">
+<span class="material-symbols-outlined text-[32px]">checklist_rtl</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-space-xs">All caught up!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">No unread notifications at the moment. We'll alert you when there are new updates to your trips or invitations.</p>
+<button class="mt-space-md inline-flex items-center gap-2 h-10 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-all" id="reset-filter-btn">
+<span class="material-symbols-outlined text-[18px]">filter_list_off</span>
+<span>View all notifications</span>
+</button>
+</section>
+</div>
+</div>
+<!-- Notification Settings Modal / Slide-out -->
+<aside aria-labelledby="settings-title" aria-modal="true" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" id="settings-modal" role="dialog">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="settings-backdrop"></div>
+<!-- Modal Card -->
+<div class="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-2xl p-space-lg md:p-space-xl flex flex-col gap-space-md z-10 max-h-[90vh] overflow-y-auto">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Preferences</span>
+<h2 class="font-headline-sm text-headline-sm text-primary" id="settings-title">Notification Settings</h2>
+</div>
+<button aria-label="Close modal" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="close-settings-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure real-time alerts and email dispatches to match your personal travel cadence.</p>
+<!-- Preferences Form Toggles -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- 1. Trip Reminders -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Trip reminders</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Departure countdowns, flight alerts, and daily schedule cues.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input checked="" class="sr-only peer" id="pref-trip-reminders" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- 2. Itinerary Changes -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Itinerary changes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live modifications by travel partners and AI auto-refinements.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input checked="" class="sr-only peer" id="pref-itinerary-changes" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- 3. Collaboration Invitations -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Collaboration invitations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Requests from friends and travel partners to co-create trips.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input checked="" class="sr-only peer" id="pref-collab-invites" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- 4. Saved Destination Updates -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Saved destination updates</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seasonal spotlights and price alerts for your bookmarked places.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input checked="" class="sr-only peer" id="pref-saved-updates" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- 5. Account Notifications -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Account &amp; Security</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sign-in alerts, passkey updates, and platform governance.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input checked="" class="sr-only peer" id="pref-account-notifs" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- 6. Weekly Email Digest Option -->
+<div class="pt-space-xs">
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col pr-4">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Weekly Editorial Digest</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Consolidated summary delivered to your inbox every Sunday morning.</span>
+</div>
+<div class="relative inline-flex items-center shrink-0">
+<input class="sr-only peer" id="pref-weekly-digest" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="pt-space-sm flex items-center justify-end gap-space-sm">
+<button class="h-11 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors" id="cancel-settings-btn">Cancel</button>
+<button class="inline-flex items-center gap-1.5 h-11 px-5 rounded-lg bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-all shadow-sm" id="save-settings-btn">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Save preferences</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Interactive Feedback Toast -->
+<aside aria-live="polite" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-4 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl" id="toast" role="status">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" id="toast-icon">check_circle</span>
+<span class="font-body-md text-body-md font-medium" id="toast-text">Notification preferences saved.</span>
+</aside>
+<script>
+    (function initActivityCenter() {
+      let activeFilter = 'all';
+
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const notifItems = document.querySelectorAll('.notif-item');
+      const groups = document.querySelectorAll('.notification-group');
+      const emptyState = document.getElementById('empty-state');
+      const markAllReadBtn = document.getElementById('mark-all-read-btn');
+      const unreadBadge = document.getElementById('unread-pill-badge');
+      const unreadText = document.getElementById('unread-pill-text');
+      const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+      // Toast utility
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      const toastIcon = document.getElementById('toast-icon');
+      let toastTimer = null;
+
+      function showToast(message, icon = 'check_circle') {
+        if (!toast) return;
+        toastText.textContent = message;
+        toastIcon.textContent = icon;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3200);
+      }
+
+      // Calculate and update metrics
+      function updateCounters() {
+        const visibleItems = Array.from(document.querySelectorAll('.notif-item'));
+        const total = visibleItems.length;
+        const unreadCount = visibleItems.filter(el => el.getAttribute('data-status') === 'unread').length;
+        const tripsCount = visibleItems.filter(el => el.getAttribute('data-category') === 'trips').length;
+        const collabCount = visibleItems.filter(el => el.getAttribute('data-category') === 'collaboration').length;
+        const accountCount = visibleItems.filter(el => el.getAttribute('data-category') === 'account').length;
+
+        const countAll = document.getElementById('count-all');
+        const countUnread = document.getElementById('count-unread');
+        const countTrips = document.getElementById('count-trips');
+        const countCollab = document.getElementById('count-collab');
+        const countAccount = document.getElementById('count-account');
+
+        if (countAll) countAll.textContent = total;
+        if (countUnread) countUnread.textContent = unreadCount;
+        if (countTrips) countTrips.textContent = tripsCount;
+        if (countCollab) countCollab.textContent = collabCount;
+        if (countAccount) countAccount.textContent = accountCount;
+
+        if (unreadText) {
+          unreadText.textContent = unreadCount === 1 ? '1 unread notification' : unreadCount + ' unread notifications';
+        }
+
+        if (unreadBadge) {
+          if (unreadCount === 0) {
+            unreadBadge.classList.add('opacity-50');
+            const pulseDot = unreadBadge.querySelector('.animate-pulse');
+            if (pulseDot) pulseDot.classList.remove('animate-pulse', 'bg-secondary');
+            if (pulseDot) pulseDot.classList.add('bg-outline-variant');
+          } else {
+            unreadBadge.classList.remove('opacity-50');
+            const pulseDot = unreadBadge.querySelector('.w-1\\.5');
+            if (pulseDot) {
+              pulseDot.classList.add('animate-pulse', 'bg-secondary');
+              pulseDot.classList.remove('bg-outline-variant');
+            }
+          }
+        }
+
+        // Update group count subtitles
+        groups.forEach(group => {
+          const itemsInGroup = Array.from(group.querySelectorAll('.notif-item')).filter(item => {
+            return !item.classList.contains('hidden');
+          });
+          const groupCountLabel = group.querySelector('.group-count');
+          if (groupCountLabel) {
+            groupCountLabel.textContent = itemsInGroup.length === 1 ? '1 update' : itemsInGroup.length + ' updates';
+          }
+        });
+      }
+
+      // Apply Filter Logic
+      function applyFilter(filter) {
+        activeFilter = filter;
+        let visibleCount = 0;
+
+        filterChips.forEach(chip => {
+          const isCurrent = chip.getAttribute('data-filter') === filter;
+          if (isCurrent) {
+            chip.classList.add('bg-primary', 'text-on-primary');
+            chip.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+            const badge = chip.querySelector('span:last-child');
+            if (badge) {
+              badge.classList.remove('bg-surface-container-highest', 'text-on-surface-variant', 'text-primary');
+              badge.classList.add('bg-white/20', 'text-on-primary');
+            }
+          } else {
+            chip.classList.remove('bg-primary', 'text-on-primary');
+            chip.classList.add('bg-surface-container-lowest', 'text-on-surface');
+            const badge = chip.querySelector('span:last-child');
+            if (badge) {
+              badge.classList.remove('bg-white/20', 'text-on-primary');
+              badge.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+            }
+          }
+        });
+
+        // Toggle visibility of each item
+        document.querySelectorAll('.notif-item').forEach(item => {
+          const status = item.getAttribute('data-status');
+          const category = item.getAttribute('data-category');
+
+          let matches = false;
+          if (filter === 'all') matches = true;
+          else if (filter === 'unread') matches = (status === 'unread');
+          else if (filter === category) matches = true;
+
+          if (matches) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        // Check each group to hide entirely if it has zero visible children
+        groups.forEach(group => {
+          const itemsInGroup = group.querySelectorAll('.notif-item:not(.hidden)');
+          if (itemsInGroup.length === 0) {
+            group.classList.add('hidden');
+          } else {
+            group.classList.remove('hidden');
+          }
+        });
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+
+        updateCounters();
+      }
+
+      // Filter chip click event
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          applyFilter(chip.getAttribute('data-filter'));
+        });
+      });
+
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener('click', () => {
+          applyFilter('all');
+        });
+      }
+
+      // Mark an individual item as read/unread
+      function setItemReadState(item, makeRead) {
+        const dot = item.querySelector('.unread-dot');
+        const bar = item.querySelector('.self-stretch');
+        const readBtnText = item.querySelector('.toggle-read-btn span:last-child');
+        const inlineReadBtn = item.querySelector('.toggle-read-inline');
+
+        if (makeRead) {
+          item.setAttribute('data-status', 'read');
+          item.classList.remove('bg-surface-container-lowest');
+          item.classList.add('bg-surface-container-low');
+          if (dot) dot.remove();
+          if (bar) {
+            bar.classList.remove('bg-primary', 'bg-secondary');
+            bar.classList.add('bg-outline-variant');
+          }
+          if (readBtnText) readBtnText.textContent = 'Mark as unread';
+          if (inlineReadBtn) inlineReadBtn.remove();
+        } else {
+          item.setAttribute('data-status', 'unread');
+          item.classList.add('bg-surface-container-lowest');
+          item.classList.remove('bg-surface-container-low');
+          if (readBtnText) readBtnText.textContent = 'Mark as read';
+        }
+        applyFilter(activeFilter);
+      }
+
+      // Mark all notifications as read
+      if (markAllReadBtn) {
+        markAllReadBtn.addEventListener('click', () => {
+          document.querySelectorAll('.notif-item[data-status="unread"]').forEach(item => {
+            setItemReadState(item, true);
+          });
+          showToast('All notifications marked as read', 'done_all');
+        });
+      }
+
+      // Delegate item level actions
+      document.getElementById('notifications-container').addEventListener('click', (e) => {
+        const target = e.target;
+
+        // Overflow 3-dots Menu Toggle
+        const menuBtn = target.closest('.menu-toggle-btn');
+        if (menuBtn) {
+          e.stopPropagation();
+          const dropdown = menuBtn.nextElementSibling;
+          // close all other open dropdowns
+          document.querySelectorAll('.menu-dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.add('hidden');
+          });
+          dropdown.classList.toggle('hidden');
+          return;
+        }
+
+        // Toggle Read from Dropdown
+        const toggleReadBtn = target.closest('.toggle-read-btn');
+        if (toggleReadBtn) {
+          e.stopPropagation();
+          const item = toggleReadBtn.closest('.notif-item');
+          const isCurrentlyUnread = item.getAttribute('data-status') === 'unread';
+          setItemReadState(item, isCurrentlyUnread);
+          toggleReadBtn.closest('.menu-dropdown').classList.add('hidden');
+          showToast(isCurrentlyUnread ? 'Marked as read' : 'Marked as unread');
+          return;
+        }
+
+        // Inline Mark as Read
+        const inlineBtn = target.closest('.toggle-read-inline');
+        if (inlineBtn) {
+          e.preventDefault();
+          const item = inlineBtn.closest('.notif-item');
+          setItemReadState(item, true);
+          showToast('Marked as read');
+          return;
+        }
+
+        // Mute trip action
+        const muteBtn = target.closest('.mute-btn');
+        if (muteBtn) {
+          e.stopPropagation();
+          muteBtn.closest('.menu-dropdown').classList.add('hidden');
+          showToast('Alerts muted for this trip', 'notifications_off');
+          return;
+        }
+
+        // Delete / Dismiss
+        const deleteBtn = target.closest('.delete-btn');
+        if (deleteBtn) {
+          e.stopPropagation();
+          const item = deleteBtn.closest('.notif-item');
+          item.style.transition = 'all 0.3s ease';
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            item.remove();
+            applyFilter(activeFilter);
+            showToast('Notification removed', 'delete');
+          }, 300);
+          return;
+        }
+
+        // Invitation Accept
+        const acceptBtn = target.closest('.accept-invitation-btn');
+        if (acceptBtn) {
+          const actionWrap = acceptBtn.closest('.invitation-action-container');
+          actionWrap.innerHTML = `
+            <div class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md">
+              <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+              <span>Invitation accepted • Added to My Trips</span>
+            </div>
+          `;
+          const item = actionWrap.closest('.notif-item');
+          setItemReadState(item, true);
+          showToast('Trip invitation accepted!', 'flight_takeoff');
+          return;
+        }
+
+        // Invitation Decline
+        const declineBtn = target.closest('.decline-invitation-btn');
+        if (declineBtn) {
+          const actionWrap = declineBtn.closest('.invitation-action-container');
+          actionWrap.innerHTML = `
+            <span class="font-label-md text-label-md text-on-surface-variant py-1">Invitation declined</span>
+          `;
+          const item = actionWrap.closest('.notif-item');
+          setItemReadState(item, true);
+          showToast('Invitation declined');
+          return;
+        }
+      });
+
+      // Close open overflow dropdowns on click outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.notif-menu-wrapper')) {
+          document.querySelectorAll('.menu-dropdown').forEach(d => d.classList.add('hidden'));
+        }
+      });
+
+      // Settings Modal Logic
+      const settingsModal = document.getElementById('settings-modal');
+      const openSettingsBtn = document.getElementById('open-settings-btn');
+      const closeSettingsBtn = document.getElementById('close-settings-btn');
+      const cancelSettingsBtn = document.getElementById('cancel-settings-btn');
+      const saveSettingsBtn = document.getElementById('save-settings-btn');
+      const settingsBackdrop = document.getElementById('settings-backdrop');
+
+      function openModal() {
+        if (!settingsModal) return;
+        settingsModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!settingsModal) return;
+        settingsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      if (openSettingsBtn) openSettingsBtn.addEventListener('click', openModal);
+      if (closeSettingsBtn) closeSettingsBtn.addEventListener('click', closeModal);
+      if (cancelSettingsBtn) cancelSettingsBtn.addEventListener('click', closeModal);
+      if (settingsBackdrop) settingsBackdrop.addEventListener('click', closeModal);
+
+      if (saveSettingsBtn) {
+        saveSettingsBtn.addEventListener('click', () => {
+          closeModal();
+          showToast('Preferences saved successfully', 'tune');
+        });
+      }
+
+      // Initial count calculation
+      updateCounters();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#">Notifications</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

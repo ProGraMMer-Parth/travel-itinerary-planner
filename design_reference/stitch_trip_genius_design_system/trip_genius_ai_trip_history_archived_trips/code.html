@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a aria-current="page" class="transition-colors text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a></div><div class="flex items-center gap-space-sm lg:hidden"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-highest text-primary font-bold" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="notifications" href="#">Notifications</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="profile" href="#">Profile</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Top Background Ambient Gradient -->
+<div class="relative w-full overflow-hidden">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-xl">
+<!-- Eyebrow & Hero Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Travel Archives &amp; Memories</span>
+</div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary font-normal tracking-tight">
+            Trip History
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+            Every journey leaves a story. Revisit your adventures, reflect upon past paths, and draw deliberate inspiration for the next horizon.
+          </p>
+</div>
+<!-- Global Metric Capsule -->
+<div class="flex items-center gap-space-md self-start md:self-auto bg-surface-container-high/60 backdrop-blur-sm px-space-md py-space-sm rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">explore</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="stat-completed-count">4 Completed</span>
+</div>
+<span class="text-on-surface-variant/40">•</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">inventory_2</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="stat-archived-count">2 Archived</span>
+</div>
+<span class="text-on-surface-variant/40">•</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-label-md text-label-md">17 Days Traveled</span>
+</div>
+</div>
+</div>
+<!-- Segmented View Switcher Tabs -->
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div class="inline-flex p-1 bg-surface-container rounded-xl shadow-sm">
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm font-semibold" id="tab-completed" onclick="switchTab('completed')">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Completed journeys</span>
+<span class="ml-1 px-2 py-0.5 text-label-sm font-label-sm rounded-full bg-primary-fixed text-on-primary-fixed" id="tab-completed-badge">4</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 text-on-surface-variant hover:text-on-surface font-medium" id="tab-archived" onclick="switchTab('archived')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archived drafts</span>
+<span class="ml-1 px-2 py-0.5 text-label-sm font-label-sm rounded-full bg-surface-container-highest text-on-surface-variant" id="tab-archived-badge">2</span>
+</button>
+</div>
+<!-- Plan New Trip Shortcut -->
+<a class="hidden sm:inline-flex items-center gap-2 px-space-md py-2 font-label-md text-label-md uppercase tracking-wider text-primary hover:bg-surface-container rounded-lg transition-colors" data-path="plan-my-trip" href="#">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Draft new journey</span>
+</a>
+</div>
+<!-- Search, Sort & Style Filters Control Rail -->
+<div class="flex flex-col gap-space-md mb-space-xl p-space-md md:p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<!-- Search Bar -->
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full h-11 pl-10 pr-10 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container transition-all" id="trip-search-input" oninput="applyFilters()" placeholder="Search trips by destination, country, or trip title..." type="text"/>
+<button class="hidden absolute inset-y-0 right-3 flex items-center text-on-surface-variant hover:text-on-surface" id="search-clear-btn" onclick="clearSearch()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Sort Select -->
+<div class="flex items-center gap-2 min-w-[210px]">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">sort</span>
+<div class="relative w-full">
+<select class="w-full h-11 px-3 pr-8 bg-surface-container-low rounded-lg font-title-md text-body-md text-on-surface focus:outline-none appearance-none cursor-pointer" id="trip-sort-select" onchange="applySort()">
+<option value="recent">Sort: Most Recent</option>
+<option value="oldest">Sort: Oldest First</option>
+<option value="name-asc">Sort: Title (A–Z)</option>
+<option value="duration">Sort: Duration (Longest)</option>
+</select>
+<span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Filter Chips Row -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-2 px-2 scrollbar-none" id="style-filter-chips">
+<button class="filter-chip active-filter flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-primary text-on-primary" data-filter="all" onclick="selectStyleFilter('all', this)">
+            All Styles
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="Culture &amp; Heritage" onclick="selectStyleFilter('Culture &amp; Heritage', this)">
+            Culture &amp; Heritage
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="Beaches &amp; Relaxation" onclick="selectStyleFilter('Beaches &amp; Relaxation', this)">
+            Beaches &amp; Relaxation
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="Nature &amp; Adventure" onclick="selectStyleFilter('Nature &amp; Adventure', this)">
+            Nature &amp; Adventure
+          </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" data-filter="Lakes &amp; Culture" onclick="selectStyleFilter('Lakes &amp; Culture', this)">
+            Lakes &amp; Romance
+          </button>
+</div>
+</div>
+<!-- VIEW 1: COMPLETED TRIPS GRID -->
+<section class="w-full" id="section-completed">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-space-lg" id="completed-grid">
+<!-- Card 1: Jaipur Heritage Escape -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2026-02-12" data-days="4" data-id="trip-1" data-location="Jaipur, Rajasthan, India" data-style="Culture &amp; Heritage" data-title="Jaipur Heritage Escape">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Warm terracotta-hued courtyards of the Jaipur City Palace with traditional carved sandstone arches, royal balconies, sunlight casting gentle angular shadows on limestone flagstones, cinematic editorial travel photograph, organic muted tones, authentic Indian architecture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4V6_Rg3-grF3n-Dn5GAoaDVWIniPtwLGPQtDy-5ddCZdLxOFR9bmSZZxKx4dFqeihnqUj01KKO3EWebkZ7BpQEbCJeSAMKhNi9dXasX4FQpXtIRqaDMlSRVMUghAfK7rHYwrse04hJ63g_36Q5ORbMv09vYpR9I0RDSZxnPE05kuOI8w4_ALWz-M4ReF9fM0GMo1Ih0WfJp1xGedJ5htOmJNfAv-xAzKyJ4m_5L6inkj0svjSCWSxeg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<!-- Status & Style Badges -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-primary text-on-primary shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Completed</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Culture &amp; Heritage
+                </span>
+</div>
+<!-- Dates Overlay Bottom Left -->
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Voyage Interval</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm">12–15 February 2026 • 4 days</p>
+</div>
+<!-- Quick Map Pin Tag -->
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Jaipur, India</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                    Jaipur Heritage Escape
+                  </h3>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-1')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-1">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Jaipur Heritage Escape')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate itinerary</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="archiveTrip('trip-1', 'Jaipur Heritage Escape')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archive trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="exportMemoryDossier('Jaipur Heritage Escape')">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export memory dossier</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('trip-1', 'Jaipur Heritage Escape')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  Immersive walk through Amer Fort at sunrise, curated gem-carving studios in Johri Bazaar, private heritage tea tastings, and royal astronomic observatories.
+                </p>
+</div>
+<!-- Highlight Pillars / Stats -->
+<div class="grid grid-cols-3 gap-2 py-space-sm px-space-md rounded-lg bg-surface-container-low text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Duration</span>
+<span class="font-title-md text-title-md text-primary font-semibold">4 Days</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Milestones</span>
+<span class="font-title-md text-title-md text-primary font-semibold">8 Curated</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ledger</span>
+<span class="font-title-md text-title-md text-secondary font-semibold">₹38,400</span>
+</div>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Verified Ledger Logged</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 px-4 h-11 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" data-path="trip-details" href="#">
+<span>View itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Goa Coastal Getaway -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2026-01-05" data-days="5" data-id="trip-2" data-location="Goa, India" data-style="Beaches &amp; Relaxation" data-title="Goa Coastal Getaway">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Serene Goa tropical shoreline with swaying coconut palm silhouettes during golden sunset, traditional wooden fishing boats moored on tranquil golden sand, warm ocean tide reflections, high-end travel journalism photography, organic muted pastel skies" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD906dhLPvo83CzblrJxNg1kPojDk0khIs035Q3_R3NcqXeX9HQbbHaw-sqBlGxVxIgBW47diBpUwbydDV7U_7i9-KAOiU-C6-f9eDNEk53yFotHxKY_cedlhsAhDAriZw-elbqP8cOpFDKXUr985rdd1kwm_dOEGGqDgOtBzSsyDeMVGx0ymgmVF-JYP_aLTkU527sEg1ip5zSTeHqxKOddCBNbMtHVqY-l2D5tpP6xugSBhnEfkW-Zw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<!-- Status & Style Badges -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-primary text-on-primary shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Completed</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Beaches &amp; Relaxation
+                </span>
+</div>
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Voyage Interval</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm">5–9 January 2026 • 5 days</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Goa, India</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                    Goa Coastal Getaway
+                  </h3>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-2')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-2">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Goa Coastal Getaway')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate itinerary</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="archiveTrip('trip-2', 'Goa Coastal Getaway')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archive trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="exportMemoryDossier('Goa Coastal Getaway')">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export memory dossier</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('trip-2', 'Goa Coastal Getaway')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  South Goan cove sanctuaries, Portuguese villa culinary residencies, kayak trails along Galgibaga backwaters, and slow sunset listening sessions.
+                </p>
+</div>
+<!-- Highlight Pillars / Stats -->
+<div class="grid grid-cols-3 gap-2 py-space-sm px-space-md rounded-lg bg-surface-container-low text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Duration</span>
+<span class="font-title-md text-title-md text-primary font-semibold">5 Days</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Strolls</span>
+<span class="font-title-md text-title-md text-primary font-semibold">6 Coastlines</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ledger</span>
+<span class="font-title-md text-title-md text-secondary font-semibold">₹42,000</span>
+</div>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">eco</span>
+<span>Slow Travel Footprint</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 px-4 h-11 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" data-path="trip-details" href="#">
+<span>View itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Manali Mountain Retreat -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-12-18" data-days="5" data-id="trip-3" data-location="Manali, Himachal Pradesh, India" data-style="Nature &amp; Adventure" data-title="Manali Mountain Retreat">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Breathtaking snow-draped Himalayan mountains looming over traditional stone and cedar wooden chalets in Manali village, morning mist flowing through pine forest valley, river flowing, crisp mountain editorial travel light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzqCDB6pmmZkMmPP60HaztY_7gFqEz-EV_QdIbkHT3dktfp0IVRYHmcD2Hv5CQXoGJgHtrbZHiDaPmqW0wEKjw_6ifXYmGWBFwKslikYsJOesXu8r3GTIrJ361a7ToicsSMijgSwULxMi9iA56xkdyCAW6wXgGci6hPU7_rvXJMm7pqHtbFwcUUw8AFxGZtKNd5S80_27KPzuZHkjYGJoHmPub_Jk8RA00uK1EVgbaKvP8-_vpSs8QSQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<!-- Status & Style Badges -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-primary text-on-primary shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Completed</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Nature &amp; Adventure
+                </span>
+</div>
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Voyage Interval</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm">18–22 December 2025 • 5 days</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Himachal, India</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                    Manali Mountain Retreat
+                  </h3>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-3')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-3">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Manali Mountain Retreat')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate itinerary</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="archiveTrip('trip-3', 'Manali Mountain Retreat')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archive trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="exportMemoryDossier('Manali Mountain Retreat')">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export memory dossier</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('trip-3', 'Manali Mountain Retreat')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  Old Manali cedar forest treks, fireside literary evenings in Naggar Castle, Solang valley snow shoe expeditions, and artisan Himalayan honey farms.
+                </p>
+</div>
+<!-- Highlight Pillars / Stats -->
+<div class="grid grid-cols-3 gap-2 py-space-sm px-space-md rounded-lg bg-surface-container-low text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Duration</span>
+<span class="font-title-md text-title-md text-primary font-semibold">5 Days</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Expeditions</span>
+<span class="font-title-md text-title-md text-primary font-semibold">3 Alpine Trails</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ledger</span>
+<span class="font-title-md text-title-md text-secondary font-semibold">₹36,500</span>
+</div>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">terrain</span>
+<span>Alpine Elevation: 2,050m</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 px-4 h-11 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" data-path="trip-details" href="#">
+<span>View itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: Udaipur Weekend -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-11-21" data-days="3" data-id="trip-4" data-location="Udaipur, Rajasthan, India" data-style="Lakes &amp; Culture" data-title="Udaipur Weekend">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Lake Pichola Udaipur at twilight, marble island palace shimmering under warm evening illumination, wooden rowboat floating on serene glass-like water, romantic Indian royal architecture editorial photograph" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBg6XkPXcTh16DxfMHcsVfCjKuGoF5LljIAkpeTLjRRGjLQEB44sZPzF7RBnqe9UwwV-OZuTA8UZGSXn3XZ69nAjqK3NdSv3M6aELJ2UXblWkn_1xFIjxIE2EvNSk9-covValF1HOmBh1VPUxk2IVb1fqZqHPyXf_u_DXuwdxLXpajPHcw1l0mM5pKT3A9KsCmYxjWJVko-32Aqpnmo_z8NQwgDrs-n66FKNe0SiVeowgRUeK2eSOZFPw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<!-- Status & Style Badges -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-primary text-on-primary shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Completed</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Lakes &amp; Romance
+                </span>
+</div>
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Voyage Interval</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm">21–23 November 2025 • 3 days</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Udaipur, India</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                    Udaipur Weekend
+                  </h3>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-4')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-4">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Udaipur Weekend')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate itinerary</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="archiveTrip('trip-4', 'Udaipur Weekend')">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Archive trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="exportMemoryDossier('Udaipur Weekend')">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Export memory dossier</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('trip-4', 'Udaipur Weekend')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  Twilight sailings across Lake Pichola, miniature painting workshops in Chandpole, rooftop dining overlooking Jag Mandir, and Monsoon Palace sunsets.
+                </p>
+</div>
+<!-- Highlight Pillars / Stats -->
+<div class="grid grid-cols-3 gap-2 py-space-sm px-space-md rounded-lg bg-surface-container-low text-center">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Duration</span>
+<span class="font-title-md text-title-md text-primary font-semibold">3 Days</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Heritage</span>
+<span class="font-title-md text-title-md text-primary font-semibold">5 Palaces &amp; Lakes</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ledger</span>
+<span class="font-title-md text-title-md text-secondary font-semibold">₹29,000</span>
+</div>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">sailing</span>
+<span>Boat Log Included</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 px-4 h-11 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" data-path="trip-details" href="#">
+<span>View itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State for Completed -->
+<div class="hidden flex-col items-center text-center p-space-xl my-space-lg rounded-xl bg-surface-container-low" id="completed-empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[32px]">flight_takeoff</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Your travel story starts here</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-space-lg">
+            Once you conclude a curated trip with Trip Genius AI, its memory chapters, logistical receipts, and highlights will populate this quiet haven.
+          </p>
+<a class="inline-flex items-center gap-2 px-space-lg h-12 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider shadow-sm hover:bg-primary-container transition-all" data-path="plan-my-trip" href="#">
+<span>Plan a new journey</span>
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</a>
+</div>
+</section>
+<!-- VIEW 2: ARCHIVED TRIPS GRID (Initially Hidden) -->
+<section class="w-full hidden" id="section-archived">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-space-lg" id="archived-grid">
+<!-- Archived Card A: Kyoto Zen Exploration -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-10-15" data-days="7" data-id="archived-1" data-location="Kyoto, Japan" data-style="Culture &amp; Heritage" data-title="Kyoto Zen Exploration">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<img alt="Kyoto Zen Exploration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XvrBwDFf7L5S3GbIkvg1Uti9jStzS8rg2-OPmffFZuCXsNwAL6m_1TgRl40BqTy7qzV3bw_g1IEgvbLLIrFSk2K8AzVelyyTlsAGZIeBv_e8EHSRlmFU3kCRapVXLSYr27_LPjSFz7MtH449n4iLDurJ7WF1MopbETpSlDTNWt4GhhkDSfChCmET4jfWNwfehC0TTDosPyyk6Z1KZlSM4F9jZRA7VC9GUlDcE_bqlTCWl3H5YbyPhozso"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<!-- Archived Badge -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-surface-container-highest text-on-surface shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+<span>Archived Draft</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Autumn Season
+                </span>
+</div>
+<!-- Archival Details Overlay Bottom Left -->
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Planned for Oct 2025 • 7 days</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">event_busy</span>
+<span>Archived on Oct 28, 2025</span>
+</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Kyoto, Japan</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                      Kyoto Zen Exploration
+                    </h3>
+<p class="font-label-sm text-label-sm text-secondary font-medium">Postponed Autumn Retreat</p>
+</div>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-arch-1')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-arch-1">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-primary hover:bg-surface-container flex items-center gap-2" onclick="restoreTrip('archived-1', 'Kyoto Zen Exploration')">
+<span class="material-symbols-outlined text-[18px]">unarchive</span>
+<span>Restore trip to active</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Kyoto Zen Exploration')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate blueprint</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('archived-1', 'Kyoto Zen Exploration')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  Machiya residence bookings in Gion, Daitoku-ji rock garden meditation hours, Kaiseki dining sequences in Pontocho alley, and dawn visits to Arashiyama bamboo path.
+                </p>
+</div>
+<!-- Archival Metadata Capsule -->
+<div class="p-space-sm px-space-md rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">history_edu</span>
+<span class="font-body-sm text-body-sm">Fully preserved itinerary state (7 days, 14 points of interest)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">100% Retained</span>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs gap-space-sm">
+<button class="inline-flex items-center justify-center gap-2 flex-1 h-11 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" onclick="restoreTrip('archived-1', 'Kyoto Zen Exploration')">
+<span class="material-symbols-outlined text-[18px]">restore</span>
+<span>Restore trip</span>
+</button>
+<a class="inline-flex items-center justify-center gap-1.5 px-space-md h-11 bg-surface-container-high text-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-highest transition-colors" data-path="trip-details" href="#">
+<span>View preview</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Archived Card B: Swiss Alpine Circuit -->
+<article class="trip-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-08-10" data-days="6" data-id="archived-2" data-location="Swiss Alps, Switzerland" data-style="Nature &amp; Adventure" data-title="Swiss Alpine Circuit">
+<div class="relative w-full h-64 md:h-72 overflow-hidden bg-surface-container">
+<img alt="Swiss Alpine Circuit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Uzy26KbipvPJUwjJZ9hVzPNe57F77BUKa3yfwXYSeHvbRMcyw56q_OTYmwNTATu8_aZRO-uIJ7l4ZW-pcdt6aTT6OSQylf1VSegtLoRLXq3ZRyy988tIgibYbgecmyh6G-zWr2ap69DtO-51vRYLclCUvtcbGTGzaZCF8HEpN1g0nZWw5W0BkORuv1pFwdC_juFvJdlpMPs9K-dGuU0wQz2CcvrLMKEY6Rrlp2PIxroyk2GEoQkOSmeRM1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<!-- Archived Badge -->
+<div class="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm tracking-wide bg-surface-container-highest text-on-surface shadow-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">archive</span>
+<span>Archived Draft</span>
+</span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm tracking-wider bg-surface-container-lowest/90 backdrop-blur-md text-on-surface uppercase">
+                  Summer High Alpine
+                </span>
+</div>
+<!-- Archival Details Overlay Bottom Left -->
+<div class="absolute bottom-4 left-4 text-on-primary">
+<p class="font-label-sm text-label-sm tracking-widest uppercase opacity-80">Planned for Aug 2025 • 6 days</p>
+<p class="font-title-md text-title-md font-semibold drop-shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">event_busy</span>
+<span>Archived on Sep 02, 2025</span>
+</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Alps, Switzerland</span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="flex flex-col flex-1 p-space-lg gap-space-md justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-normal group-hover:text-primary-container transition-colors">
+                      Swiss Alpine Circuit
+                    </h3>
+<p class="font-label-sm text-label-sm text-secondary font-medium">Summer Pass Tour Draft</p>
+</div>
+<!-- Overflow Actions Trigger -->
+<div class="relative overflow-menu-container">
+<button aria-label="Trip actions" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" onclick="toggleMenu(event, 'menu-arch-2')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl py-1.5 z-20 flex-col" id="menu-arch-2">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-primary hover:bg-surface-container flex items-center gap-2" onclick="restoreTrip('archived-2', 'Swiss Alpine Circuit')">
+<span class="material-symbols-outlined text-[18px]">unarchive</span>
+<span>Restore trip to active</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2" onclick="duplicateTrip('Swiss Alpine Circuit')">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicate blueprint</span>
+</button>
+<div class="my-1 border-t border-surface-container-high"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-error hover:bg-error-container/30 flex items-center gap-2" onclick="confirmDeleteModal('archived-2', 'Swiss Alpine Circuit')">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+<span>Delete permanently</span>
+</button>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                  Glacier Express panorama carriage segments, hiking routes along Zermatt ridges facing the Matterhorn, and alpine dairy degustations in Engadin.
+                </p>
+</div>
+<!-- Archival Metadata Capsule -->
+<div class="p-space-sm px-space-md rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">history_edu</span>
+<span class="font-body-sm text-body-sm">Fully preserved itinerary state (6 days, 11 train transits)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">100% Retained</span>
+</div>
+<!-- Action Rail -->
+<div class="flex items-center justify-between pt-space-xs gap-space-sm">
+<button class="inline-flex items-center justify-center gap-2 flex-1 h-11 px-space-md rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all active:scale-95 shadow-sm" onclick="restoreTrip('archived-2', 'Swiss Alpine Circuit')">
+<span class="material-symbols-outlined text-[18px]">restore</span>
+<span>Restore trip</span>
+</button>
+<a class="inline-flex items-center justify-center gap-1.5 px-space-md h-11 bg-surface-container-high text-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-highest transition-colors" data-path="trip-details" href="#">
+<span>View preview</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State for Archived -->
+<div class="hidden flex-col items-center text-center p-space-xl my-space-lg rounded-xl bg-surface-container-low" id="archived-empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[32px]">inventory_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Nothing archived yet</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-space-lg">
+            Trips you decide to set aside or archive will be quietly conserved here. You can inspect or restore them to your active roster anytime.
+          </p>
+<button class="inline-flex items-center gap-2 px-space-lg h-12 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider shadow-sm hover:bg-primary-container transition-all" onclick="switchTab('completed')">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Return to completed journeys</span>
+</button>
+</div>
+</section>
+<!-- Editorial Footer Curation Note -->
+<div class="mt-space-xl p-space-lg rounded-xl bg-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-semibold">Travel Dossier Archival Protocol</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All past reservations, ticket manifests, GPS trail records, and AI curator observations remain cryptographically protected in your private ledger.</p>
+</div>
+</div>
+<button class="flex-shrink-0 inline-flex items-center gap-2 px-space-md h-11 bg-surface-container-lowest hover:bg-surface-container-high text-primary rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="triggerDossierDownload()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download full dossier (.zip)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- UNDO TOAST NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="undo-toast">
+<div class="flex items-center gap-3 bg-inverse-surface text-inverse-on-surface px-space-md py-3 rounded-xl shadow-xl">
+<span class="material-symbols-outlined text-[20px] text-inverse-primary" id="toast-icon">check_circle</span>
+<span class="font-body-md text-body-md" id="toast-text">Trip updated successfully.</span>
+<button class="ml-2 font-label-md text-label-md uppercase tracking-wider text-inverse-primary hover:underline font-semibold pointer-events-auto" id="toast-undo-btn" onclick="executeUndo()">Undo</button>
+</div>
+</div>
+<!-- DELETE CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-sm p-4" id="delete-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center gap-3 text-error">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px] text-on-error-container">warning</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-semibold text-on-surface">Permanently Delete Trip?</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Are you certain you wish to remove <strong class="text-on-surface" id="delete-modal-trip-name">this trip</strong>? All associated itineraries, custom notes, receipts, and offline checkpoints will be permanently purged.
+      </p>
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-space-md h-11 rounded-lg text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors" onclick="closeDeleteModal()">
+          Cancel
+        </button>
+<button class="px-space-lg h-11 rounded-lg bg-error text-on-error hover:bg-error/90 font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="executeDelete()">
+          Delete permanently
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let activeTab = 'completed';
+  let activeStyle = 'all';
+  let pendingDeleteId = null;
+  let lastAction = null;
+  let toastTimeout = null;
+
+  function switchTab(tab) {
+    activeTab = tab;
+    const tabCompleted = document.getElementById('tab-completed');
+    const tabArchived = document.getElementById('tab-archived');
+    const sectionCompleted = document.getElementById('section-completed');
+    const sectionArchived = document.getElementById('section-archived');
+
+    if (tab === 'completed') {
+      tabCompleted.className = "flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm font-semibold";
+      tabArchived.className = "flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 text-on-surface-variant hover:text-on-surface font-medium";
+      sectionCompleted.classList.remove('hidden');
+      sectionArchived.classList.add('hidden');
+    } else {
+      tabArchived.className = "flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm font-semibold";
+      tabCompleted.className = "flex items-center gap-2 px-space-lg py-2 rounded-lg font-title-md text-title-md transition-all duration-200 text-on-surface-variant hover:text-on-surface font-medium";
+      sectionArchived.classList.remove('hidden');
+      sectionCompleted.classList.add('hidden');
+    }
+    closeAllMenus();
+    applyFilters();
+  }
+
+  function selectStyleFilter(style, button) {
+    activeStyle = style;
+    document.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.className = "filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high";
+    });
+    button.className = "filter-chip active-filter flex-shrink-0 px-3.5 py-1.5 rounded-lg text-label-md font-label-md tracking-wide transition-all bg-primary text-on-primary";
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const searchVal = (document.getElementById('trip-search-input').value || '').trim().toLowerCase();
+    const clearBtn = document.getElementById('search-clear-btn');
+    if (searchVal.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+
+    const currentSectionId = activeTab === 'completed' ? 'completed-grid' : 'archived-grid';
+    const grid = document.getElementById(currentSectionId);
+    const cards = grid.querySelectorAll('.trip-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const title = (card.getAttribute('data-title') || '').toLowerCase();
+      const location = (card.getAttribute('data-location') || '').toLowerCase();
+      const style = card.getAttribute('data-style') || '';
+
+      const matchesSearch = !searchVal || title.includes(searchVal) || location.includes(searchVal);
+      const matchesStyle = activeStyle === 'all' || style.toLowerCase().includes(activeStyle.toLowerCase());
+
+      if (matchesSearch && matchesStyle) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    const emptyState = document.getElementById(activeTab === 'completed' ? 'completed-empty-state' : 'archived-empty-state');
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+    }
+  }
+
+  function clearSearch() {
+    document.getElementById('trip-search-input').value = '';
+    applyFilters();
+  }
+
+  function applySort() {
+    const sortVal = document.getElementById('trip-sort-select').value;
+    const currentSectionId = activeTab === 'completed' ? 'completed-grid' : 'archived-grid';
+    const grid = document.getElementById(currentSectionId);
+    const cards = Array.from(grid.querySelectorAll('.trip-card'));
+
+    cards.sort((a, b) => {
+      if (sortVal === 'recent') {
+        return new Date(b.getAttribute('data-date')) - new Date(a.getAttribute('data-date'));
+      } else if (sortVal === 'oldest') {
+        return new Date(a.getAttribute('data-date')) - new Date(b.getAttribute('data-date'));
+      } else if (sortVal === 'name-asc') {
+        return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'));
+      } else if (sortVal === 'duration') {
+        return parseInt(b.getAttribute('data-days')) - parseInt(a.getAttribute('data-days'));
+      }
+      return 0;
+    });
+
+    cards.forEach(card => grid.appendChild(card));
+  }
+
+  function toggleMenu(event, menuId) {
+    event.stopPropagation();
+    const menu = document.getElementById(menuId);
+    const isHidden = menu.classList.contains('hidden');
+    closeAllMenus();
+    if (isHidden) {
+      menu.classList.remove('hidden');
+      menu.classList.add('flex');
+    }
+  }
+
+  function closeAllMenus() {
+    document.querySelectorAll('.overflow-menu-container > div').forEach(menu => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.overflow-menu-container')) {
+      closeAllMenus();
+    }
+  });
+
+  function showToast(text, canUndo = true, icon = 'check_circle') {
+    const toast = document.getElementById('undo-toast');
+    const toastText = document.getElementById('toast-text');
+    const toastIcon = document.getElementById('toast-icon');
+    const undoBtn = document.getElementById('toast-undo-btn');
+
+    toastText.textContent = text;
+    toastIcon.textContent = icon;
+    if (canUndo) {
+      undoBtn.classList.remove('hidden');
+    } else {
+      undoBtn.classList.add('hidden');
+    }
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      hideToast();
+    }, 4500);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('undo-toast');
+    toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+
+  function executeUndo() {
+    if (!lastAction) return;
+    if (lastAction.type === 'archive') {
+      const card = document.querySelector(`[data-id="${lastAction.id}"]`);
+      if (card) {
+        card.style.display = '';
+        updateCounts();
+        showToast(`Restored "${lastAction.title}" to active view.`, false);
+      }
+    } else if (lastAction.type === 'restore') {
+      const card = document.querySelector(`[data-id="${lastAction.id}"]`);
+      if (card) {
+        card.style.display = '';
+        updateCounts();
+        showToast(`"${lastAction.title}" moved back to archives.`, false);
+      }
+    }
+    lastAction = null;
+    hideToast();
+  }
+
+  function archiveTrip(tripId, title) {
+    closeAllMenus();
+    const card = document.querySelector(`[data-id="${tripId}"]`);
+    if (card) {
+      card.style.display = 'none';
+      lastAction = { type: 'archive', id: tripId, title: title };
+      updateCounts();
+      showToast(`"${title}" moved to archived trips.`, true);
+      applyFilters();
+    }
+  }
+
+  function restoreTrip(tripId, title) {
+    closeAllMenus();
+    const card = document.querySelector(`[data-id="${tripId}"]`);
+    if (card) {
+      card.style.display = 'none';
+      lastAction = { type: 'restore', id: tripId, title: title };
+      updateCounts();
+      showToast(`"${title}" restored to active collection.`, true);
+      applyFilters();
+    }
+  }
+
+  function updateCounts() {
+    const completedVisible = document.querySelectorAll('#completed-grid .trip-card:not([style*="display: none"])').length;
+    const archivedVisible = document.querySelectorAll('#archived-grid .trip-card:not([style*="display: none"])').length;
+
+    document.getElementById('stat-completed-count').textContent = `${completedVisible} Completed`;
+    document.getElementById('stat-archived-count').textContent = `${archivedVisible} Archived`;
+    document.getElementById('tab-completed-badge').textContent = completedVisible;
+    document.getElementById('tab-archived-badge').textContent = archivedVisible;
+  }
+
+  function duplicateTrip(title) {
+    closeAllMenus();
+    showToast(`Created duplicate draft of "${title}".`, false, 'file_copy');
+  }
+
+  function exportMemoryDossier(title) {
+    closeAllMenus();
+    showToast(`Exporting travel memory dossier for "${title}"...`, false, 'picture_as_pdf');
+  }
+
+  function triggerDossierDownload() {
+    showToast(`Compiling full zip dossier of all past expeditions...`, false, 'archive');
+  }
+
+  function confirmDeleteModal(tripId, title) {
+    closeAllMenus();
+    pendingDeleteId = tripId;
+    document.getElementById('delete-modal-trip-name').textContent = `"${title}"`;
+    const modal = document.getElementById('delete-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeDeleteModal() {
+    const modal = document.getElementById('delete-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    pendingDeleteId = null;
+  }
+
+  function executeDelete() {
+    if (pendingDeleteId) {
+      const card = document.querySelector(`[data-id="${pendingDeleteId}"]`);
+      if (card) {
+        card.remove();
+        updateCounts();
+        showToast('Trip record has been deleted permanently.', false, 'delete');
+        applyFilters();
+      }
+    }
+    closeDeleteModal();
+  }
+</script></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="trip-history-and-archived-trips" href="#">Trip History &amp; Archives</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#">Notifications</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="profile" href="#">Profile</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

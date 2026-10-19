@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a aria-current="page" class="transition-colors text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-highest text-primary font-bold" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Toast Notification (Top Right Floating) -->
+<div class="fixed top-24 right-6 z-50 transform translate-y-[-20px] opacity-0 pointer-events-none transition-all duration-300 ease-out flex items-center gap-3 bg-surface-container-lowest text-on-surface px-space-md py-3 rounded-lg shadow-xl" id="toast-notification">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-sm text-primary font-semibold">Itinerary Link Copied</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Shareable link ready on your clipboard</span>
+</div>
+<button class="text-outline hover:text-on-surface ml-2" onclick="hideToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Delete Modal Dialog -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-4" id="delete-modal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-xl p-space-lg shadow-2xl transition-transform duration-200">
+<div class="flex items-center gap-3 text-secondary mb-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">delete_forever</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Archive or Delete Trip?</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+        Are you sure you want to delete <span class="font-semibold text-on-surface" id="delete-trip-target">this itinerary</span>? This action removes all AI-curated routes, bookings, and logistical notes.
+      </p>
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5">
+<button class="w-full sm:w-auto h-11 px-5 rounded-lg font-title-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="closeDeleteModal()">
+          Cancel
+        </button>
+<button class="w-full sm:w-auto h-11 px-6 rounded-lg bg-secondary hover:bg-on-secondary-container text-on-secondary font-title-md text-body-md transition-all shadow-sm" onclick="confirmDelete()">
+          Delete Trip
+        </button>
+</div>
+</div>
+</div>
+<!-- Main Container -->
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin w-full pb-24">
+<!-- Section 1: Page Header with Responsive Switcher -->
+<header class="pt-8 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider mb-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Your Travel Space
+        </div>
+<h1 class="font-display-hero text-headline-lg-mobile md:text-display-hero text-primary font-normal tracking-tight">
+          Every journey, all in one place.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 leading-relaxed">
+          Revisit curated day plans, pick up where your inspiration paused, and keep every expedition orchestrated to your cadence.
+        </p>
+</div>
+<!-- Action Area: View Switcher & Primary Button -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<!-- Interactive Preview Mode Pill -->
+<div class="bg-surface-container-high p-1 rounded-lg flex items-center self-start sm:self-auto">
+<button class="px-3.5 py-1.5 rounded font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all" id="tab-btn-populated" onclick="setViewMode('populated')">
+            Active Trips (3)
+          </button>
+<button class="px-3.5 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-empty" onclick="setViewMode('empty')">
+            Empty State Preview
+          </button>
+</div>
+<!-- Plan New Trip CTA -->
+<a class="inline-flex items-center justify-center gap-2 h-11 px-6 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg shadow-sm active:scale-[0.98] transition-all" data-path="plan-my-trip" href="#">
+<span class="material-symbols-outlined text-[19px]">add</span>
+<span>Plan a New Trip</span>
+</a>
+</div>
+</header>
+<!-- Populated View Wrapper -->
+<div class="flex flex-col gap-8 transition-opacity duration-300" id="populated-view">
+<!-- Section 2: Summary Metrics Rail -->
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Upcoming Trips</span>
+<span class="material-symbols-outlined text-primary text-[22px]">calendar_month</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">02</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Departing within 90 days</span>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between text-on-surface-variant/80">
+<span class="font-body-sm text-[12px]">Kyoto, Japan • Bernese Oberland</span>
+<span class="font-label-sm text-[11px] bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">Live Sync</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Saved &amp; Drafts</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">edit_note</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">01</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">In-progress route</span>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between text-on-surface-variant/80">
+<span class="font-body-sm text-[12px]">Bali Slow Escape (Day 4 of 10)</span>
+<span class="font-label-sm text-[11px] bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-0.5 rounded">Drafting</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Destinations Explored</span>
+<span class="material-symbols-outlined text-surface-tint text-[22px]">travel_explore</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">06</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Across 4 global regions</span>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between text-on-surface-variant/80">
+<span class="font-body-sm text-[12px]">Sample archive data</span>
+<span class="font-label-sm text-[11px] bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded">Verified</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Filters, Search, and Sort Toolbar -->
+<section class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+<!-- Search Field -->
+<div class="relative flex-1 min-w-[260px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary outline-none transition-all" id="trip-search-input" oninput="filterTrips()" placeholder="Search trips by destination or journey name..." type="text"/>
+</div>
+<!-- Filter Segmented Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0" id="filter-tabs">
+<button class="filter-tab active-filter px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all" onclick="setFilter('all', this)">
+            All Trips (3)
+          </button>
+<button class="filter-tab px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('upcoming', this)">
+            Upcoming (2)
+          </button>
+<button class="filter-tab px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('draft', this)">
+            Drafts (1)
+          </button>
+<button class="filter-tab px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap text-on-surface-variant/60 hover:text-on-surface hover:bg-surface-container transition-all" onclick="setFilter('past', this)">
+            Past Trips (0)
+          </button>
+</div>
+<!-- Sort Select Dropdown -->
+<div class="flex items-center gap-2 self-end lg:self-auto min-w-[190px]">
+<span class="font-body-sm text-[12px] text-outline whitespace-nowrap">Sort:</span>
+<div class="relative w-full">
+<select class="w-full h-11 pl-3 pr-8 bg-surface-container-low rounded-lg font-title-md text-body-sm text-on-surface appearance-none focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer transition-all" id="sort-select" onchange="sortTrips(this.value)">
+<option value="recent">Recently Updated</option>
+<option value="date">Departure Date</option>
+<option value="name">Destination Name</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Section 4: Trip Cards Responsive Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="trips-grid">
+<!-- Card 1: Kyoto (Upcoming) -->
+<article class="trip-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-date="2025-10-14" data-name="Autumn Cultural Escape Kyoto" data-status="upcoming">
+<div>
+<!-- Image Frame -->
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Traditional Kyoto alleyway at twilight with weathered wooden machiya houses, warm paper lanterns glowing in amber, stone paved street glistening softly after a gentle autumn rain, cinematic documentary travel photography in muted earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-fjSycIkef9nrBLIqw7ENYFs0LjMEEzrJ73UIUwk8ZFtR9jNCAxiRN56enBvqVn_AICa0OU0HG1GwXrbthkY4gzIQik4p6Brj8SjdSx90Q_iwr4X_mLam20DlkPRqykJRFUpEiwlRLFmkGWweeSsPSFIz32ULbftIZQl-b2kOXEFXGUQB9rupLbnno2H_kc9l7F9Hw_iYj877t9NqRB0ST7_tBwA4cO7SmxhXZbprVMnC1NQF4JMrSA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Badges Over Image -->
+<div class="absolute top-3.5 left-3.5 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-md text-[11px] uppercase tracking-wider font-semibold shadow-sm">
+                  Upcoming
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">auto_awesome</span>
+                  AI Curated
+                </span>
+</div>
+<!-- More Options Menu Trigger -->
+<div class="absolute top-3.5 right-3.5">
+<button class="w-8 h-8 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:bg-surface flex items-center justify-center transition-all shadow-sm" onclick="toggleCardMenu('menu-kyoto', event)">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<!-- Popover Dropdown -->
+<div class="card-popover hidden absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-lg shadow-xl py-1.5 z-20" id="menu-kyoto">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="showToast('Kyoto trip link copied!'); toggleCardMenu('menu-kyoto', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">share</span>
+<span>Share / Export PDF</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="duplicateCard('Autumn Cultural Escape'); toggleCardMenu('menu-kyoto', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">content_copy</span>
+<span>Duplicate Trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="toggleCardMenu('menu-kyoto', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">archive</span>
+<span>Archive Trip</span>
+</button>
+<div class="my-1 border-t border-surface-container"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-secondary hover:bg-secondary-fixed/50 flex items-center gap-2.5" onclick="openDeleteModal('Autumn Cultural Escape (Kyoto)'); toggleCardMenu('menu-kyoto', event)">
+<span class="material-symbols-outlined text-[18px] text-secondary">delete</span>
+<span>Delete Trip</span>
+</button>
+</div>
+</div>
+<!-- Bottom Overlay Title -->
+<div class="absolute bottom-3 left-4 right-4 text-on-primary">
+<p class="font-label-md text-label-md text-primary-fixed uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                  Kyoto, Japan
+                </p>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-normal leading-tight">
+                  Autumn Cultural Escape
+                </h3>
+</div>
+</div>
+<!-- Card Body Logistics -->
+<div class="p-5 flex flex-col gap-4">
+<!-- Key Travel Info -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Dates</span>
+<span class="font-title-md text-body-sm text-on-surface">Oct 14 – Oct 22, 2025</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">group</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Travellers</span>
+<span class="font-title-md text-body-sm text-on-surface">2 travellers • Couple</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+                  8 days • 7 nights
+                </span>
+<span class="font-label-sm text-[11px] text-outline">Sample dates</span>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-title-md text-body-sm text-primary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">check_circle</span>
+                    Itinerary 100% Ready
+                  </span>
+<span class="font-label-sm text-on-surface-variant">7 of 7 days locked</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-full h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Actions Footer -->
+<div class="px-5 pb-5 pt-1 flex items-center gap-2">
+<a class="flex-1 h-11 inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all" data-path="plan-my-trip" href="#">
+<span>View Itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="h-11 px-4 inline-flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider transition-all" data-path="plan-my-trip" href="#">
+              Edit
+            </a>
+</div>
+</article>
+<!-- Card 2: Swiss Alps (Upcoming) -->
+<article class="trip-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-date="2025-07-10" data-name="Alpine Ridge &amp; Panoramic Rail Switzerland" data-status="upcoming">
+<div>
+<!-- Image Frame -->
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Solo hiker overlooking dramatic green alpine valley in Switzerland bathed in golden morning sunrise light, mountain peaks shrouded in light mist, distant rustic chalets, cinematic editorial travel shot with muted forest green and ivory tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1gttfubxPdBM7De9SBCUtbJa2hRapCbibjnzvkKYw_pcwR4bPjt38d1YqKU3mlG68FKY2YN_7mEmRdJ04n5xESdzZNdEgbjQWm0inBofBTItsDmYgWtPWBINWErTlsrfAozNIFX85fTQpx158MMw8e9p4HOrpfhbKRagl0bItlT3tFRvmg0g9BReRsmRQj__8QgtCVo86Z9vmf9CJ5Lhm7AuY_Q5VCUJMrKfyr-8szRTIS-XsqvrMkw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Badges Over Image -->
+<div class="absolute top-3.5 left-3.5 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary font-label-md text-[11px] uppercase tracking-wider font-semibold shadow-sm">
+                  Upcoming
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">train</span>
+                  Scenic Rail Pass
+                </span>
+</div>
+<!-- More Options Menu Trigger -->
+<div class="absolute top-3.5 right-3.5">
+<button class="w-8 h-8 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:bg-surface flex items-center justify-center transition-all shadow-sm" onclick="toggleCardMenu('menu-swiss', event)">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="card-popover hidden absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-lg shadow-xl py-1.5 z-20" id="menu-swiss">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="showToast('Swiss itinerary link copied!'); toggleCardMenu('menu-swiss', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">share</span>
+<span>Share / Export PDF</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="duplicateCard('Alpine Ridge &amp; Panoramic Rail'); toggleCardMenu('menu-swiss', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">content_copy</span>
+<span>Duplicate Trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="toggleCardMenu('menu-swiss', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">archive</span>
+<span>Archive Trip</span>
+</button>
+<div class="my-1 border-t border-surface-container"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-secondary hover:bg-secondary-fixed/50 flex items-center gap-2.5" onclick="openDeleteModal('Alpine Ridge &amp; Panoramic Rail'); toggleCardMenu('menu-swiss', event)">
+<span class="material-symbols-outlined text-[18px] text-secondary">delete</span>
+<span>Delete Trip</span>
+</button>
+</div>
+</div>
+<!-- Bottom Overlay Title -->
+<div class="absolute bottom-3 left-4 right-4 text-on-primary">
+<p class="font-label-md text-label-md text-primary-fixed uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                  Bernese Oberland, Switzerland
+                </p>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-normal leading-tight">
+                  Alpine Ridge &amp; Panoramic Rail
+                </h3>
+</div>
+</div>
+<!-- Card Body Logistics -->
+<div class="p-5 flex flex-col gap-4">
+<!-- Key Travel Info -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Dates</span>
+<span class="font-title-md text-body-sm text-on-surface">Jul 10 – Jul 18, 2025</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">family_restroom</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Travellers</span>
+<span class="font-title-md text-body-sm text-on-surface">4 travellers • Family</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+                  9 days • 8 nights
+                </span>
+<span class="font-label-sm text-[11px] text-outline">Sample dates</span>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-title-md text-body-sm text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px] text-secondary">pending</span>
+                    Itinerary 85% Drafted
+                  </span>
+<span class="font-label-sm text-on-surface-variant">6 of 7 days curated</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-[85%] h-full bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Actions Footer -->
+<div class="px-5 pb-5 pt-1 flex items-center gap-2">
+<a class="flex-1 h-11 inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all" data-path="plan-my-trip" href="#">
+<span>View Itinerary</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="h-11 px-4 inline-flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider transition-all" data-path="plan-my-trip" href="#">
+              Edit
+            </a>
+</div>
+</article>
+<!-- Card 3: Bali (Draft) -->
+<article class="trip-card group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-date="2025-11-03" data-name="Island Slow Escape &amp; Wellness Bali Ubud Sidemen" data-status="draft">
+<div>
+<!-- Image Frame -->
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Stunning emerald green terraced rice paddies in Sidemen Bali early morning mist, solitary farmer with conical hat walking stone ridge, towering tropical palm trees and distant volcano silhouettes in soft atmospheric lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeRG3PZs5ISB3za35tAw7BukQxR60tFqvR3PVoauMWXIMiFGIPSsMeIZB394Lcgsi1KnEUGYOSZa8aIljuGOYsN-dMysR4jjG_8UOlzj4dwVyT-AhNZligzcjxSzacbd3npHkf0w_cu8iemauksgDDsbj3PjKbmFNJQO_ulSnk3nUSQb_gZtCCUspiznri22WOy-k9eZcTlH96Cut2ZEo-ZBqcDoZK30YCJYp3sGjRkh0KYpga_Y0Yzg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Badges Over Image -->
+<div class="absolute top-3.5 left-3.5 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-md text-[11px] uppercase tracking-wider font-semibold shadow-sm">
+                  Draft
+                </span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-sm text-secondary font-label-sm text-[11px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">spa</span>
+                  Wellness Focus
+                </span>
+</div>
+<!-- More Options Menu Trigger -->
+<div class="absolute top-3.5 right-3.5">
+<button class="w-8 h-8 rounded-full bg-surface/90 backdrop-blur-sm text-on-surface hover:bg-surface flex items-center justify-center transition-all shadow-sm" onclick="toggleCardMenu('menu-bali', event)">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<div class="card-popover hidden absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-lg shadow-xl py-1.5 z-20" id="menu-bali">
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="showToast('Bali draft link copied!'); toggleCardMenu('menu-bali', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">share</span>
+<span>Share / Export PDF</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="duplicateCard('Island Slow Escape'); toggleCardMenu('menu-bali', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">content_copy</span>
+<span>Duplicate Trip</span>
+</button>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-on-surface hover:bg-surface-container flex items-center gap-2.5" onclick="toggleCardMenu('menu-bali', event)">
+<span class="material-symbols-outlined text-[18px] text-outline">archive</span>
+<span>Archive Trip</span>
+</button>
+<div class="my-1 border-t border-surface-container"></div>
+<button class="w-full px-4 py-2 text-left font-body-sm text-body-sm text-secondary hover:bg-secondary-fixed/50 flex items-center gap-2.5" onclick="openDeleteModal('Island Slow Escape &amp; Wellness'); toggleCardMenu('menu-bali', event)">
+<span class="material-symbols-outlined text-[18px] text-secondary">delete</span>
+<span>Delete Trip</span>
+</button>
+</div>
+</div>
+<!-- Bottom Overlay Title -->
+<div class="absolute bottom-3 left-4 right-4 text-on-primary">
+<p class="font-label-md text-label-md text-primary-fixed uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                  Ubud &amp; Sidemen, Bali
+                </p>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-normal leading-tight">
+                  Island Slow Escape &amp; Wellness
+                </h3>
+</div>
+</div>
+<!-- Card Body Logistics -->
+<div class="p-5 flex flex-col gap-4">
+<!-- Key Travel Info -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Dates</span>
+<span class="font-title-md text-body-sm text-on-surface">Nov 3 – Nov 12, 2025</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">person</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] uppercase text-outline">Travellers</span>
+<span class="font-title-md text-body-sm text-on-surface">1 traveller • Solo</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+                  10 days • Circadian paced
+                </span>
+<span class="font-label-sm text-[11px] text-outline">Sample dates</span>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-title-md text-body-sm text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px] text-secondary">edit_calendar</span>
+                    Drafting • 40% Complete
+                  </span>
+<span class="font-label-sm text-on-surface-variant">4 of 10 days plotted</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="w-[40%] h-full bg-secondary-container rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Actions Footer -->
+<div class="px-5 pb-5 pt-1 flex items-center gap-2">
+<a class="flex-1 h-11 inline-flex items-center justify-center gap-1.5 rounded-lg bg-secondary hover:bg-on-secondary-container text-on-secondary font-label-md text-label-md uppercase tracking-wider transition-all shadow-sm" data-path="plan-my-trip" href="#">
+<span>Resume Planning</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="h-11 px-4 inline-flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider transition-all" data-path="plan-my-trip" href="#">
+              Edit
+            </a>
+</div>
+</article>
+</section>
+<!-- Zero-match search feedback inside populated view -->
+<div class="hidden py-16 text-center bg-surface-container-lowest rounded-xl shadow-sm" id="no-search-results">
+<span class="material-symbols-outlined text-[48px] text-outline mb-2">travel_explore</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">No journeys match your filter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-sm mx-auto">
+          Try adjusting your search query or switch back to the 'All Trips' tab.
+        </p>
+<button class="mt-4 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-title-md text-body-sm text-primary transition-all" onclick="resetFilters()">
+          Clear Search Filter
+        </button>
+</div>
+</div>
+<!-- Section 5: Dedicated Empty State View (Toggleable & High Fidelity) -->
+<div class="hidden flex-col items-center justify-center text-center py-20 px-4 bg-surface-container-lowest rounded-2xl shadow-sm" id="empty-state-view">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-6 shadow-inner">
+<span class="material-symbols-outlined text-[40px] text-primary">explore</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[14px]">map</span>
+        Ready When You Are
+      </div>
+<h2 class="font-display-hero text-headline-md md:text-headline-lg text-primary max-w-lg mb-3">
+        Your next adventure starts here.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto mb-8 leading-relaxed">
+        Create a personalized itinerary and your trips will appear here, ready whenever wanderlust strikes.
+      </p>
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<a class="h-12 px-7 inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg shadow-sm transition-all" data-path="plan-my-trip" href="#">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">auto_awesome</span>
+<span>Plan Your First Trip</span>
+</a>
+<button class="h-12 px-6 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md uppercase tracking-wider text-primary transition-all" onclick="setViewMode('populated')">
+          Back to Demo Trips
+        </button>
+</div>
+<!-- Editorial Guarantee Quote -->
+<div class="mt-12 pt-8 border-t border-surface-container max-w-md text-center">
+<p class="font-body-sm text-[12px] text-outline leading-relaxed">
+          Trip Genius AI synthesizes real-world logistics, opening times, transit connections, and natural circadian pacing into printable, adaptable journeys.
+        </p>
+</div>
+</div>
+</div>
+<!-- Inline Script for Interactivity -->
+<script>
+    // Tab and View State
+    function setViewMode(mode) {
+      const populated = document.getElementById('populated-view');
+      const empty = document.getElementById('empty-state-view');
+      const btnPopulated = document.getElementById('tab-btn-populated');
+      const btnEmpty = document.getElementById('tab-btn-empty');
+
+      if (mode === 'populated') {
+        populated.classList.remove('hidden');
+        empty.classList.add('hidden');
+        btnPopulated.className = 'px-3.5 py-1.5 rounded font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all';
+        btnEmpty.className = 'px-3.5 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      } else {
+        populated.classList.add('hidden');
+        empty.classList.remove('hidden');
+        empty.classList.add('flex');
+        btnEmpty.className = 'px-3.5 py-1.5 rounded font-label-md text-label-md text-on-primary bg-primary shadow-sm transition-all';
+        btnPopulated.className = 'px-3.5 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    }
+
+    // Filter Chips
+    let currentFilter = 'all';
+
+    function setFilter(status, el) {
+      currentFilter = status;
+      const allTabs = document.querySelectorAll('.filter-tab');
+      allTabs.forEach(tab => {
+        tab.className = 'filter-tab px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all';
+      });
+      el.className = 'filter-tab active-filter px-4 h-9 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary text-on-primary shadow-sm transition-all';
+      filterTrips();
+    }
+
+    // Combined Search and Filter
+    function filterTrips() {
+      const query = (document.getElementById('trip-search-input').value || '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.trip-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const status = card.getAttribute('data-status');
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        
+        const matchesStatus = (currentFilter === 'all') || (currentFilter === status);
+        const matchesQuery = !query || name.includes(query);
+
+        if (matchesStatus && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noResults = document.getElementById('no-search-results');
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    function resetFilters() {
+      document.getElementById('trip-search-input').value = '';
+      const firstTab = document.querySelector('.filter-tab');
+      if (firstTab) setFilter('all', firstTab);
+    }
+
+    // Sorting
+    function sortTrips(criteria) {
+      const grid = document.getElementById('trips-grid');
+      const cards = Array.from(document.querySelectorAll('.trip-card'));
+
+      cards.sort((a, b) => {
+        if (criteria === 'date') {
+          return (a.getAttribute('data-date') || '').localeCompare(b.getAttribute('data-date') || '');
+        } else if (criteria === 'name') {
+          return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+        } else {
+          // default recent (original DOM order or simple reverse)
+          return 0;
+        }
+      });
+
+      cards.forEach(card => grid.appendChild(card));
+    }
+
+    // Popover Action Menu Toggle
+    function toggleCardMenu(menuId, event) {
+      event.stopPropagation();
+      const targetMenu = document.getElementById(menuId);
+      const allMenus = document.querySelectorAll('.card-popover');
+      
+      allMenus.forEach(m => {
+        if (m !== targetMenu) m.classList.add('hidden');
+      });
+
+      targetMenu.classList.toggle('hidden');
+    }
+
+    // Close menus on click outside
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.card-popover').forEach(m => m.classList.add('hidden'));
+    });
+
+    // Toast Notification
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast-notification');
+      if (message) {
+        const textSpan = toast.querySelector('.font-title-md');
+        if (textSpan) textSpan.textContent = message;
+      }
+      clearTimeout(toastTimeout);
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      toastTimeout = setTimeout(() => {
+        hideToast();
+      }, 3500);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('toast-notification');
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-20px]');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }
+
+    // Duplicate Card Mock Action
+    function duplicateCard(name) {
+      showToast(`Duplicated "${name}" to drafts!`);
+    }
+
+    // Delete Modal
+    let pendingDeleteTarget = '';
+    function openDeleteModal(name) {
+      pendingDeleteTarget = name;
+      document.getElementById('delete-trip-target').textContent = `"${name}"`;
+      const modal = document.getElementById('delete-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeDeleteModal() {
+      const modal = document.getElementById('delete-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function confirmDelete() {
+      closeDeleteModal();
+      showToast(`Removed itinerary from your space.`);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

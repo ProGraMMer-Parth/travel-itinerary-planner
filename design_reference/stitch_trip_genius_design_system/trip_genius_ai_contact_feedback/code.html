@@ -1,0 +1,465 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span class="">Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a></div><div class="flex items-center gap-space-sm lg:hidden"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="notifications" href="#">Notifications</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="profile" href="#">Profile</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span class="">Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Subtle Architectural Ambient Accent -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 right-1/4 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-1/3 -left-20 w-80 h-80 bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin pt-space-md pb-space-xl"><!-- Breadcrumb -->
+<nav aria-label="Breadcrumbs" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md tracking-wider uppercase mb-space-lg">
+  <a class="hover:text-primary transition-colors flex items-center gap-1" data-path="home" href="#">
+    <span class="material-symbols-outlined text-[16px]">home</span>
+    <span class="">Home</span>
+  </a>
+  <span class="text-outline-variant">/</span>
+  <span class="text-primary font-semibold">Contact &amp; Feedback</span>
+</nav>
+
+<!-- Main Two-Column Feedback Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl items-start mb-space-xl">
+  <!-- Left Column: Guidance & Information -->
+  <div class="md:col-span-5 flex flex-col justify-start pr-0 md:pr-4 pt-2">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-primary font-label-sm text-label-sm uppercase tracking-widest mb-space-sm shadow-sm w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <span class="">Traveler Inquiries</span>
+    </div>
+    <h1 class="font-headline-lg text-headline-lg text-[#252923] tracking-tight mb-space-sm">
+      Let’s talk
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-space-lg">
+      Questions, ideas, or something not working as expected? Tell us about it.
+    </p>
+
+    <!-- Informational Cards -->
+    <div class="space-y-space-md mb-space-lg">
+      <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-surface-container-low transition-colors hover:bg-surface-container">
+        <div class="w-9 h-9 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0 mt-0.5">
+          <span class="material-symbols-outlined text-[20px]">help_outline</span>
+        </div>
+        <div>
+          <h2 class="font-title-md text-title-md text-primary font-semibold">General questions</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Get help using Trip Genius AI.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-surface-container-low transition-colors hover:bg-surface-container">
+        <div class="w-9 h-9 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0 mt-0.5">
+          <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+        </div>
+        <div>
+          <h2 class="font-title-md text-title-md text-primary font-semibold">Share an idea</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Suggest a feature or improvement.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-surface-container-low transition-colors hover:bg-surface-container">
+        <div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-primary flex items-center justify-center shrink-0 mt-0.5">
+          <span class="material-symbols-outlined text-[20px]">build</span>
+        </div>
+        <div>
+          <h2 class="font-title-md text-title-md text-primary font-semibold">Report a problem</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Tell us about a technical issue.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Cadence Note -->
+    <div class="p-4 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 text-on-surface-variant font-body-sm text-body-sm flex items-start gap-3">
+      <span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">verified</span>
+      <p class="">We value your feedback and use it to improve your travel-planning experience.</p>
+    </div>
+  </div>
+
+  <!-- Right Column: Card Surface with Form -->
+  <div class="md:col-span-7 bg-[#FFFFFF] border border-[#E4E2D9] rounded-xl p-8 md:p-10 shadow-sm" id="feedback-card">
+    <form class="space-y-space-md" id="feedback-form" novalidate="">
+      <!-- 1. What is this about? (Dropdown) -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label class="block font-title-md text-title-md text-primary font-semibold" for="category-select">
+            What is this about? <span class="text-secondary">*</span>
+          </label>
+          <span class="hidden text-error font-body-sm text-body-sm flex items-center gap-1" id="category-error">
+            <span class="material-symbols-outlined text-[16px]">error</span> Please select a topic
+          </span>
+        </div>
+        <div class="relative">
+          <select class="w-full min-h-[44px] h-11 px-3.5 pr-10 rounded-lg bg-surface-container-lowest border border-[#E4E2D9] text-on-surface font-body-md text-body-md focus:border-[#244A3A] focus:ring-2 focus:ring-[#244A3A]/20 outline-none appearance-none transition-all cursor-pointer" id="category-select" name="category" required="">
+            <option value="">Select a category</option>
+            <option value="general">General feedback</option>
+            <option value="feature">Feature suggestion</option>
+            <option value="bug">Bug report</option>
+            <option value="trip_planning">Trip-planning issue</option>
+            <option value="account">Account issue</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="material-symbols-outlined absolute right-3 top-3 text-[20px] text-on-surface-variant pointer-events-none">
+            expand_more
+          </span>
+        </div>
+      </div>
+
+      <!-- 2. Subject (Single-line Input) -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label class="block font-title-md text-title-md text-primary font-semibold" for="subject-input">
+            Subject <span class="text-secondary">*</span>
+          </label>
+          <span class="hidden text-error font-body-sm text-body-sm flex items-center gap-1" id="subject-error">
+            <span class="material-symbols-outlined text-[16px]">error</span> Subject is required
+          </span>
+        </div>
+        <input class="w-full min-h-[44px] h-11 px-3.5 rounded-lg bg-surface-container-lowest border border-[#E4E2D9] text-on-surface font-body-md text-body-md focus:border-[#244A3A] focus:ring-2 focus:ring-[#244A3A]/20 outline-none transition-all placeholder:text-outline" id="subject-input" name="subject" placeholder="Briefly describe your note or question" required="" type="text">
+      </div>
+
+      <!-- 3. Your message (Multiline Textarea) -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label class="block font-title-md text-title-md text-primary font-semibold" for="message-input">
+            Your message <span class="text-secondary">*</span>
+          </label>
+          <span class="hidden text-error font-body-sm text-body-sm flex items-center gap-1" id="message-error">
+            <span class="material-symbols-outlined text-[16px]">error</span> Please provide your message
+          </span>
+        </div>
+        <div class="relative">
+          <textarea class="w-full min-h-[160px] p-3.5 pb-8 rounded-lg bg-surface-container-lowest border border-[#E4E2D9] text-on-surface font-body-md text-body-md focus:border-[#244A3A] focus:ring-2 focus:ring-[#244A3A]/20 outline-none transition-all placeholder:text-outline resize-y" id="message-input" maxlength="1000" name="message" placeholder="Tell us a little more about your experience…" required=""></textarea>
+          <div class="absolute bottom-2.5 right-3 font-label-sm text-label-sm text-on-surface-variant select-none">
+            <span id="char-counter" class="">0</span> / 1,000 characters
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Email address -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label class="block font-title-md text-title-md text-primary font-semibold" for="email-input">
+            Email address <span class="text-secondary">*</span>
+          </label>
+          <span class="hidden text-error font-body-sm text-body-sm flex items-center gap-1" id="email-error">
+            <span class="material-symbols-outlined text-[16px]">error</span> Valid email required
+          </span>
+        </div>
+        <input class="w-full min-h-[44px] h-11 px-3.5 rounded-lg bg-surface-container-lowest border border-[#E4E2D9] text-on-surface font-body-md text-body-md focus:border-[#244A3A] focus:ring-2 focus:ring-[#244A3A]/20 outline-none transition-all" id="email-input" name="email" required="" type="email" value="traveler@tripgenius.ai">
+      </div>
+
+      <!-- 5. Related trip (Optional dropdown) -->
+      <div class="space-y-1.5">
+        <label class="block font-title-md text-title-md text-primary font-semibold" for="trip-select">
+          Related trip <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(optional)</span>
+        </label>
+        <div class="relative">
+          <select class="w-full min-h-[44px] h-11 px-3.5 pr-10 rounded-lg bg-surface-container-lowest border border-[#E4E2D9] text-on-surface font-body-md text-body-md focus:border-[#244A3A] focus:ring-2 focus:ring-[#244A3A]/20 outline-none appearance-none transition-all cursor-pointer" id="trip-select" name="related_trip">
+            <option value="">None / General Inquiry</option>
+            <option value="kyoto">Kyoto Cultural Heritage — Kyoto, Japan (Oct 2025)</option>
+            <option value="jaipur">Jaipur Heritage Escape — Jaipur, India (Feb 2026)</option>
+            <option value="goa">Goa Coastal Getaway — Goa, India (Jan 2026)</option>
+            <option value="manali">Manali Mountain Retreat — Manali, India (Dec 2025)</option>
+          </select>
+          <span class="material-symbols-outlined absolute right-3 top-3 text-[20px] text-on-surface-variant pointer-events-none">
+            expand_more
+          </span>
+        </div>
+      </div>
+
+      <!-- Privacy Notice -->
+      <div class="flex items-start gap-2.5 pt-1 text-on-surface-variant font-body-sm text-body-sm">
+        <span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">shield</span>
+        <p class="">
+          By submitting, you agree that your comments will be processed in accordance with the 
+          <a class="text-primary underline font-medium hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Trip Genius AI Privacy Policy</a>.
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-space-sm">
+        <a class="w-full sm:w-auto min-h-[44px] h-11 px-space-lg rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center hover:bg-surface-container-high transition-all" data-path="home" href="#">
+          Cancel / Back
+        </a>
+        <button class="w-full sm:w-auto min-w-[190px] min-h-[44px] h-11 px-space-lg rounded-lg bg-[#244A3A] text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary active:scale-[0.98] shadow-sm transition-all cursor-pointer" id="submit-btn" type="submit">
+          <span class="btn-text">Send feedback</span>
+          <span class="material-symbols-outlined text-[18px] btn-icon">arrow_forward</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Success / Confirmation State View -->
+    <div class="hidden text-center py-space-xl px-space-md" id="confirmation-view">
+      <div class="w-16 h-16 rounded-full bg-primary-fixed text-primary flex items-center justify-center mx-auto mb-space-md shadow-sm">
+        <span class="material-symbols-outlined text-[36px]">check_circle</span>
+      </div>
+      <h2 class="font-headline-md text-headline-md text-primary mb-space-xs">
+        Thank you for helping us improve.
+      </h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto mb-space-lg leading-relaxed">
+        Your feedback has been recorded in this demo. We appreciate you taking the time to share your experience.
+      </p>
+      <div class="p-4 rounded-xl bg-surface-container-low max-w-md mx-auto mb-space-lg text-left flex items-start gap-3">
+        <span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">mark_email_read</span>
+        <div>
+          <span class="font-title-md text-title-md text-primary block font-semibold">Confirmation Dispatch</span>
+          <span class="font-body-sm text-body-sm text-on-surface-variant">A copy has been recorded for <strong class="text-on-surface font-semibold" id="confirmed-email-display">traveler@tripgenius.ai</strong>.</span>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a class="w-full sm:w-auto min-h-[44px] h-11 px-space-lg rounded-lg bg-[#244A3A] text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-sm" data-path="home" href="#">
+          <span class="">Back to Trip Genius AI</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        <button class="w-full sm:w-auto min-h-[44px] h-11 px-space-lg rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center hover:bg-surface-container-high transition-all" id="reset-form-btn" type="button">
+          Send Another Message
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Looking for something else? Quick-jump section -->
+<section class="mt-space-xl pt-space-lg border-t border-outline-variant/30">
+  <div class="flex items-center justify-between mb-space-md">
+    <div>
+      <h3 class="font-headline-sm text-headline-sm text-primary">Looking for something else?</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Instant jump points for active planning, account details, and concierge guides.</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+    <!-- Card 1: Help Center -->
+    <a class="group bg-surface-container-lowest p-5 rounded-xl hover:shadow-md transition-all flex flex-col justify-between border border-outline-variant/20" data-path="how-it-works" href="#">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">help_center</span>
+        </div>
+        <h4 class="font-title-lg text-title-lg text-primary mb-1">Help Center</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Find quick answers to common trip planning, calendar sync, &amp; itinerary queries.</p>
+      </div>
+      <div class="mt-space-md flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:translate-x-1 transition-transform">
+        <span class="">View Guide</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </div>
+    </a>
+    <!-- Card 2: Plan My Trip -->
+    <a class="group bg-surface-container-lowest p-5 rounded-xl hover:shadow-md transition-all flex flex-col justify-between border border-outline-variant/20" data-path="plan-my-trip" href="#">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center mb-space-sm group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+        </div>
+        <h4 class="font-title-lg text-title-lg text-primary mb-1">Plan My Trip</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Generate a customized AI itinerary in minutes with optimized rhythm &amp; local spots.</p>
+      </div>
+      <div class="mt-space-md flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:translate-x-1 transition-transform">
+        <span class="">Launch Planner</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </div>
+    </a>
+    <!-- Card 3: My Trips -->
+    <a class="group bg-surface-container-lowest p-5 rounded-xl hover:shadow-md transition-all flex flex-col justify-between border border-outline-variant/20" data-path="my-trips" href="#">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-primary flex items-center justify-center mb-space-sm group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">luggage</span>
+        </div>
+        <h4 class="font-title-lg text-title-lg text-primary mb-1">My Trips</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Review active expeditions, travel companions, daily routes, and downloaded offline files.</p>
+      </div>
+      <div class="mt-space-md flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:translate-x-1 transition-transform">
+        <span class="">Open Dashboard</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </div>
+    </a>
+    <!-- Card 4: Profile & Settings -->
+    <a class="group bg-surface-container-lowest p-5 rounded-xl hover:shadow-md transition-all flex flex-col justify-between border border-outline-variant/20" data-path="profile" href="#">
+      <div>
+        <div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">manage_accounts</span>
+        </div>
+        <h4 class="font-title-lg text-title-lg text-primary mb-1">Profile &amp; Settings</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Manage voyager diet preferences, pacing styles, currency, and privacy privileges.</p>
+      </div>
+      <div class="mt-space-md flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider text-secondary group-hover:translate-x-1 transition-transform">
+        <span class="">Account Setup</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </div>
+    </a>
+  </div>
+</section></div>
+</div>
+<script>
+    (function initContactFeedback() {
+      const form = document.getElementById('feedback-form');
+      const confirmationView = document.getElementById('confirmation-view');
+      const charCounter = document.getElementById('char-counter');
+      const messageInput = document.getElementById('message-input');
+      const subjectInput = document.getElementById('subject-input');
+      const emailInput = document.getElementById('email-input');
+      const submitBtn = document.getElementById('submit-btn');
+      const resetBtn = document.getElementById('reset-form-btn');
+      const confirmedEmailDisplay = document.getElementById('confirmed-email-display');
+
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const sentimentBtns = document.querySelectorAll('.sentiment-btn');
+
+      // Character Counter
+      if (messageInput && charCounter) {
+        messageInput.addEventListener('input', () => {
+          charCounter.textContent = messageInput.value.length;
+        });
+      }
+
+      // Category Pill Interaction
+      categoryPills.forEach(pill => {
+        const radio = pill.querySelector('input[type="radio"]');
+        const indicator = pill.querySelector('.category-indicator');
+        const dot = pill.querySelector('.dot');
+
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary');
+            p.classList.add('bg-surface-container-low', 'hover:bg-surface-container');
+            const pDot = p.querySelector('.dot');
+            const pInd = p.querySelector('.category-indicator');
+            if (pDot) pDot.classList.remove('scale-100');
+            if (pDot) pDot.classList.add('scale-0');
+            if (pInd) {
+              pInd.classList.remove('bg-primary-container');
+              pInd.classList.add('bg-surface-container-highest');
+            }
+          });
+
+          radio.checked = true;
+          pill.classList.remove('bg-surface-container-low', 'hover:bg-surface-container');
+          pill.classList.add('bg-primary', 'text-on-primary');
+          if (dot) {
+            dot.classList.remove('scale-0');
+            dot.classList.add('scale-100');
+          }
+          if (indicator) {
+            indicator.classList.remove('bg-surface-container-highest');
+            indicator.classList.add('bg-secondary');
+          }
+          document.getElementById('category-error')?.classList.add('hidden');
+        });
+      });
+
+      // Sentiment Button Toggle
+      sentimentBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isSelected = btn.classList.contains('bg-primary-container');
+          sentimentBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+
+          if (!isSelected) {
+            btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+            btn.classList.add('bg-primary-container', 'text-on-primary');
+          }
+        });
+      });
+
+      // Form Validation & Submission
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          let isValid = true;
+          const selectedCategory = form.querySelector('input[name="feedback_category"]:checked');
+          const categoryError = document.getElementById('category-error');
+          const subjectError = document.getElementById('subject-error');
+          const messageError = document.getElementById('message-error');
+          const emailError = document.getElementById('email-error');
+
+          // Reset Errors
+          categoryError?.classList.add('hidden');
+          subjectError?.classList.add('hidden');
+          messageError?.classList.add('hidden');
+          emailError?.classList.add('hidden');
+
+          if (!selectedCategory) {
+            categoryError?.classList.remove('hidden');
+            isValid = false;
+          }
+
+          if (!subjectInput.value.trim()) {
+            subjectError?.classList.remove('hidden');
+            subjectInput.classList.add('ring-2', 'ring-error');
+            isValid = false;
+          } else {
+            subjectInput.classList.remove('ring-2', 'ring-error');
+          }
+
+          if (!messageInput.value.trim()) {
+            messageError?.classList.remove('hidden');
+            messageInput.classList.add('ring-2', 'ring-error');
+            isValid = false;
+          } else {
+            messageInput.classList.remove('ring-2', 'ring-error');
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+            emailError?.classList.remove('hidden');
+            emailInput.classList.add('ring-2', 'ring-error');
+            isValid = false;
+          } else {
+            emailInput.classList.remove('ring-2', 'ring-error');
+          }
+
+          if (!isValid) return;
+
+          // Loading Transition
+          const btnText = submitBtn.querySelector('.btn-text');
+          const btnIcon = submitBtn.querySelector('.btn-icon');
+          submitBtn.disabled = true;
+          btnText.textContent = 'Submitting feedback...';
+          btnIcon.textContent = 'sync';
+          btnIcon.classList.add('animate-spin');
+
+          setTimeout(() => {
+            form.classList.add('hidden');
+            confirmationView.classList.remove('hidden');
+            if (confirmedEmailDisplay) {
+              confirmedEmailDisplay.textContent = emailInput.value.trim();
+            }
+            // Restore button text for future use
+            submitBtn.disabled = false;
+            btnText.textContent = 'Submit feedback';
+            btnIcon.textContent = 'send';
+            btnIcon.classList.remove('animate-spin');
+          }, 600);
+        });
+      }
+
+      // Reset / Send Another Message
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          form.reset();
+          if (charCounter) charCounter.textContent = '0';
+          
+          categoryPills.forEach(p => {
+            p.classList.remove('bg-primary', 'text-on-primary');
+            p.classList.add('bg-surface-container-low', 'hover:bg-surface-container');
+            const pDot = p.querySelector('.dot');
+            const pInd = p.querySelector('.category-indicator');
+            if (pDot) pDot.classList.remove('scale-100');
+            if (pDot) pDot.classList.add('scale-0');
+            if (pInd) {
+              pInd.classList.remove('bg-secondary');
+              pInd.classList.add('bg-surface-container-highest');
+            }
+          });
+
+          sentimentBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+
+          confirmationView.classList.add('hidden');
+          form.classList.remove('hidden');
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="trip-history-and-archived-trips" href="#">Trip History &amp; Archives</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#">Notifications</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="profile" href="#">Profile</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer>
+
+</body></html>

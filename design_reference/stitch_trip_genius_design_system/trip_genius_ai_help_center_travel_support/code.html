@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a></div><div class="flex items-center gap-space-sm lg:hidden"><a class="relative w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span></a><a class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ring-1 ring-outline-variant/40" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="trip-history-and-archived-trips" href="#">Trip History</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="notifications" href="#">Notifications</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="profile" href="#">Profile</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Top Hero & Search Section -->
+<section class="relative overflow-hidden bg-surface-container-low py-12 md:py-16 px-margin-mobile md:px-margin">
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed mb-4 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Knowledge Base &amp; Travel Assistance</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-headline-lg text-headline-lg text-primary max-w-3xl mb-3 tracking-tight">
+        How can we help you travel better?
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">
+        Find answers, explore planning tips, and get help with your Trip Genius AI experience.
+      </p>
+<!-- Prominent Search Box -->
+<div class="w-full max-w-2xl relative">
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(37,41,35,0.06)] ring-1 ring-outline-variant/30 focus-within:ring-2 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-outline ml-4 text-[22px]">search</span>
+<input autocomplete="off" class="w-full h-14 pl-3 pr-10 bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="helpSearchInput" placeholder="Search help articles, trip planning, account settings..." type="text"/>
+<button class="hidden absolute right-3 w-8 h-8 rounded-full hover:bg-surface-container text-outline hover:text-on-surface items-center justify-center transition-colors" id="clearSearchBtn" title="Clear search" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Quick Tags -->
+<div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Suggested:</span>
+<button class="quick-tag-btn font-label-md text-label-md px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm" data-term="Creating a trip" type="button">
+            Creating a trip
+          </button>
+<button class="quick-tag-btn font-label-md text-label-md px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm" data-term="Itinerary editing" type="button">
+            Itinerary editing
+          </button>
+<button class="quick-tag-btn font-label-md text-label-md px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm" data-term="Cost estimates" type="button">
+            Cost estimates
+          </button>
+<button class="quick-tag-btn font-label-md text-label-md px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm" data-term="Companion access" type="button">
+            Companion access
+          </button>
+<button class="quick-tag-btn font-label-md text-label-md px-3 py-1 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm" data-term="Password reset" type="button">
+            Password reset
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Container -->
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin w-full py-12 flex flex-col gap-16">
+<!-- Section 1: Help Categories Grid -->
+<section>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Directory</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Browse by Topic</h2>
+</div>
+<!-- Active Filter Indicator & Reset -->
+<div class="flex items-center gap-2">
+<button class="hidden items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" id="resetCategoryFilterBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Show All Categories</span>
+</button>
+<span class="text-on-surface-variant font-body-sm text-body-sm italic" id="activeCategoryBadge">6 core domains</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="categoriesGrid">
+<!-- Category 1: Getting Started -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="getting-started">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">explore</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Getting Started</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Learn the basics of planning your first trip with our AI copilot.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">4 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+<!-- Category 2: Planning a Trip -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="planning">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">edit_calendar</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Planning a Trip</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Manage destinations, travel dates, budgets, and personalized preferences.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">8 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+<!-- Category 3: Itineraries -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="itineraries">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">route</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Itineraries</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Understand, edit, and organize your daily travel plans and transit.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">6 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+<!-- Category 4: Trips & Saved Places -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="saved-places">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">bookmark</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Trips &amp; Saved Places</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Find your saved destinations, completed trips, and offline archives.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">5 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+<!-- Category 5: Account & Security -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="account">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">shield</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Account &amp; Security</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Manage your profile, sign-in methods, sessions, and data privacy.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">7 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+<!-- Category 6: Sharing & Collaboration -->
+<div class="category-card cursor-pointer group p-6 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(37,41,35,0.04)] ring-1 ring-outline-variant/30 flex flex-col justify-between" data-cat-id="collaboration">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">group</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-1">Sharing &amp; Collaboration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Invite travel companions and manage shared-trip access permissions.</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-secondary font-medium">3 Articles</span>
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Quick App Areas Navigation -->
+<section class="bg-surface-container-high rounded-2xl p-6 md:p-8">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Fast Jumps</span>
+<h3 class="font-title-lg text-title-lg text-primary mt-0.5">Relevant App Areas</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct shortcuts to active planner modules</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+<a class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-all shadow-sm group" data-path="plan-my-trip" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:text-on-primary">add_circle</span>
+<span class="font-title-md text-title-md text-sm truncate font-medium">Plan My Trip</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-all shadow-sm group" data-path="my-trips" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:text-on-primary">flight_takeoff</span>
+<span class="font-title-md text-title-md text-sm truncate font-medium">My Trips</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-all shadow-sm group" data-path="explore-destinations" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:text-on-primary">favorite</span>
+<span class="font-title-md text-title-md text-sm truncate font-medium">Saved Places</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-all shadow-sm group" data-path="profile" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:text-on-primary">settings</span>
+<span class="font-title-md text-title-md text-sm truncate font-medium">Profile &amp; Settings</span>
+</a>
+<a class="flex items-center gap-2.5 p-3 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-all shadow-sm group" data-path="login" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary group-hover:text-on-primary">lock_reset</span>
+<span class="font-title-md text-title-md text-sm truncate font-medium">Forgot Password</span>
+</a>
+</div>
+</section>
+<!-- Section 3: Frequently Asked Questions (Interactive Accordion) -->
+<section class="scroll-mt-24" id="faqSection">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Instant Clarity</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Frequently Asked Questions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Quick answers to common questions about planning, managing, and sharing trips.</p>
+</div>
+<!-- FAQ Container -->
+<div class="flex flex-col gap-3" id="faqAccordionContainer">
+<!-- Q1 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="getting-started planning" data-keywords="personalized trip create preferences destination budget generate proposed itinerary">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q1</span>
+<span>How do I create a personalized trip?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Open <strong>Plan My Trip</strong>, enter your destination or travel preferences, choose your dates and budget, and submit your preferences to generate a proposed itinerary.
+            </div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="itineraries planning" data-keywords="edit generated itinerary activities dates trip details">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q2</span>
+<span>Can I edit a generated itinerary?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Yes. Open the trip and use the available editing controls to adjust activities, dates, and other trip details. Available editing options depend on the features implemented in your account.
+            </div>
+</div>
+</div>
+<!-- Q3 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="saved-places getting-started" data-keywords="save trip accessible viewing planning archive">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q3</span>
+<span>How can I save a trip?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Use the available save action when planning or viewing a trip. Saved trips should be accessible from the appropriate trips area when that feature is available.
+            </div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="collaboration" data-keywords="share itinerary friends companions share link permissions collaborators">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q4</span>
+<span>Can I share my itinerary with friends?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Use the trip-sharing controls to create a share link or invite collaborators, depending on the available sharing options and permissions.
+            </div>
+</div>
+</div>
+<!-- Q5 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="planning itineraries" data-keywords="change travel budget estimates booking cost revise">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q5</span>
+<span>How do I change my travel budget?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Open the relevant trip and use its budget or trip-editing controls when available. Review any revised estimates before making travel bookings.
+            </div>
+</div>
+</div>
+<!-- Q6 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="account" data-keywords="reset password sign-in forgot password account recovery">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q6</span>
+<span>How can I reset my password?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              Open the sign-in page and select <strong>Forgot Password</strong>. Follow the instructions provided for account recovery.
+            </div>
+</div>
+</div>
+<!-- Q7 -->
+<div class="faq-item rounded-xl bg-surface-container-lowest ring-1 ring-outline-variant/30 overflow-hidden transition-all duration-200" data-category="planning itineraries" data-keywords="itinerary costs travel times guaranteed estimated accuracy provider">
+<button aria-expanded="false" class="faq-trigger w-full flex items-center justify-between p-5 text-left transition-colors hover:bg-surface-container-low" type="button">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-3">
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Q7</span>
+<span>Are itinerary costs and travel times guaranteed?</span>
+</span>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-0">
+<div class="pl-9 pr-4 py-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md border-l-4 border-primary">
+              No. Estimated costs, travel times, opening hours, and other planning information can change. Verify important details with the relevant provider before travelling or booking.
+            </div>
+</div>
+</div>
+</div>
+<!-- No FAQs Match State -->
+<div class="hidden text-center py-12 px-4 rounded-xl bg-surface-container-low border border-dashed border-outline-variant" id="noFaqMatch">
+<span class="material-symbols-outlined text-[36px] text-outline mb-2">find_in_page</span>
+<h4 class="font-title-lg text-title-lg text-primary font-semibold mb-1">No FAQs matched your search</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">Try refining your keyword or submit a direct question below to our travel concierge support.</p>
+</div>
+</section>
+<!-- Section 4: Popular Help Articles (Curated Deep Dives) -->
+<section id="guidesSection">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Knowledge Hub</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Popular Guides &amp; Deep Dives</h2>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Expert travel design methodology</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="guidesGrid">
+<!-- Guide 1 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="getting-started" data-title="A beginner’s guide to planning your first trip">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Getting Started</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 3 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              A beginner’s guide to planning your first trip
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Essential steps to craft your inaugural journey from scratch, from selecting destinations to intelligent pace allocation.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="Planning your inaugural voyage with Trip Genius AI combines algorithmic route intelligence with human intuition. Step 1: Input your destination, trip length, and primary vibe (e.g., culinary, cultural, fast-paced). Step 2: Set your daily spending bounds. Step 3: Let the engine produce your modular day-by-day blueprint. You can freely lock anchor activities while letting the AI optimize transit and proximity between morning and evening spots." data-guide-category="Getting Started" data-guide-title="A beginner’s guide to planning your first trip" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+<!-- Guide 2 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="planning" data-title="How to create a realistic travel budget">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Planning</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 4 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              How to create a realistic travel budget
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Balancing transport, stays, dining, and reserve funds without surprises using accurate regional benchmarks.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="An accurate budget is the foundation of serene exploration. We advocate the 50/30/20 formula tailored for travel: 50% for transit and lodging essentials, 30% for curated activities and exceptional dining, and 20% reserved as an untouchable buffer for spontaneous shifts or currency exchange fluctuations. Our estimates synthesize verified seasonal averages across local dining, transit passes, and admission tiers." data-guide-category="Planning a Trip" data-guide-title="How to create a realistic travel budget" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+<!-- Guide 3 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="itineraries" data-title="Editing your daily itinerary">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Itineraries</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 3 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              Editing your daily itinerary
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Reordering stops, swapping recommendations, and pacing your daily route cadence with zero logistical stress.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="Your Trip Genius itinerary is never set in stone. Click on any block to drag and reorder stops. If you shift an afternoon tea or museum ticket, our engine recalibrates the transit window and alerts you if an attraction's ticketing window conflicts with your new timing. Use the 'Swap Place' icon to discover alternate spots within 10 minutes walking radius." data-guide-category="Itineraries" data-guide-title="Editing your daily itinerary" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+<!-- Guide 4 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="collaboration" data-title="Sharing a trip with travel companions">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Collaboration</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              Sharing a trip with travel companions
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Permission tiers, public links, and collaborative real-time sync for couples, families, and travel cohorts.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="Effortless co-travel starts with clear roles. Generate a read-only spectator link for friends and relatives back home, or invite co-planners via email with 'Editor' permissions. Co-planners can vote on dining suggestions, add custom points of interest, and split ledger notes in real time." data-guide-category="Sharing &amp; Collaboration" data-guide-title="Sharing a trip with travel companions" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+<!-- Guide 5 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="saved-places" data-title="Managing saved destinations">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Saved Places</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 3 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              Managing saved destinations
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Organizing dream locations, seasonal bookmarks, and quick drafts into cohesive, actionable collections.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="Whenever you discover a boutique riad in Marrakech or a hidden coffee shop in Kyoto, tap the bookmark icon. In your Saved Places vault, tag pins by region or season. When you finally schedule a journey to that city, your saved bookmarks automatically surface inside your itinerary builder as priority suggestions." data-guide-category="Trips &amp; Saved Places" data-guide-title="Managing saved destinations" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+<!-- Guide 6 -->
+<article class="guide-card rounded-xl bg-surface-container-lowest p-6 flex flex-col justify-between ring-1 ring-outline-variant/30 hover:shadow-md transition-all group" data-category="account" data-title="Keeping your account secure">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-medium">Security</span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 2 min read
+              </span>
+</div>
+<h3 class="font-title-lg text-title-lg text-primary font-semibold group-hover:text-secondary transition-colors mb-2">
+              Keeping your account secure
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Password recovery protocols, active device sessions, and data privacy safeguards when accessing trips globally.
+            </p>
+</div>
+<button class="open-guide-btn inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-semibold uppercase tracking-wider hover:text-secondary transition-colors" data-guide-body="Your travel details, passport numbers, and flight confirmation documents are encrypted at rest and in transit. Protect your profile by activating two-factor authentication, reviewing authorized mobile devices in Profile Settings, and utilizing single-session sign-ins when accessing internet cafés or public kiosks abroad." data-guide-category="Account &amp; Security" data-guide-title="Keeping your account secure" type="button">
+<span>Read guide</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</article>
+</div>
+</section>
+<!-- Section 5: Contact Support Section ("Still need a hand?") -->
+<section class="bg-surface-container-lowest rounded-2xl p-8 md:p-12 ring-1 ring-outline-variant/30 shadow-sm relative overflow-hidden">
+<!-- Decorative subtle accent bar -->
+<div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-primary-container to-secondary"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Side Column: Info & Trust -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-primary w-fit">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Concierge Support</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Still need a hand?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Tell us what you need help with, and we’ll help you find the right next step. Our editorial curators and technical engineers review all inquiries within 24 business hours.
+          </p>
+<div class="mt-4 p-5 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified</span>
+<span class="font-title-md text-title-md text-sm font-semibold">Priority Travel Assistance</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Traveling right now? Flag your inquiry with your booking code to route your request to our active departures desk.
+            </p>
+</div>
+</div>
+<!-- Right Side Column: Support Form -->
+<div class="lg:col-span-7">
+<!-- Success Notification Banner (Initially Hidden) -->
+<div class="hidden mb-6 p-5 rounded-xl bg-primary-fixed text-on-primary-fixed ring-1 ring-primary/20" id="supportSuccessBanner">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[24px] text-primary mt-0.5">check_circle</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-semibold">Inquiry Dispatched Successfully</h4>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant mt-1">
+                  Your inquiry has been recorded. Our travel concierge team will review your message and reach out via your account email.
+                </p>
+<div class="mt-3 flex items-center gap-4">
+<span class="font-mono text-label-sm text-primary font-bold">Ticket #TG-88241</span>
+<button class="font-label-sm text-label-sm uppercase tracking-wider text-primary underline font-bold" id="resetSupportFormBtn" type="button">Submit another request</button>
+</div>
+</div>
+</div>
+</div>
+<!-- The Interactive Form -->
+<form class="flex flex-col gap-5" id="supportForm">
+<!-- Subject Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-sm text-primary font-medium flex items-center justify-between" for="supportSubject">
+<span>Subject <span class="text-error">*</span></span>
+<span class="text-outline text-label-sm font-normal">Brief summary</span>
+</label>
+<input class="w-full h-11 px-4 bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-lg ring-1 ring-outline-variant focus:ring-2 focus:ring-primary focus:outline-none font-body-md text-body-md transition-all" id="supportSubject" name="subject" placeholder="e.g. Question about Tokyo day 3 transit route" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Category Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-sm text-primary font-medium" for="supportCategory">
+                  Help Category <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-3 bg-surface-container-lowest text-on-surface rounded-lg ring-1 ring-outline-variant focus:ring-2 focus:ring-primary focus:outline-none font-body-md text-body-md transition-all cursor-pointer" id="supportCategory" name="category" required="">
+<option disabled="" selected="" value="">Select category...</option>
+<option value="Getting Started">Getting Started</option>
+<option value="Planning a Trip">Planning a Trip</option>
+<option value="Itineraries">Itineraries</option>
+<option value="Trips &amp; Saved Places">Trips &amp; Saved Places</option>
+<option value="Account &amp; Security">Account &amp; Security</option>
+<option value="Sharing &amp; Collaboration">Sharing &amp; Collaboration</option>
+<option value="Technical Issue">Technical Issue</option>
+</select>
+</div>
+<!-- Related Trip (Optional) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-sm text-primary font-medium flex items-center justify-between" for="supportRelatedTrip">
+<span>Related Trip</span>
+<span class="text-outline text-label-sm font-normal">Optional</span>
+</label>
+<select class="w-full h-11 px-3 bg-surface-container-lowest text-on-surface rounded-lg ring-1 ring-outline-variant focus:ring-2 focus:ring-primary focus:outline-none font-body-md text-body-md transition-all cursor-pointer" id="supportRelatedTrip" name="relatedTrip">
+<option value="None / General inquiry">None / General inquiry</option>
+<option value="Kyoto Heritage Escape (Oct 2025)">Kyoto Heritage Escape (Oct 2025)</option>
+<option value="Goa Coastal Getaway">Goa Coastal Getaway</option>
+</select>
+</div>
+</div>
+<!-- Description Field with Character Count -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-sm text-primary font-medium" for="supportDescription">
+                  Description of the Issue <span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-outline" id="charCounter">0 / 800</span>
+</div>
+<textarea class="w-full p-4 bg-surface-container-lowest text-on-surface placeholder:text-outline rounded-lg ring-1 ring-outline-variant focus:ring-2 focus:ring-primary focus:outline-none font-body-md text-body-md transition-all resize-y" id="supportDescription" maxlength="800" name="description" placeholder="Describe what occurred, any error messages, or steps you are attempting to complete..." required="" rows="4"></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+                Signed in as <span class="font-medium text-primary">traveler@tripgenius.ai</span>
+</span>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-12 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm" id="submitRequestBtn" type="submit">
+<span>Submit Request</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div>
+<!-- In-page Guide Reader Modal (Overlay) -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm transition-opacity duration-300" id="guideModal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl p-6 md:p-8 shadow-[0_20px_40px_-8px_rgba(24,55,44,0.18)] ring-1 ring-outline-variant/40 flex flex-col max-h-[90vh] overflow-hidden">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-secondary px-2.5 py-1 rounded bg-secondary-fixed" id="modalCategory">Category</span>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="closeGuideModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="overflow-y-auto pr-2 flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-primary" id="modalTitle">Guide Title</h3>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed" id="modalBody">Guide full body text will render here.</p>
+<div class="mt-4 p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Did this article answer your question?</span>
+<div class="flex items-center gap-2">
+<button class="feedback-btn px-3 py-1 rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary text-label-sm transition-colors" type="button">Yes</button>
+<button class="feedback-btn px-3 py-1 rounded bg-surface-container text-primary hover:bg-primary hover:text-on-primary text-label-sm transition-colors" type="button">No</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side script for interactive FAQ search, filter, accordion, modal and form -->
+<script>
+  (function initHelpCenter() {
+    // FAQ Accordion logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Close others for neat single-accordion look
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherTrigger = otherItem.querySelector('.faq-trigger');
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherContent.classList.add('hidden');
+            otherIcon.textContent = 'expand_more';
+            otherItem.classList.remove('ring-primary', 'bg-surface-container-low');
+          }
+        });
+
+        if (isExpanded) {
+          trigger.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.textContent = 'expand_more';
+          item.classList.remove('ring-primary', 'bg-surface-container-low');
+        } else {
+          trigger.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.textContent = 'expand_less';
+          item.classList.add('ring-primary', 'bg-surface-container-low');
+        }
+      });
+    });
+
+    // Search Filtering across FAQ & Guides
+    const searchInput = document.getElementById('helpSearchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const noFaqMatch = document.getElementById('noFaqMatch');
+    const guideCards = document.querySelectorAll('.guide-card');
+    const resetCatBtn = document.getElementById('resetCategoryFilterBtn');
+    const categoryCards = document.querySelectorAll('.category-card');
+    const activeCatBadge = document.getElementById('activeCategoryBadge');
+
+    let currentSelectedCategory = null;
+
+    function performSearchAndFilter() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      
+      if (query.length > 0) {
+        clearSearchBtn.classList.remove('hidden');
+        clearSearchBtn.classList.add('flex');
+      } else {
+        clearSearchBtn.classList.add('hidden');
+        clearSearchBtn.classList.remove('flex');
+      }
+
+      let visibleFaqCount = 0;
+
+      // Filter FAQs
+      faqItems.forEach(item => {
+        const text = (item.textContent || '').toLowerCase();
+        const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+        const cats = (item.getAttribute('data-category') || '').toLowerCase();
+
+        const matchesQuery = !query || text.includes(query) || keywords.includes(query);
+        const matchesCategory = !currentSelectedCategory || cats.includes(currentSelectedCategory);
+
+        if (matchesQuery && matchesCategory) {
+          item.classList.remove('hidden');
+          visibleFaqCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      if (visibleFaqCount === 0) {
+        noFaqMatch.classList.remove('hidden');
+      } else {
+        noFaqMatch.classList.add('hidden');
+      }
+
+      // Filter Guide Cards
+      guideCards.forEach(card => {
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const body = (card.textContent || '').toLowerCase();
+        const cat = (card.getAttribute('data-category') || '').toLowerCase();
+
+        const matchesQuery = !query || title.includes(query) || body.includes(query);
+        const matchesCategory = !currentSelectedCategory || cat.includes(currentSelectedCategory);
+
+        if (matchesQuery && matchesCategory) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', performSearchAndFilter);
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        performSearchAndFilter();
+        searchInput.focus();
+      });
+    }
+
+    // Quick tags click handlers
+    const quickTags = document.querySelectorAll('.quick-tag-btn');
+    quickTags.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const term = btn.getAttribute('data-term');
+        searchInput.value = term;
+        performSearchAndFilter();
+        const faqSection = document.getElementById('faqSection');
+        if (faqSection) {
+          faqSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Category Card Interactive selection
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const catId = card.getAttribute('data-cat-id');
+        
+        if (currentSelectedCategory === catId) {
+          // Deselect
+          currentSelectedCategory = null;
+          card.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-high');
+          resetCatBtn.classList.add('hidden');
+          resetCatBtn.classList.remove('inline-flex');
+          activeCatBadge.textContent = '6 core domains';
+        } else {
+          categoryCards.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-high'));
+          currentSelectedCategory = catId;
+          card.classList.add('ring-2', 'ring-primary', 'bg-surface-container-high');
+          resetCatBtn.classList.remove('hidden');
+          resetCatBtn.classList.add('inline-flex');
+          const title = card.querySelector('h3')?.textContent || 'Category';
+          activeCatBadge.textContent = 'Filtered: ' + title;
+        }
+
+        performSearchAndFilter();
+      });
+    });
+
+    if (resetCatBtn) {
+      resetCatBtn.addEventListener('click', () => {
+        currentSelectedCategory = null;
+        categoryCards.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-high'));
+        resetCatBtn.classList.add('hidden');
+        resetCatBtn.classList.remove('inline-flex');
+        activeCatBadge.textContent = '6 core domains';
+        performSearchAndFilter();
+      });
+    }
+
+    // Guide Modal logic
+    const guideModal = document.getElementById('guideModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalBody = document.getElementById('modalBody');
+    const closeGuideModalBtn = document.getElementById('closeGuideModalBtn');
+    const openGuideBtns = document.querySelectorAll('.open-guide-btn');
+
+    openGuideBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-guide-title');
+        const cat = btn.getAttribute('data-guide-category');
+        const body = btn.getAttribute('data-guide-body');
+
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalCategory) modalCategory.textContent = cat;
+        if (modalBody) modalBody.textContent = body;
+
+        guideModal.classList.remove('hidden');
+      });
+    });
+
+    if (closeGuideModalBtn) {
+      closeGuideModalBtn.addEventListener('click', () => {
+        guideModal.classList.add('hidden');
+      });
+    }
+
+    if (guideModal) {
+      guideModal.addEventListener('click', (e) => {
+        if (e.target === guideModal) {
+          guideModal.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modal feedback buttons
+    const feedbackBtns = document.querySelectorAll('.feedback-btn');
+    feedbackBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.innerHTML = '<span class="text-xs font-semibold text-primary">Thank you for your feedback!</span>';
+      });
+    });
+
+    // Character Counter for textarea
+    const supportDescription = document.getElementById('supportDescription');
+    const charCounter = document.getElementById('charCounter');
+    if (supportDescription && charCounter) {
+      supportDescription.addEventListener('input', () => {
+        const currentLength = supportDescription.value.length;
+        charCounter.textContent = `${currentLength} / 800`;
+      });
+    }
+
+    // Support Form Submission validation & banner
+    const supportForm = document.getElementById('supportForm');
+    const supportSuccessBanner = document.getElementById('supportSuccessBanner');
+    const resetSupportFormBtn = document.getElementById('resetSupportFormBtn');
+
+    if (supportForm) {
+      supportForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Hide form and reveal success banner
+        supportForm.classList.add('hidden');
+        supportSuccessBanner.classList.remove('hidden');
+        supportSuccessBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
+    if (resetSupportFormBtn) {
+      resetSupportFormBtn.addEventListener('click', () => {
+        supportForm.reset();
+        if (charCounter) charCounter.textContent = '0 / 800';
+        supportSuccessBanner.classList.add('hidden');
+        supportForm.classList.remove('hidden');
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="trip-history-and-archived-trips" href="#">Trip History &amp; Archives</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="notifications" href="#">Notifications</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="profile" href="#">Profile</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#90b9a4", "on-primary-fixed": "#002115", "on-secondary-fixed": "#380d00", "tertiary-fixed-dim": "#c0c9be", "surface-container-low": "#f2f5eb", "error-container": "#ffdad6", "tertiary-container": "#3d453d", "tertiary": "#272f28", "surface-container-lowest": "#ffffff", "surface-tint": "#406655", "on-background": "#191d17", "on-primary": "#ffffff", "surface-bright": "#f7fbf1", "secondary": "#924a2e", "on-secondary": "#ffffff", "primary-fixed-dim": "#a6d0ba", "surface-container-high": "#e6e9e0", "error": "#ba1a1a", "primary-fixed": "#c2ecd6", "surface-container-highest": "#e0e4da", "on-error-container": "#93000a", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "on-primary-fixed-variant": "#284e3e", "secondary-fixed-dim": "#ffb59a", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "outline": "#717974", "on-surface-variant": "#414844", "on-error": "#ffffff", "on-surface": "#191d17", "on-tertiary-fixed-variant": "#404941", "on-secondary-container": "#78361b", "primary-container": "#244a3a", "secondary-fixed": "#ffdbce", "on-tertiary-container": "#a9b2a8", "background": "#f7fbf1", "tertiary-fixed": "#dce5da", "inverse-on-surface": "#eff2e8", "primary": "#0b3325", "on-tertiary": "#ffffff", "inverse-primary": "#a6d0ba", "secondary-container": "#fea17e", "surface-variant": "#e0e4da", "on-secondary-fixed-variant": "#753419", "surface-container": "#ecefe6", "surface-dim": "#d8dbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-mobile": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xl": "2.5rem", "margin": "3rem" }, "fontFamily": { "display-hero": [ "DM Serif Display" ], "title-lg": [ "DM Sans" ], "body-sm": [ "DM Sans" ], "body-md": [ "DM Sans" ], "headline-md": [ "DM Serif Display" ], "display-hero-mobile": [ "DM Serif Display" ], "headline-sm": [ "DM Serif Display" ], "label-sm": [ "DM Sans" ], "headline-lg": [ "DM Serif Display" ], "title-md": [ "DM Sans" ], "headline-lg-mobile": [ "DM Serif Display" ], "body-lg": [ "DM Sans" ], "label-md": [ "DM Sans" ] }, "fontSize": { "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "title-lg": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "display-hero-mobile": [ "38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-sm": [ "22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "title-md": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-[#F7F5EF]/90 backdrop-blur-md border-b border-[#E4E2D9]">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="flex items-center" data-path="home" href="#">
+<img alt="Trip Genius AI" class="w-auto object-contain h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIw8XaP-fo5xj3MAsvc4qpsQn-ZMCT-KgWuSDf4aYTWgh6hNR0HN-UQsGZhxZVW8DjP71BMWjHnun3-K5N3VM0gsW40dQIiDvMDmjGWm7aaRqzQ2FzHooAU2nXf2gsq8ZLXcWK95t-mrv7eW0d3KRjQxniOtheZj7oOmqlMUWgfv27NkGJYShXHZtrXL1dHNkMUPOnp2haWPE4aqSBaRIWXOSCXZyOTg3vnt5TUL-ToXKCBVyuHR1R96cGpG8a_E0O7To">
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore" href="#">Explore Destinations</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:inline-block font-title-md text-title-md text-primary hover:text-primary-container transition-colors" data-path="signin" href="#">Sign In</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-all shadow-sm" data-path="plan" href="#">
+<span class="">Plan My Trip</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors" data-path="profile" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</a>
+</div>
+</div>
+</header><main class="w-full pt-16 bg-background flex-1 flex flex-col"><div class="flex flex-col w-full">
+<!-- Interactive State Management Control Bar -->
+
+<!-- Main Recovery Container Section -->
+<section class="w-full py-12 md:py-16 px-4 sm:px-6 flex items-center justify-center relative">
+<!-- Subtle architectural background glow -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
+<div class="w-[520px] h-[520px] rounded-full bg-tertiary-fixed/35 blur-3xl -z-10 transform -translate-y-6"></div>
+</div>
+<!-- Centered Card Surface -->
+<div class="w-full max-w-xl bg-surface-container-lowest rounded-xl p-6 sm:p-10 shadow-sm relative transition-all">
+<!-- View 1: Recovery Form (State A) -->
+<div class="space-y-6 block" id="view-form">
+<!-- Eyebrow & Headline -->
+<div class="space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">
+              Account Recovery
+            </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Reset your password.
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Enter the email address associated with your travel account. If an account matches, we'll send tailored instructions to restore your access.
+          </p>
+</div>
+<!-- Form Component -->
+<form class="space-y-5" id="recovery-form" onsubmit="event.preventDefault(); handleSubmit();">
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold" for="recovery-email">
+              Email Address
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-on-surface-variant pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[19px]">mail</span>
+</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container shadow-sm transition-all" id="recovery-email" placeholder="name@example.com" required="" type="email" value="eleanor.vance@atelier-voyage.co">
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[15px] text-outline mt-0.5 shrink-0">info</span>
+<span class="">For security reasons, we do not reveal whether an account exists for a specific address.</span>
+</p>
+</div>
+<!-- Submit CTA -->
+<button class="w-full h-12 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.99] cursor-pointer" type="submit">
+<span class="">Send Reset Link</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Secondary Navigation -->
+<div class="pt-2 text-center">
+<a class="inline-flex items-center gap-1.5 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="signin" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span class="">Back to Sign In</span>
+</a>
+</div>
+<!-- Security Reassurance Notice -->
+<div class="pt-6 mt-6 bg-surface-container-low -mx-6 sm:-mx-10 -mb-6 sm:-mb-10 px-6 sm:px-10 py-4 rounded-b-xl flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">encrypted</span>
+<span class="">256-bit encrypted account dispatch</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span class="">Links expire in 60 min</span>
+</div>
+</div>
+</div>
+<!-- View 2: Confirmation / Inbox Sent (State B) -->
+<div class="space-y-6 hidden" id="view-sent">
+<!-- Visual Status Badge -->
+<div class="flex items-center justify-between">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[28px]">mark_email_read</span>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            Dispatched
+          </span>
+</div>
+<!-- Text copy -->
+<div class="space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">
+              Instructions Dispatched
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Check your inbox.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            If an account is associated with this identity, we have transmitted password recovery steps and authentication parameters.
+          </p>
+</div>
+<!-- Dynamic Email Address Pill -->
+<div class="p-4 rounded-lg bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">forward_to_inbox</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Recipient Mailbox</p>
+<p class="font-title-md text-title-md text-on-surface truncate" id="dispatched-email-label">
+                eleanor.vance@atelier-voyage.co
+              </p>
+</div>
+</div>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm uppercase tracking-wider underline shrink-0" onclick="switchState('form')">
+            Edit
+          </button>
+</div>
+<!-- Action Items -->
+<div class="space-y-3 pt-2">
+<a class="w-full h-12 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm transition-all" data-path="signin" href="#">
+<span class="">Return to Sign In</span>
+<span class="material-symbols-outlined text-[18px]">login</span>
+</a>
+<!-- Cooldown action indicator -->
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] animate-spin text-outline">autorenew</span>
+<span class="">Didn't receive an email? Resend in <strong class="font-title-md text-on-surface" id="countdown-timer">54s</strong></span>
+</div>
+<a class="font-title-md text-title-md text-secondary hover:text-on-secondary-container transition-colors inline-flex items-center gap-1" data-path="support" href="#">
+<span class="">Contact Concierge</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Security hint -->
+<div class="pt-6 mt-6 bg-surface-container-low -mx-6 sm:-mx-10 -mb-6 sm:-mb-10 px-6 sm:px-10 py-4 rounded-b-xl flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">mark_email_unread</span>
+<span class="">Check spam or filter rules</span>
+</span>
+<span class="text-outline">Single-use token</span>
+</div>
+</div>
+<!-- View 3: Validation & Error State Preview (State C) -->
+<div class="space-y-6 hidden" id="view-error">
+<!-- Error Banner -->
+<div class="p-4 rounded-lg bg-error-container text-on-error-container flex items-start gap-3 shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-error mt-0.5 shrink-0">error</span>
+<div class="space-y-1">
+<p class="font-title-md text-title-md font-semibold text-error">Unable to transmit recovery email</p>
+<p class="font-body-sm text-body-sm text-on-error-container">
+              Authorization servers are undergoing scheduled key rotation. Please verify network connectivity and try again in moments.
+            </p>
+</div>
+</div>
+<!-- Eyebrow & Headline -->
+<div class="space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">
+              Action Required
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Reset your password.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Please resolve the validation remarks indicated below.
+          </p>
+</div>
+<!-- Form with Invalid State Applied -->
+<form class="space-y-5" onsubmit="event.preventDefault(); switchState('sent');">
+<div class="space-y-2">
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold" for="recovery-email-error">
+              Email Address
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-error pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[19px]">mail</span>
+</span>
+<input class="w-full h-12 pl-10 pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md ring-2 ring-error focus:outline-none shadow-sm transition-all" id="recovery-email-error" type="text" value="eleanor.vance#atelier">
+<span class="absolute right-3.5 text-error pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">report</span>
+<span class="">Please enter a valid email address format (e.g. name@domain.com).</span>
+</p>
+</div>
+<!-- Active Cooldown State Example -->
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">hourglass_top</span>
+<span class="">Rate limiter active: Maximum 3 attempts per 15 mins.</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container-highest text-on-surface">Tier 1</span>
+</div>
+<button class="w-full h-12 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm transition-all" type="submit">
+<span class="">Retry Transmission</span>
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</form>
+<div class="pt-2 text-center">
+<a class="inline-flex items-center gap-1.5 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="signin" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span class="">Back to Sign In</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Verification & Trust Details Section -->
+<section class="w-full bg-surface-container-low py-12 px-6 lg:px-12">
+<div class="max-w-5xl mx-auto space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Account Safeguards</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Voyager Security Protocols</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          Trip Genius AI manages complex travel bookings, personal itineraries, and airline seat vaults using zero-knowledge identity tokens.
+        </p>
+</div>
+<!-- Trust Pillars Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Ephemeral Dispatch</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Recovery links become void immediately upon consumption or after 60 minutes. Subsequent requests instantly invalidate prior tokens.
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">privacy_tip</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Silent Enumeration Shield</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            We return identical timing metrics regardless of whether an email exists on our platform, preventing brute-force directory harvesting.
+          </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Expedited Concierge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            If you have lost access to your primary booking email while traveling abroad, reach out to our emergency travel concierge desk.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Client Behavior Script -->
+<script>
+    function switchState(stateName) {
+      const viewForm = document.getElementById('view-form');
+      const viewSent = document.getElementById('view-sent');
+      const viewError = document.getElementById('view-error');
+
+      const btnForm = document.getElementById('btn-state-form');
+      const btnSent = document.getElementById('btn-state-sent');
+      const btnError = document.getElementById('btn-state-error');
+
+      // Hide all views
+      viewForm.classList.add('hidden');
+      viewForm.classList.remove('block');
+      viewSent.classList.add('hidden');
+      viewSent.classList.remove('block');
+      viewError.classList.add('hidden');
+      viewError.classList.remove('block');
+
+      // Reset button styles
+      [btnForm, btnSent, btnError].forEach(btn => {
+        btn.className = "px-3 py-1.5 rounded-md font-label-sm text-label-sm tracking-wider uppercase transition-all hover:bg-surface-container-low text-on-surface-variant";
+      });
+
+      const activeBtnClass = "px-3 py-1.5 rounded-md font-label-sm text-label-sm tracking-wider uppercase transition-all bg-primary-container text-on-primary";
+
+      if (stateName === 'form') {
+        viewForm.classList.remove('hidden');
+        viewForm.classList.add('block');
+        btnForm.className = activeBtnClass;
+      } else if (stateName === 'sent') {
+        viewSent.classList.remove('hidden');
+        viewSent.classList.add('block');
+        btnSent.className = activeBtnClass;
+        startCountdown();
+      } else if (stateName === 'error') {
+        viewError.classList.remove('hidden');
+        viewError.classList.add('block');
+        btnError.className = activeBtnClass;
+      }
+    }
+
+    function handleSubmit() {
+      const emailInput = document.getElementById('recovery-email');
+      const label = document.getElementById('dispatched-email-label');
+      if (emailInput && emailInput.value) {
+        label.textContent = emailInput.value;
+      }
+      switchState('sent');
+    }
+
+    let timerInterval;
+    function startCountdown() {
+      let seconds = 54;
+      const timerDisplay = document.getElementById('countdown-timer');
+      if (!timerDisplay) return;
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+          timerDisplay.textContent = seconds + 's';
+        } else {
+          clearInterval(timerInterval);
+          timerDisplay.textContent = 'Ready';
+        }
+      }, 1000);
+    }
+  </script>
+</div></main><footer class="w-full bg-[#EAE6DD] border-t border-[#E4E2D9] mt-auto py-12">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-2 space-y-3">
+<img alt="Trip Genius AI" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIw8XaP-fo5xj3MAsvc4qpsQn-ZMCT-KgWuSDf4aYTWgh6hNR0HN-UQsGZhxZVW8DjP71BMWjHnun3-K5N3VM0gsW40dQIiDvMDmjGWm7aaRqzQ2FzHooAU2nXf2gsq8ZLXcWK95t-mrv7eW0d3KRjQxniOtheZj7oOmqlMUWgfv27NkGJYShXHZtrXL1dHNkMUPOnp2haWPE4aqSBaRIWXOSCXZyOTg3vnt5TUL-ToXKCBVyuHR1R96cGpG8a_E0O7To">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm leading-relaxed">
+        Intelligent travel planning that crafts custom, paced itineraries tailored to how you truly travel.
+      </p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold pt-2">
+        CRAFTED FOR THOUGHTFUL VOYAGERS
+      </p>
+</div>
+<div class="space-y-3">
+<p class="font-title-md text-title-md text-primary font-semibold">Navigation</p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="explore" href="#">Explore Destinations</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<p class="font-title-md text-title-md text-primary font-semibold">Governance &amp; Trust</p>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" data-path="privacy" href="#">Privacy Policy</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="terms" href="#">Terms of Service</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="trust" href="#">Security &amp; Data Vault</a></li>
+<li class=""><a class="hover:text-primary transition-colors" data-path="support" href="#">Help Center</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-8 mt-8 border-t border-[#DCD7CB] flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm gap-4">
+<p class="">© 2025 Trip Genius AI Inc. All rights reserved.</p>
+<p class="">Handcrafted itineraries • Powered by human-aligned intelligence</p>
+</div>
+</footer>
+
+
+</body></html>

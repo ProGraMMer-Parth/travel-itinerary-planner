@@ -1,0 +1,459 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py- space-xs rounded-lg"><a aria-current="page" class="transition-colors text-primary font-title-md font-semibold bg-surface-container-high px-space-md py- space-xs rounded-lg" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#">Plan My Trip</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-highest text-primary font-bold" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#">Plan My Trip</a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Inner Page Wrapper -->
+<div class="max-w-[1200px] w-full mx-auto px-margin-mobile sm:px-6 md:px-8 py-8 md:py-12 flex flex-col gap-16 md:gap-24">
+<!-- 1. HERO SECTION -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<div class="lg:col-span-6 flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+          Editorial Travel Intelligence
+        </div>
+<h1 class="font-display-hero-mobile lg:font-display-hero text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight leading-[1.08]">
+          Every journey, <span class="italic font-normal text-primary">thoughtfully planned.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Discover places you'll love and turn your travel preferences into a personalized itinerary, built around your time, budget, and travel style.
+        </p>
+<div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary active:scale-[0.98] transition-all font-title-md text-title-md shadow-sm" href="#quick-planner">
+<span class="">Plan My Trip</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-low transition-all font-title-md text-title-md shadow-sm" href="#destinations">
+<span class="">Explore Destinations</span>
+</a>
+</div>
+<div class="flex items-center gap-6 pt-4 text-on-surface-variant text-label-md font-label-md">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+            No cookie-cutter tours
+          </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+            Under 30s generation
+          </div>
+</div>
+</div>
+<!-- Hero Visual -->
+<div class="lg:col-span-6 relative">
+<div class="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-md bg-surface-container">
+<img alt="Swiss Alpine Traverses" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Sweeping panoramic vista of the Swiss Alps in Grindelwald with early morning soft mist hovering over green alpine valleys, warm golden sunrise illumination, crisp jagged mountain peaks, and a lone traveler standing on a ridgeline pathway with a trekking backpack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjTrAPof6U2nay5MgGFl_CqDKa_ChPGakItw5C-ER7DE7ZdVo33S0TaapGdmYOBytrKg5QwZUT9Bft30xsZu6FR45RG7Xob3wPats0oADelQkALeFakdWZBD9Z9KniIU_Gng6sK9cnj2SAN4Omol_guOFoC0yG1rJdavsZEMmB4H0jE9j0P8nDA9N9oCqvAGaIvvBE8bcJqjxn0XZkWTYCuz8A2CquQGtsMePJpO08LL4K_VwJ78Ymkw">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent pointer-events-none"></div>
+<!-- Editorial Overlay Badge -->
+<div class="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto flex items-center gap-3 p-3.5 rounded-xl bg-surface/90 backdrop-blur-md shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">nature_people</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Curated Route</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Swiss Alpine Traverses • Early Autumn</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. QUICK TRIP PLANNER -->
+<section class="w-full -mt-4 md:-mt-8 relative z-20" id="quick-planner">
+<div class="bg-surface-container-lowest rounded-xl p-6 sm:p-7 shadow-md flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-semibold">Create your bespoke expedition</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set your travel parameters and let the AI balance routes, rhythms, and hidden gems.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm self-start sm:self-auto">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+            Step 1 of 3
+          </span>
+</div>
+<form class="flex flex-col gap-6" id="trip-planner-form" onsubmit="event.preventDefault();">
+<!-- Form Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Destination Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="dest-input">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                Destination
+              </label>
+<div class="relative">
+<input class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface placeholder:text-outline rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="dest-input" placeholder="e.g. Kyoto, Dolomites, Oaxaca" type="text" value="Kyoto, Japan">
+</div>
+</div>
+<!-- Travel Dates -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="dates-input">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span>
+                Travel Dates
+              </label>
+<button class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md flex items-center justify-between text-left hover:bg-surface-container transition-colors" id="dates-input" type="button">
+<span class="truncate">Oct 14 — Oct 22</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded ml-2 flex-shrink-0">8 Nights</span>
+</button>
+</div>
+<!-- Travelers -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="travelers-input">
+<span class="material-symbols-outlined text-[16px] text-primary">group</span>
+                Travelers
+              </label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all appearance-none cursor-pointer" id="travelers-input">
+<option>1 Solo Explorer</option>
+<option selected="">2 Adults, 1 Room</option>
+<option>2 Adults, 2 Rooms</option>
+<option>Family (2 Adults, 2 Kids)</option>
+<option>Group (4+ Travelers)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Budget Range -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="budget-input">
+<span class="material-symbols-outlined text-[16px] text-primary">payments</span>
+                Budget Tier
+              </label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all appearance-none cursor-pointer" id="budget-input">
+<option>$750 – $1,500 (Essential &amp; Hostels)</option>
+<option selected="">$1,500 – $3,000 (Comfortable &amp; Boutique)</option>
+<option>$3,000 – $5,500 (Premium Heritage)</option>
+<option>$5,500+ (Ultra Luxury Private)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Travel Style Multi-select & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pt-2">
+<div class="flex flex-col sm:flex-row sm:items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider flex-shrink-0">Travel Style:</span>
+<div class="flex flex-wrap items-center gap-2" id="style-tags">
+<button class="h-8 px-3.5 rounded-lg bg-surface-container-low text-on-surface text-label-md font-label-md transition-all flex items-center gap-1" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-low'); this.classList.toggle('text-on-surface');" type="button">
+<span class="">Adventure</span>
+</button>
+<button class="h-8 px-3.5 rounded-lg bg-surface-container-low text-on-surface text-label-md font-label-md transition-all flex items-center gap-1" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-low'); this.classList.toggle('text-on-surface');" type="button">
+<span class="">Relaxation</span>
+</button>
+<!-- Selected Tag 1 -->
+<button class="h-8 px-3.5 rounded-lg bg-primary-container text-on-primary text-label-md font-label-md transition-all flex items-center gap-1 shadow-sm" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-low'); this.classList.toggle('text-on-surface');" type="button">
+<span class="material-symbols-outlined text-[14px]">museum</span>
+<span class="">Culture</span>
+</button>
+<!-- Selected Tag 2 -->
+<button class="h-8 px-3.5 rounded-lg bg-primary-container text-on-primary text-label-md font-label-md transition-all flex items-center gap-1 shadow-sm" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-low'); this.classList.toggle('text-on-surface');" type="button">
+<span class="material-symbols-outlined text-[14px]">forest</span>
+<span class="">Nature</span>
+</button>
+<button class="h-8 px-3.5 rounded-lg bg-surface-container-low text-on-surface text-label-md font-label-md transition-all flex items-center gap-1" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-low'); this.classList.toggle('text-on-surface');" type="button">
+<span class="">Food</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+<button class="h-12 px-8 rounded-lg bg-primary-container text-on-primary font-title-md text-title-md hover:bg-primary active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">auto_awesome</span>
+<span class="">Generate My Itinerary</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">bolt</span>
+              Tailored to your pace and season in under 30 seconds.
+            </span>
+<span class="hidden sm:inline font-label-sm text-label-sm text-outline">Trip Genius Engine v2.4</span>
+</div>
+</form>
+</div>
+</section>
+<!-- 3. POPULAR DESTINATIONS ("Places worth discovering") -->
+<section class="flex flex-col gap-8" id="destinations">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Curated Expeditions</span>
+<h2 class="font-headline-md sm:font-headline-lg text-headline-md sm:text-headline-lg text-on-surface">Places worth discovering</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Find inspiration for your next adventure with season-ready templates.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-title-md text-title-md text-primary hover:text-secondary transition-colors self-start sm:self-auto" href="#">
+<span class="">View all 48 locations</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+<!-- 4 Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Kyoto -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img alt="Kyoto Japan Machiya Streets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Quiet paved alleyway in Gion Kyoto at dawn with traditional dark wooden machiya merchant townhouses, glowing paper lantern with calligraphy, wet stone pavement reflecting morning light, and lush green maple leaves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCndC4Np097F-OxZh5K_A2tx1GzOUVlQYmMHVhCGwnxvv_dpqvoNIyGd_dsfmu8kzpvVqYYFofjQg0sK2I4A64lLAuiMkzGgzHIIy67NZqw_jwbEwjTGZEPQJgGYwQcfsxApQhfZGebl5lMJxOJtE9c9Cbmr6uMnfHW_spFts5cX733_w_vpP995phtH4hjzvWpWqFA19YbwpcuE92UOtbhiu9IF0cGzA8Rzu96J-HuHkFNPr3APZ5Phw">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-primary uppercase">Culture &amp; Zen</span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kansai, Japan</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Kyoto</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Wander preserved machiya lanes, secluded moss gardens, and historic tea houses during quiet morning light.
+              </p>
+</div>
+<a class="inline-flex items-center gap-1 font-title-md text-title-md text-primary group-hover:text-secondary transition-colors pt-2" href="#">
+<span class="">Explore destination</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Swiss Alps -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img alt="Swiss Alps Hiking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High altitude Swiss mountain trail with backpacker gazing at soaring alpine summits, rolling green meadows filled with wildflowers, cozy wooden chalets in the valley, and crisp golden hour light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhuJH3iYiFUN3dPY9tvhTVPw5Fa1kUzSS6ea4AC7xyo4u2tMtQWlIxmkz-9ny3BAXvkiKCgN70Tg3-L2hvO0KMEgpFH2M8IkH1cLIu5SG8whpk6oM3y8AkjGCUU0fzJ8aovNyzry0A4GArcr-461f2arQvpFwuh0103IUEkuK2SlnA-DUbIYBclGMzOpy9gTQ-qG4fZ_Lt0dADg4kkXmFl5bCK2ev7nZl33rW89dDmX5QQBqiHVthQvw">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-primary uppercase">Alpine Adventure</span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Bernese Oberland, Switzerland</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Swiss Alps</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Traverse panoramic alpine ridges, quiet pine valleys, and stay in secluded high-altitude chalets.
+              </p>
+</div>
+<a class="inline-flex items-center gap-1 font-title-md text-title-md text-primary group-hover:text-secondary transition-colors pt-2" href="#">
+<span class="">Explore destination</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Bali -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img alt="Bali Rice Terraces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Lush emerald green terraced rice paddies in Jatiluwih Bali with majestic coconut palms, morning tropical mist rising from mountain valleys, and a local farmer walking a narrow dirt ridge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEFIYXW50eL2is-fGe3qbNL5pbvg2Mx7gVYF4LJRdT2m9aTRw732TYK2r42tV4TVMmT3xwKy_C0N-9dlam3j7WmfbQwYaCfxqrHjPJ7hrTZ4O6FGofVKEN-N0rhQNUrIMr7grSvGvfiKjCmkXaA3JWGS-3HWYkAM48CehJ7nqUyJwnT6zg17lNuxZkI-OE9kFGr07Ncn-MYq_EOoaYj1HMK8Vk9sVtzFCgXUWmkvIjzNwvfRXhUvQphQ">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-primary uppercase">Wellness &amp; Nature</span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Ubud &amp; Jatiluwih, Indonesia</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Bali</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Immerse in emerald cascading rice terraces, cultural sanctuaries, and rejuvenating wellness retreats.
+              </p>
+</div>
+<a class="inline-flex items-center gap-1 font-title-md text-title-md text-primary group-hover:text-secondary transition-colors pt-2" href="#">
+<span class="">Explore destination</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Jaipur -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col">
+<div class="relative aspect-[4/3] w-full overflow-hidden bg-surface-container">
+<img alt="Jaipur Sandstone Palace Courtyard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sunlit sandstone courtyard inside the City Palace in Jaipur Rajasthan with intricate ornamental archways, pink carved facades, potted palace plants, and locals walking peacefully in vibrant traditional textiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoPKoSH4o4ht0HUnfF6R_phLYl7GmS9qisI1ve5zmpsMi1LksL_WsfqFs5CGiI0ZQur3AugGhtimAA-mAuJprWd4LfeCmr8AolherAqxdEl8GhwY_5UKcjJSMwo4IHVs7GyG5dA5D7Ct5ot7x9VBoQVk-jSyjtYVXAtXAGF5bkd3QuTamyPaVDWAt3heHxY023M9BUEJPimkMvDzOGwFY9ZE2netdDmTctbwLjmyUz-ropk21u3epYVg">
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface/90 backdrop-blur-sm font-label-sm text-label-sm text-primary uppercase">Heritage Craft</span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between gap-4">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Rajasthan, India</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold group-hover:text-primary transition-colors">Jaipur</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Marvel at intricate pink sandstone palace courtyards, artisan textile bazaars, and heritage culinary craft.
+              </p>
+</div>
+<a class="inline-flex items-center gap-1 font-title-md text-title-md text-primary group-hover:text-secondary transition-colors pt-2" href="#">
+<span class="">Explore destination</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. HOW IT WORKS ("Your trip, made simple.") -->
+<section class="bg-surface-container-low rounded-2xl p-6 sm:p-10 md:p-12 flex flex-col gap-10">
+<div class="flex flex-col items-center text-center gap-2 max-w-2xl mx-auto">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Intelligent Process</span>
+<h2 class="font-headline-md sm:font-headline-lg text-headline-md sm:text-headline-lg text-on-surface">Your trip, made simple.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Three deliberate steps from initial spark to verified itinerary.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<!-- Step 01 -->
+<div class="bg-surface-container-lowest p-7 rounded-xl shadow-sm flex flex-col gap-5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+<span class="font-display-hero text-headline-md text-surface-container-highest font-light">01</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Share your preferences</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Tell us where you want to go, your budget, travel dates, and preferred travel pace. No rigid presets.
+            </p>
+</div>
+<div class="pt-2 flex items-center gap-2 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Takes 30 seconds
+          </div>
+</div>
+<!-- Step 02 -->
+<div class="bg-surface-container-lowest p-7 rounded-xl shadow-sm flex flex-col gap-5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+</div>
+<span class="font-display-hero text-headline-md text-surface-container-highest font-light">02</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Get your personalized plan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Explore a suggested itinerary organized by day and circadian rhythm, tailored to your exact tastes.
+            </p>
+</div>
+<div class="pt-2 flex items-center gap-2 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Optimized travel times
+          </div>
+</div>
+<!-- Step 03 -->
+<div class="bg-surface-container-lowest p-7 rounded-xl shadow-sm flex flex-col gap-5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">bookmark</span>
+</div>
+<span class="font-display-hero text-headline-md text-surface-container-highest font-light">03</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Refine and save</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Edit activities, swap routes, adjust times seamlessly, and save your private notebook for offline travel.
+            </p>
+</div>
+<div class="pt-2 flex items-center gap-2 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Available offline on mobile
+          </div>
+</div>
+</div>
+</section>
+<!-- 5. KEY BENEFITS -->
+<section class="flex flex-col gap-10">
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Deliberate Travel Architecture</span>
+<h2 class="font-headline-md sm:font-headline-lg text-headline-md sm:text-headline-lg text-on-surface">
+          Thoughtful planning for deliberate travelers.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Engineered to eliminate friction without draining the romance from spontaneous discovery.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Benefit 1 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Personalized itineraries</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Plans built around individual interests, culinary tastes, and realistic energy rhythms rather than tourist checklists.
+            </p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">route</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Smarter route planning</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Organize destinations and transit times into a practical, daylight-optimized travel schedule without backtracking.
+            </p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Budget-conscious travel</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Plan transparently within your exact preferred spending range without algorithmic surcharges or inflated recommendations.
+            </p>
+</div>
+</div>
+<!-- Benefit 4 -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">edit_calendar</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Flexible trip editing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Easily modify, re-order activities, swap hotel suggestions, and revisit your saved notebooks anytime across devices.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. FINAL CALL TO ACTION -->
+<section class="relative rounded-2xl overflow-hidden bg-primary text-on-primary p-8 sm:p-12 md:p-16 shadow-lg">
+<!-- Decorative Terracotta Subtle Accent Accent -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<!-- Subtle Ambient Decorative Circle -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-primary-container/30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">luggage</span>
+          Ready when you are
+        </div>
+<h2 class="font-headline-md sm:font-headline-lg text-headline-md sm:text-headline-lg text-on-primary font-normal">
+          Your next great trip starts here.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 max-w-lg">
+          Bring your travel ideas together and create a journey that feels uniquely yours. Free to start, customizable forever.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container font-title-md text-title-md transition-all shadow-sm" href="#quick-planner">
+<span class="">Start Planning</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-primary/60">No credit card required</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for quick planner form submission
+  document.getElementById('trip-planner-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const dest = document.getElementById('dest-input').value || 'your chosen destination';
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Synthesizing route...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> Itinerary Ready!';
+      btn.classList.remove('bg-primary-container');
+      btn.classList.add('bg-secondary');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.add('bg-primary-container');
+        btn.classList.remove('bg-secondary');
+        btn.disabled = false;
+      }, 2500);
+    }, 1200);
+  });
+</script></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

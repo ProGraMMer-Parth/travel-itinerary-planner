@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Trip Genius AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#ecefe6", "inverse-primary": "#a6d0ba", "surface-container-highest": "#e0e4da", "on-error": "#ffffff", "primary-fixed": "#c2ecd6", "on-primary-fixed": "#002115", "on-tertiary": "#ffffff", "outline": "#717974", "surface-dim": "#d8dbd2", "on-tertiary-container": "#a9b2a8", "on-secondary-fixed-variant": "#753419", "secondary-fixed-dim": "#ffb59a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#404941", "secondary-fixed": "#ffdbce", "secondary": "#924a2e", "on-secondary-container": "#78361b", "inverse-on-surface": "#eff2e8", "on-surface": "#191d17", "secondary-container": "#fea17e", "on-tertiary-fixed": "#151d17", "inverse-surface": "#2e322b", "surface": "#f7fbf1", "outline-variant": "#c1c8c2", "primary-container": "#244a3a", "surface-tint": "#406655", "on-primary": "#ffffff", "surface-container-high": "#e6e9e0", "primary": "#0b3325", "primary-fixed-dim": "#a6d0ba", "tertiary-container": "#3d453d", "surface-container-low": "#f2f5eb", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#284e3e", "on-primary-container": "#90b9a4", "background": "#f7fbf1", "surface-bright": "#f7fbf1", "tertiary-fixed-dim": "#c0c9be", "on-surface-variant": "#414844", "on-secondary-fixed": "#380d00", "surface-variant": "#e0e4da", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dce5da", "tertiary": "#272f28", "on-background": "#191d17" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "label-sm": ["DM Sans"], "label-md": ["DM Sans"], "display-hero": ["DM Serif Display"], "body-sm": ["DM Sans"], "title-md": ["DM Sans"], "title-lg": ["DM Sans"], "headline-lg-mobile": ["DM Serif Display"], "body-lg": ["DM Sans"], "headline-sm": ["DM Serif Display"], "display-hero-mobile": ["DM Serif Display"], "body-md": ["DM Sans"], "headline-md": ["DM Serif Display"], "headline-lg": ["DM Serif Display"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(37,41,35,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group" data-path="home" href="#"><img alt="Trip Genius AI" class="h-8 md:h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md font-semibold bg-surface-container-high px-space-md py-space-xs rounded-lg"><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="home" href="#">Home</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="my-trips" href="#">My Trips</a><a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs" data-path="how-it-works" href="#">How It Works</a></nav><div class="hidden md:flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-11 px-space-md font-label-md text-label-md uppercase tracking-wider text-primary rounded-lg hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="login" href="#">Sign In</a><a class="inline-flex items-center justify-center gap-1.5 h-11 px-space-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-lg shadow-[0_2px_8px_-2px_rgba(37,41,35,0.08)]" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a><div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-primary cursor-pointer hover:bg-surface-container-high transition-colors ml-space-xs ring-1 ring-outline-variant/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div><div class="flex items-center gap-space-sm lg:hidden"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden lg:hidden bg-surface-container-low px-margin-mobile py-space-lg shadow-[0_8px_20px_-4px_rgba(37,41,35,0.08)]" id="mobile-drawer"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-highest text-primary font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="home" href="#">Home</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="explore-destinations" href="#">Explore Destinations</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="my-trips" href="#">My Trips</a><a class="flex items-center px-space-md py-space-sm rounded-lg font-title-md text-title-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-path="how-it-works" href="#">How It Works</a></nav><div class="flex flex-col gap-space-sm mt-space-md pt-space-md"><a class="flex items-center justify-center h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-primary bg-surface-container-lowest hover:bg-surface-container-high hover:text-on-surface" data-path="login" href="#">Sign In</a><a class="flex items-center justify-center gap-1.5 h-12 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-primary bg-primary-container hover:bg-primary" data-path="plan-my-trip" href="#"><span>Plan My Trip</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<div class="flex items-center gap-space-sm bg-primary text-on-primary px-space-md py-space-sm rounded-lg shadow-xl">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Trip link copied to clipboard</span>
+</div>
+</div>
+<div class="max-w-7xl mx-auto w-full px-margin-mobile md:px-margin py-space-lg">
+<!-- Breadcrumb & Back Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 flex-wrap">
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#">My Trips</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors truncate max-w-[200px] sm:max-w-none" href="#">Cultural Heritage &amp; Gardens (Kyoto)</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Sharing &amp; Collaboration</span>
+</nav>
+<a class="inline-flex items-center gap-1.5 self-start sm:self-auto font-label-md text-label-md uppercase tracking-wider text-primary hover:text-primary-container transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Itinerary</span>
+</a>
+</div>
+<!-- Editorial Header & Trip Summary Bento Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm mb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-lg">
+<!-- Title and Mission -->
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Multi-Traveler Co-Planning</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Share Your Trip</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+            Bring everyone into the plan and make the journey easier to organize together.
+          </p>
+</div>
+<!-- Trip Summary Capsule -->
+<div class="bg-surface-container-low rounded-xl p-space-sm md:p-space-md flex items-center gap-space-md">
+<img class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover shadow-sm flex-shrink-0" data-alt="Intimate morning view of Gion Kyoto historic preserved street with traditional wooden machiya houses, stone paved path, and lantern in soft golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-iQn1PbE9k1yWrZdnxvTQFozoCnAZbokuz7ZNWHW5C7NlAX_JNukwmbXEaI3tRdqqV716hzGxUZRIjhrD1nghnQF8PR_WZHOXUm9BxDVV6QhKIclSntvBMVsVPqWJzfWho_kzJmrUWYttXtxUEw_eD9xKID141ZoS5uUAosls-T1ZxM4cWi-I5GzZG7ysuB-HIW9nO0THwx4wyCc_EPu01g9Qds_IC8I7mUn_oUCc-cbs7rsfTdSAsw"/>
+<div class="min-w-0 pr-space-xs">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm uppercase tracking-wider mb-0.5">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-semibold">Kyoto, Japan</span>
+</div>
+<div class="font-title-md text-title-md text-primary font-bold truncate">Cultural Heritage &amp; Gardens</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Oct 14 – Oct 20, 2025 • 7 Days</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Active, 1 Pending Traveler</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Two-Column Workflow -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / PRIMARY COLUMN (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- SECTION A: Share Trip Link -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">link</span>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Share Trip Link</h2>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed self-start sm:self-auto">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Link Active • Anyone with link can view</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+            Recipients with this link can view the itinerary and trip notes according to your access settings.
+          </p>
+<!-- Input + Primary Action Container -->
+<div class="bg-surface-container-low rounded-lg p-space-xs flex flex-col sm:flex-row items-stretch sm:items-center gap-space-xs">
+<div class="relative flex-1 flex items-center px-space-sm py-2">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2 flex-shrink-0">vpn_key</span>
+<input aria-label="Trip share URL" class="w-full bg-transparent font-body-sm text-body-sm text-on-surface outline-none select-all truncate" id="share-link-input" readonly="" type="text" value="https://tripgenius.ai/trip/kyoto-autumn-2025?key=share_k82m9x"/>
+</div>
+<button class="h-11 px-space-md bg-primary-container hover:bg-primary active:scale-[0.98] text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-sm flex-shrink-0" id="copy-btn" onclick="copyShareUrl()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="copy-icon">content_copy</span>
+<span id="copy-text">Copy Link</span>
+</button>
+</div>
+<!-- Secondary Controls & Security Footnote -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mt-space-md pt-space-sm">
+<div class="flex items-center gap-space-md">
+<button class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary transition-colors" onclick="regenerateLink()" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Regenerate Link</span>
+</button>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-outline hover:text-error transition-colors" id="disable-link-btn" onclick="toggleLinkState()" type="button">
+<span class="material-symbols-outlined text-[16px]">link_off</span>
+<span>Disable Link</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">verified_user</span>
+<span>Protected token URL</span>
+</div>
+</div>
+<!-- Safety disclaimer note -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5 flex-shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Links use an unguessable encrypted token. Editing permissions are never granted via public link to keep your schedule authentic and protected.
+            </p>
+</div>
+</div>
+<!-- SECTION B: Access Permissions Selection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="mb-space-md">
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Who Can Access This Trip?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Control visibility across casual viewers and verified travel companions.
+            </p>
+</div>
+<!-- Option Cards (Radio selection) -->
+<div aria-label="Access levels" class="flex flex-col gap-space-sm" role="radiogroup">
+<!-- Option 1: Private -->
+<label class="group cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-md">
+<input class="mt-1 accent-[#244A3A]" name="access_tier" onchange="updateAccessMode('private')" type="radio" value="private"/>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-title-md text-title-md text-primary font-semibold">Private</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Only the trip owner (you) can access, organize, and view this trip itinerary.
+                </div>
+</div>
+</label>
+<!-- Option 2: Anyone with the link (Selected State) -->
+<label class="group cursor-pointer rounded-xl p-space-md bg-primary-fixed/20 shadow-sm transition-all flex items-start gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<input checked="" class="mt-1 accent-[#244A3A]" name="access_tier" onchange="updateAccessMode('link')" type="radio" value="link"/>
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold">Anyone with the link</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold">Current Setting</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  People with the shared link can view the trip. Does not allow modifications or accidental deletion.
+                </div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 hidden sm:block">check_circle</span>
+</label>
+<!-- Option 3: Invited people only -->
+<label class="group cursor-pointer rounded-xl p-space-md bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-md">
+<input class="mt-1 accent-[#244A3A]" name="access_tier" onchange="updateAccessMode('invited')" type="radio" value="invited"/>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-title-md text-title-md text-primary font-semibold">Invited people only</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Only designated collaborators with approved email invitations can view or contribute.
+                </div>
+</div>
+</label>
+</div>
+<!-- Link Visitor Rights Config -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-md rounded-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<span class="font-title-md text-title-md text-primary font-semibold">Default Visitor Permission</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Applies to users accessing via the shared link.</p>
+</div>
+<div class="relative inline-block">
+<select class="h-10 pl-space-md pr-8 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface appearance-none cursor-pointer outline-none shadow-sm focus:ring-1 focus:ring-primary">
+<option selected="">Can view (Default)</option>
+<option disabled="">Can edit (Requires explicit email invite)</option>
+</select>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center gap-1.5 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">security</span>
+<span class="font-label-sm text-label-sm">Editing permission requires an explicit email invitation and verified account.</span>
+</div>
+</div>
+</div>
+<!-- SECTION C: Safety, Security & Privacy Notice -->
+<div class="bg-surface-container-high rounded-xl p-space-md md:p-space-lg flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary font-bold">Privacy &amp; Traveler Safeguards</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+              Collaborators can view scheduled days, transit notes, and budget projections. Collaborators can <strong class="text-primary font-semibold">never</strong> view your personal payment methods, flight purchase receipts, account credentials, or any other private itineraries in your vault.
+            </p>
+<div class="mt-space-sm flex flex-wrap items-center gap-space-md text-primary">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+<span>End-to-end tokenization</span>
+</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">history</span>
+<span>Audit trail logging</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT / SECONDARY COLUMN (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- SECTION D: Invite Travel Companions -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-secondary text-[22px]">person_add</span>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Invite Travel Companions</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+            Send private invitations directly to your travel partners' inbox with custom editing permissions.
+          </p>
+<form class="flex flex-col gap-space-sm" onsubmit="handleInvite(event)">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1 font-semibold" for="companion-email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined text-[18px] text-outline absolute left-3 top-1/2 -translate-y-1/2">mail</span>
+<input class="w-full h-11 pl-10 pr-space-md rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-1.5 focus:ring-primary transition-all" id="companion-email" placeholder="companion@email.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant mb-1 font-semibold">Permission Level</label>
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all bg-primary-container text-on-primary flex items-center justify-center gap-1 shadow-sm" id="perm-edit" onclick="setInvitePerm('edit')" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Can Edit</span>
+</button>
+<button class="h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1" id="perm-view" onclick="setInvitePerm('view')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Can View</span>
+</button>
+</div>
+</div>
+<button class="mt-space-xs h-11 w-full bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Invitation</span>
+</button>
+<p class="font-body-sm text-body-sm text-outline text-center mt-1">
+              Invitations expire automatically in 14 days if not accepted.
+            </p>
+</form>
+</div>
+<!-- SECTION E: Active Collaborators List -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-primary font-bold">People with Access</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold">3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live Sync Active</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Item 1: Owner -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center font-bold flex-shrink-0 ring-2 ring-surface-container-lowest">
+                  EM
+                </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold truncate">Elena Miller</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase">You</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">elena.miller@example.com</div>
+</div>
+</div>
+<div class="flex-shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+<span>Owner</span>
+</span>
+</div>
+</div>
+<!-- Item 2: Collaborator Accepted -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-primary font-title-md text-title-md flex items-center justify-center font-bold flex-shrink-0">
+                  DK
+                </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-primary font-bold truncate">David Kim</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">david.k@example.com</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<div class="relative">
+<select class="h-8 pl-2 pr-6 rounded-md bg-surface-container-lowest font-label-sm text-label-sm text-primary appearance-none cursor-pointer outline-none">
+<option selected="">Can edit</option>
+<option>Can view</option>
+<option class="text-error">Remove</option>
+</select>
+<span class="material-symbols-outlined text-[14px] text-outline absolute right-1.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-error transition-colors" title="Manage collaborator" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Item 3: Collaborator Pending -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md flex items-center justify-center font-bold flex-shrink-0">
+                  SC
+                </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-md text-title-md text-primary font-bold truncate">Sarah Chen</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">Pending</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">s.chen@example.com</div>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="h-8 px-2 rounded-md font-label-sm text-label-sm uppercase tracking-wider text-primary hover:bg-surface-container-high transition-colors" onclick="triggerToast('Invitation resent to Sarah Chen')" type="button">
+                  Resend
+                </button>
+<button class="h-8 px-2 rounded-md font-label-sm text-label-sm uppercase tracking-wider text-error hover:bg-error-container/40 transition-colors" onclick="triggerToast('Invitation revoked')" type="button">
+                  Revoke
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION F: Recent Activity Stream -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">notifications_active</span>
+<h3 class="font-title-md text-title-md text-primary font-bold">Recent Activity</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Real-time</span>
+</div>
+<!-- Activity Timeline -->
+<div class="relative pl-6 space-y-space-md before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Event 1 -->
+<div class="relative flex items-start gap-space-sm">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">David Kim</strong> added <span class="text-secondary font-medium">“Nishiki Market Culinary Walk”</span> to Day 4.
+                </p>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 block">2 hours ago</span>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex items-start gap-space-sm">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Elena Miller</strong> adjusted Target Budget projection to <span class="font-medium text-primary">¥55,000 / day</span>.
+                </p>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 block">Yesterday at 4:18 PM</span>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex items-start gap-space-sm">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-surface-dim ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Sarah Chen</strong> was invited with view access.
+                </p>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 block">2 days ago</span>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex items-start gap-space-sm">
+<span class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary-container ring-4 ring-surface-container-lowest"></span>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Elena Miller</strong> initialized itinerary from AI prompt “Kyoto Zen &amp; Traditional Gastronomy”.
+                </p>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 block">Oct 1, 2025</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-xs rounded-lg flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">cloud_done</span>
+<span>All changes automatically synced</span>
+</span>
+<a class="text-primary hover:underline font-semibold" href="#">View Log</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Page Actions & Help Anchor Bar -->
+<div class="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-wrap justify-center md:justify-start">
+<a class="h-11 px-space-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary rounded-lg font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Itinerary</span>
+</a>
+<button class="h-11 px-space-lg bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-[0.98]" onclick="copyShareUrl()" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Copy Share Link</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+<span class="font-body-sm text-body-sm">
+          Need help planning with a group? 
+          <a class="text-primary font-semibold hover:underline" href="#">Read our Group Travel Guide</a>
+</span>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Logic -->
+<script>
+    let currentInvitePerm = 'edit';
+    let isLinkActive = true;
+
+    function triggerToast(text) {
+      const toast = document.getElementById('toast');
+      const message = document.getElementById('toast-message');
+      message.innerText = text;
+      toast.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-24', 'pointer-events-none');
+      }, 2800);
+    }
+
+    function copyShareUrl() {
+      const linkInput = document.getElementById('share-link-input');
+      linkInput.select();
+      navigator.clipboard.writeText(linkInput.value).then(() => {
+        const copyText = document.getElementById('copy-text');
+        const copyIcon = document.getElementById('copy-icon');
+        copyText.innerText = 'Copied!';
+        copyIcon.innerText = 'done';
+        triggerToast('Trip link copied to clipboard');
+
+        setTimeout(() => {
+          copyText.innerText = 'Copy Link';
+          copyIcon.innerText = 'content_copy';
+        }, 2000);
+      }).catch(() => {
+        triggerToast('Trip link copied to clipboard');
+      });
+    }
+
+    function regenerateLink() {
+      const randomKey = 'share_' + Math.random().toString(36).substring(2, 8);
+      document.getElementById('share-link-input').value = `https://tripgenius.ai/trip/kyoto-autumn-2025?key=${randomKey}`;
+      triggerToast('A fresh unique share token has been generated');
+    }
+
+    function toggleLinkState() {
+      isLinkActive = !isLinkActive;
+      const btn = document.getElementById('disable-link-btn');
+      if (!isLinkActive) {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">link</span><span>Re-enable Link</span>';
+        btn.classList.remove('text-outline');
+        btn.classList.add('text-primary');
+        triggerToast('Public trip link has been deactivated');
+      } else {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">link_off</span><span>Disable Link</span>';
+        btn.classList.remove('text-primary');
+        btn.classList.add('text-outline');
+        triggerToast('Trip link is now active');
+      }
+    }
+
+    function updateAccessMode(mode) {
+      if (mode === 'private') {
+        triggerToast('Trip is now Private. Shared links are temporarily disabled.');
+      } else if (mode === 'link') {
+        triggerToast('Trip can be viewed by anyone with the link.');
+      } else if (mode === 'invited') {
+        triggerToast('Trip restricted to explicitly invited members only.');
+      }
+    }
+
+    function setInvitePerm(type) {
+      currentInvitePerm = type;
+      const editBtn = document.getElementById('perm-edit');
+      const viewBtn = document.getElementById('perm-view');
+
+      if (type === 'edit') {
+        editBtn.className = 'h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all bg-primary-container text-on-primary flex items-center justify-center gap-1 shadow-sm';
+        viewBtn.className = 'h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1';
+      } else {
+        viewBtn.className = 'h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all bg-primary-container text-on-primary flex items-center justify-center gap-1 shadow-sm';
+        editBtn.className = 'h-9 rounded-md font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-all text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1';
+      }
+    }
+
+    function handleInvite(e) {
+      e.preventDefault();
+      const input = document.getElementById('companion-email');
+      const email = input.value.trim();
+      if (email) {
+        triggerToast(`Invitation sent to ${email} (${currentInvitePerm === 'edit' ? 'Can Edit' : 'Can View'})`);
+        input.value = '';
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-2"><img alt="Trip Genius AI" class="h-7 md:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U1sVcI-Wq8QNp-P21aB1U52W4DcrrsV_xrSHTceA9gbNEtFEKgcKTEfTydRgZ-8hwVGEBw0uCuZdSmhpLEKSkWGJV0K-TDjxtLwUUReiGfzmbqfjJwLWPcx1nCoBLC2wJ31TdZldC6-F32vJZOGZtNB4EjKgmh2vc6_mxBe86u-bee28A1QZEDTh4w0DPOC2oFYnhlUiuuUuKeLHyO6omeMQhSfV4bJdVItoUmtyMzX-mXqVJAWGS2gvdc"/></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Your journey. Your way. Thoughtfully planned. Synthesizing editorial curation with intelligent route logistics to orchestrate authentic, effortless global expeditions.</p><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Crafted for Thoughtful Voyagers</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Navigation</span><div class="grid grid-cols-2 gap-space-sm"><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="explore-destinations" href="#">Explore Destinations</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#">My Trips</a></div><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="plan-my-trip" href="#">Trip Planner</a></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-primary font-semibold mb-space-xs">Governance &amp; Trust</span><div class="flex flex-col gap-space-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" data-path="ethics-in-ai" href="#"><span class="material-symbols-outlined text-[16px] text-primary">psychology</span>Ethics in AI</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><p class="font-body-sm text-body-sm">© 2025 Trip Genius AI Inc. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Global Editorial Edition 2.5</span></div></div></div></footer></body></html>
