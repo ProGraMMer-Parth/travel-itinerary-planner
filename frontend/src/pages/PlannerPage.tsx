@@ -1,22 +1,74 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { generateItinerary } from "../services/api";
+import type {
+  Budget,
+  ItineraryGenerateResponse,
+  Pace,
+  PlannerPreferences,
+} from "../types";
 
 type PlannerPageProps = {
-  initialDestination: string;
+  initialDestination?: string;
+  initialPreferences?: PlannerPreferences | null;
   onBack: () => void;
-  onGenerate: () => void;
+  onGenerate: (destination: string, itinerary: ItineraryGenerateResponse) => void;
 };
 
+function normalizeInterest(interest: string): string {
+  const trimmed = interest.trim();
+  const lower = trimmed.toLowerCase();
+  if (lower === "slow travel") return "Relaxation";
+  if (lower === "nature & adventure" || lower === "nature and adventure") return "Nature";
+  if (lower === "culture & heritage" || lower === "culture and heritage") return "Culture";
+  return trimmed;
+}
+
 export default function PlannerPage({
-  initialDestination,
+  initialDestination = "",
+  initialPreferences = null,
   onBack,
   onGenerate,
 }: PlannerPageProps) {
-  const [destination, setDestination] = useState(initialDestination);
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [budget, setBudget] = useState("moderate");
-  const [travelStyle, setTravelStyle] = useState("balanced");
-  const [interests, setInterests] = useState<string[]>(["Culture"]);
+  const isEditingSavedTrip = Boolean(initialPreferences?.tripId || initialPreferences?.tripTitle);
+
+  const [destination, setDestination] = useState(
+    initialPreferences?.destination || initialDestination || ""
+  );
+  const [startDate, setStartDate] = useState(initialPreferences?.startDate || "");
+  const [endDate, setEndDate] = useState(initialPreferences?.endDate || "");
+  const [budget, setBudget] = useState<Budget>(initialPreferences?.budget || "moderate");
+  const [travelStyle, setTravelStyle] = useState<Pace>(initialPreferences?.pace || "balanced");
+  const [interests, setInterests] = useState<string[]>(
+    initialPreferences?.interests?.length
+      ? initialPreferences.interests.map(normalizeInterest)
+      : ["Culture"]
+  );
+  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Sync state whenever initialPreferences or initialDestination changes
+  useEffect(() => {
+    if (initialPreferences) {
+      setDestination(initialPreferences.destination || "");
+      setStartDate(initialPreferences.startDate || "");
+      setEndDate(initialPreferences.endDate || "");
+      setBudget(initialPreferences.budget || "moderate");
+      setTravelStyle(initialPreferences.pace || "balanced");
+      setInterests(
+        initialPreferences.interests?.length
+          ? initialPreferences.interests.map(normalizeInterest)
+          : ["Culture"]
+      );
+    } else {
+      setDestination(initialDestination || "");
+      setStartDate("");
+      setEndDate("");
+      setBudget("moderate");
+      setTravelStyle("balanced");
+      setInterests(["Culture"]);
+    }
+    setError("");
+  }, [initialPreferences, initialDestination]);
 
   const interestOptions = [
     "Nature",
@@ -36,30 +88,84 @@ export default function PlannerPage({
     );
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function runGeneration(isDemo = false) {
+    const trimmedDestination = destination.trim();
+    if (!trimmedDestination) {
+      setError("Enter a destination to continue.");
+      return;
+    }
 
-    // The preferences will be connected to the itinerary generator next.
-    onGenerate();
+    if (!startDate || !endDate) {
+      setError("Choose your start and end dates.");
+      return;
+    }
+
+    if (endDate < startDate) {
+      setError("Your end date needs to be on or after the start date.");
+      return;
+    }
+
+    if (interests.length === 0) {
+      setError("Choose at least one interest.");
+      return;
+    }
+
+    setError("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await generateItinerary({
+        destination: trimmedDestination,
+        start_date: startDate,
+        end_date: endDate,
+        interests,
+        budget,
+        pace: travelStyle,
+        demo: isDemo,
+      });
+
+      onGenerate(trimmedDestination, response);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Could not generate an itinerary. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <div className="planner-page">
       <div className="planner-page-inner">
         <button className="back-link" type="button" onClick={onBack}>
-          ← Back to home
+          {isEditingSavedTrip ? "← Back to itinerary" : "← Back to home"}
         </button>
 
         <div className="planner-page-heading">
-          <span className="section-kicker">YOUR JOURNEY STARTS HERE</span>
-          <h1>Let&apos;s plan something wonderful.</h1>
+          <span className="section-kicker">
+            {isEditingSavedTrip ? "EDIT TRIP PREFERENCES" : "YOUR JOURNEY STARTS HERE"}
+          </span>
+          <h1>
+            {isEditingSavedTrip
+              ? `Refine trip to ${destination || "your destination"}`
+              : "Let's plan something wonderful."}
+          </h1>
           <p>
-            Tell us a little about your trip. We&apos;ll help you shape a
-            journey around the things you love.
+            {isEditingSavedTrip
+              ? "Update your preferences below and regenerate a personalized itinerary."
+              : "Tell us a little about your trip. We'll help you shape a journey around the things you love."}
           </p>
         </div>
 
-        <form className="trip-form" onSubmit={handleSubmit}>
+        <form
+          className="trip-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            runGeneration(false);
+          }}
+        >
           <section className="form-section">
             <span className="form-step">01</span>
             <div className="form-section-content">
@@ -147,7 +253,7 @@ export default function PlannerPage({
                   <span>BUDGET PER PERSON</span>
                   <select
                     value={budget}
-                    onChange={(event) => setBudget(event.target.value)}
+                    onChange={(event) => setBudget(event.target.value as Budget)}
                   >
                     <option value="budget">Budget-friendly</option>
                     <option value="moderate">Moderate</option>
@@ -160,7 +266,9 @@ export default function PlannerPage({
                   <span>TRAVEL PACE</span>
                   <select
                     value={travelStyle}
-                    onChange={(event) => setTravelStyle(event.target.value)}
+                    onChange={(event) =>
+                      setTravelStyle(event.target.value as Pace)
+                    }
                   >
                     <option value="relaxed">Relaxed</option>
                     <option value="balanced">Balanced</option>
@@ -171,16 +279,40 @@ export default function PlannerPage({
             </div>
           </section>
 
+          {error && (
+            <p className="form-status form-status-error" role="alert">
+              {error}
+            </p>
+          )}
+
           <div className="planner-form-actions">
             <button
               className="button button-secondary"
               type="button"
               onClick={onBack}
+              disabled={isSubmitting}
             >
               Cancel
             </button>
-            <button className="button button-primary" type="submit">
-              Create my itinerary <span aria-hidden="true">→</span>
+            <button
+              className="button button-primary"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <span className="spinner-inline" />
+                  Generating itinerary...
+                </>
+              ) : isEditingSavedTrip ? (
+                <>
+                  Regenerate itinerary <span aria-hidden="true">→</span>
+                </>
+              ) : (
+                <>
+                  Create my itinerary <span aria-hidden="true">→</span>
+                </>
+              )}
             </button>
           </div>
         </form>

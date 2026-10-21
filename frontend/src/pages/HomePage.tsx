@@ -1,6 +1,7 @@
 type HomePageProps = {
-  onPlanTrip: (destination: string) => void;
+  onPlanTrip: (destination: string, interests?: string[]) => void;
 };
+
 const destinations = [
   {
     name: "Kyoto, Japan",
@@ -8,6 +9,7 @@ const destinations = [
     image:
       "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=85",
     tag: "CULTURE & HERITAGE",
+    interest: "Culture",
   },
   {
     name: "Amalfi Coast, Italy",
@@ -15,6 +17,7 @@ const destinations = [
     image:
       "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85",
     tag: "SLOW TRAVEL",
+    interest: "Relaxation",
   },
   {
     name: "Manali, India",
@@ -22,6 +25,7 @@ const destinations = [
     image:
       "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=85",
     tag: "NATURE & ADVENTURE",
+    interest: "Nature",
   },
 ];
 
@@ -142,11 +146,26 @@ export default function HomePage({ onPlanTrip }: HomePageProps) {
 
         <div className="destination-grid">
           {destinations.map((destination) => (
-            <article className="destination-card" key={destination.name}>
-              <a
+            <article
+              className="destination-card"
+              key={destination.name}
+              role="button"
+              tabIndex={0}
+              aria-label={`Plan a trip to ${destination.name}`}
+              onClick={() => onPlanTrip(destination.name, [destination.interest])}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  onPlanTrip(destination.name, [destination.interest]);
+                }
+              }}
+            >
+              <div
                 className="destination-image-link"
-                href="#planner"
-                aria-label={`Plan a trip to ${destination.name}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onPlanTrip(destination.name, [destination.interest]);
+                }}
               >
                 <img
                   className="destination-image"
@@ -154,10 +173,17 @@ export default function HomePage({ onPlanTrip }: HomePageProps) {
                   alt={destination.name}
                   loading="lazy"
                 />
-                <span className="destination-arrow" aria-hidden="true">
+                <span
+                  className="destination-arrow"
+                  aria-hidden="true"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onPlanTrip(destination.name, [destination.interest]);
+                  }}
+                >
                   ↗
                 </span>
-              </a>
+              </div>
               <div className="destination-info">
                 <span className="destination-tag">{destination.tag}</span>
                 <h3>{destination.name}</h3>

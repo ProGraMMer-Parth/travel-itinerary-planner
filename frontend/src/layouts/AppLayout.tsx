@@ -1,21 +1,53 @@
+import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
 
-import { useState } from 'react';
+export type NavigationTarget =
+  | "home"
+  | "planner"
+  | "itinerary"
+  | "my-trips"
+  | "destinations"
+  | "how-it-works";
+
+export function getUserDisplayName(user: { email?: string; user_metadata?: Record<string, unknown> } | null): string {
+  if (!user) return "";
+  const meta = user.user_metadata;
+  const fullName = typeof meta?.full_name === "string" ? meta.full_name.trim() : "";
+  if (fullName) return fullName;
+
+  const altName = typeof meta?.name === "string" ? meta.name.trim() : "";
+  if (altName) return altName;
+
+  if (user.email) {
+    const prefix = user.email.split("@")[0].trim();
+    if (prefix) return prefix;
+  }
+
+  return "Traveler";
+}
 
 type AppLayoutProps = {
   children: React.ReactNode;
+  activePage?: string;
+  onNavigate?: (target: NavigationTarget) => void;
+  onOpenAuth?: () => void;
 };
 
-const navigation = [
-  { label: 'Home', href: '#home' },
-  { label: 'Explore Destinations', href: '#destinations' },
-  { label: 'My Trips', href: '#my-trips' },
-  { label: 'How It Works', href: '#how-it-works' },
-];
-
-export default function AppLayout({ children }: AppLayoutProps) {
+export default function AppLayout({
+  children,
+  activePage = "home",
+  onNavigate,
+  onOpenAuth,
+}: AppLayoutProps) {
+  const { user, signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
+
+  function handleNav(target: NavigationTarget) {
+    closeMenu();
+    onNavigate?.(target);
+  }
 
   return (
     <div className="app-shell">
@@ -25,7 +57,10 @@ export default function AppLayout({ children }: AppLayoutProps) {
             className="brand"
             href="#home"
             aria-label="Trip Genius AI home"
-            onClick={closeMenu}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav("home");
+            }}
           >
             <span className="brand-mark" aria-hidden="true">
               T<span className="brand-route">⌁</span>
@@ -36,37 +71,77 @@ export default function AppLayout({ children }: AppLayoutProps) {
           </a>
 
           <nav className="desktop-nav" aria-label="Main navigation">
-            {navigation.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`nav-link ${
-                  item.label === 'Home' ? 'nav-link-active' : ''
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
+            <button
+              type="button"
+              className={`nav-link nav-btn ${activePage === "home" ? "nav-link-active" : ""}`}
+              onClick={() => handleNav("home")}
+            >
+              Home
+            </button>
+            <button
+              type="button"
+              className="nav-link nav-btn"
+              onClick={() => handleNav("destinations")}
+            >
+              Explore Destinations
+            </button>
+            <button
+              type="button"
+              className={`nav-link nav-btn ${activePage === "my-trips" ? "nav-link-active" : ""}`}
+              onClick={() => handleNav("my-trips")}
+            >
+              My Trips
+            </button>
+            <button
+              type="button"
+              className="nav-link nav-btn"
+              onClick={() => handleNav("how-it-works")}
+            >
+              How It Works
+            </button>
           </nav>
 
           <div className="header-actions">
-            <a className="sign-in-link" href="#sign-in">
-              Sign In
-            </a>
-            <a className="button button-primary header-cta" href="#planner">
+            {user ? (
+              <div className="user-profile-header">
+                <span className="user-email-badge user-name-badge" title={user.email ?? ""}>
+                  {getUserDisplayName(user)}
+                </span>
+                <button
+                  type="button"
+                  className="button button-secondary button-small sign-out-btn"
+                  onClick={() => signOut()}
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className="sign-in-link sign-in-btn"
+                onClick={onOpenAuth}
+              >
+                Sign In
+              </button>
+            )}
+            <button
+              type="button"
+              className="button button-primary header-cta"
+              onClick={() => handleNav("planner")}
+            >
               Plan My Trip <span aria-hidden="true">↗</span>
-            </a>
+            </button>
           </div>
 
           <button
             type="button"
             className="mobile-menu-button"
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <span>{menuOpen ? '✕' : '☰'}</span>
+            <span>{menuOpen ? "✕" : "☰"}</span>
           </button>
         </div>
 
@@ -76,34 +151,69 @@ export default function AppLayout({ children }: AppLayoutProps) {
             className="mobile-nav"
             aria-label="Mobile navigation"
           >
-            {navigation.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`mobile-nav-link ${
-                  item.label === 'Home' ? 'nav-link-active' : ''
-                }`}
-                onClick={closeMenu}
-              >
-                {item.label}
-              </a>
-            ))}
-
-            <a
-              className="mobile-nav-link"
-              href="#sign-in"
-              onClick={closeMenu}
+            <button
+              type="button"
+              className={`mobile-nav-link nav-btn text-left ${activePage === "home" ? "nav-link-active" : ""}`}
+              onClick={() => handleNav("home")}
             >
-              Sign In
-            </a>
+              Home
+            </button>
+            <button
+              type="button"
+              className="mobile-nav-link nav-btn text-left"
+              onClick={() => handleNav("destinations")}
+            >
+              Explore Destinations
+            </button>
+            <button
+              type="button"
+              className={`mobile-nav-link nav-btn text-left ${activePage === "my-trips" ? "nav-link-active" : ""}`}
+              onClick={() => handleNav("my-trips")}
+            >
+              My Trips
+            </button>
+            <button
+              type="button"
+              className="mobile-nav-link nav-btn text-left"
+              onClick={() => handleNav("how-it-works")}
+            >
+              How It Works
+            </button>
 
-            <a
+            {user ? (
+              <div className="mobile-user-block">
+                <span className="mobile-user-name">{getUserDisplayName(user)}</span>
+                <button
+                  type="button"
+                  className="button button-secondary button-small"
+                  onClick={() => {
+                    signOut();
+                    closeMenu();
+                  }}
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className="mobile-nav-link nav-btn text-left"
+                onClick={() => {
+                  closeMenu();
+                  onOpenAuth?.();
+                }}
+              >
+                Sign In
+              </button>
+            )}
+
+            <button
+              type="button"
               className="button button-primary mobile-cta"
-              href="#planner"
-              onClick={closeMenu}
+              onClick={() => handleNav("planner")}
             >
               Plan My Trip <span aria-hidden="true">↗</span>
-            </a>
+            </button>
           </nav>
         )}
       </header>
@@ -113,7 +223,14 @@ export default function AppLayout({ children }: AppLayoutProps) {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand-block">
-            <a className="brand footer-brand" href="#home">
+            <a
+              className="brand footer-brand"
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav("home");
+              }}
+            >
               <span className="brand-mark" aria-hidden="true">
                 T<span className="brand-route">⌁</span>
               </span>
@@ -128,10 +245,34 @@ export default function AppLayout({ children }: AppLayoutProps) {
           </div>
 
           <div className="footer-links">
-            <a href="#destinations">Explore destinations</a>
-            <a href="#planner">Plan a trip</a>
-            <a href="#my-trips">My trips</a>
-            <a href="#help">Help &amp; support</a>
+            <button
+              type="button"
+              className="footer-nav-btn"
+              onClick={() => handleNav("destinations")}
+            >
+              Explore destinations
+            </button>
+            <button
+              type="button"
+              className="footer-nav-btn"
+              onClick={() => handleNav("planner")}
+            >
+              Plan a trip
+            </button>
+            <button
+              type="button"
+              className="footer-nav-btn"
+              onClick={() => handleNav("my-trips")}
+            >
+              My trips
+            </button>
+            <button
+              type="button"
+              className="footer-nav-btn"
+              onClick={() => handleNav("how-it-works")}
+            >
+              How it works
+            </button>
           </div>
 
           <div className="footer-bottom">
