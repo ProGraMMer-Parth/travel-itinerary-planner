@@ -32,6 +32,30 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+function normalizeAuthError(error: unknown): string {
+  const rawMessage =
+    typeof error === "string"
+      ? error
+      : error &&
+          typeof error === "object" &&
+          "message" in error &&
+          typeof (error as { message: unknown }).message === "string"
+        ? (error as { message: string }).message
+        : "";
+
+  const lower = rawMessage.toLowerCase();
+  if (
+    lower.includes("failed to fetch") ||
+    lower.includes("networkerror") ||
+    lower.includes("network request failed") ||
+    lower.includes("load failed")
+  ) {
+    return "Could not connect to the authentication service. If your Supabase project was paused due to inactivity, please unpause or restore it in your Supabase dashboard.";
+  }
+
+  return rawMessage || "An unexpected error occurred. Please try again.";
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
@@ -132,12 +156,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         password,
       });
       if (error) {
-        return { error: error.message };
+        return { error: normalizeAuthError(error) };
       }
       return { error: null };
     } catch (err) {
       return {
-        error: err instanceof Error ? err.message : "An unexpected error occurred during sign in.",
+        error: normalizeAuthError(err),
       };
     }
   }, []);
@@ -159,7 +183,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
 
         if (error) {
-          return { error: error.message };
+          return { error: normalizeAuthError(error) };
         }
 
         if (data.session) {
@@ -173,8 +197,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
       } catch (err) {
         return {
-          error:
-            err instanceof Error ? err.message : "An unexpected error occurred during sign up.",
+          error: normalizeAuthError(err),
         };
       }
     },
