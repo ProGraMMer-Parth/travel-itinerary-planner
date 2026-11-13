@@ -319,6 +319,6 @@ Your feedback and suggestions are always welcome!
 ---
 
 <p align="center">
-  <b>Built with ❤️ using React, FastAPI, Supabase & AI.</b>
+  <b>Built with ❤️ using React, FastAPI, Supabase</b>
 </p>
 
