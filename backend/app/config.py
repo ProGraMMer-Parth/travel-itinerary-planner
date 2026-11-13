@@ -8,6 +8,10 @@ REQUIRED_LOCAL_ORIGINS = [
     "http://127.0.0.1:5174",
 ]
 
+PRODUCTION_ORIGINS = [
+    "https://travel-itinerary-planner-sage.vercel.app",
+]
+
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 ENV_FILE = BACKEND_DIR / ".env"
 
@@ -31,7 +35,7 @@ class Settings(BaseSettings):
     def cors_origin_list(self) -> list[str]:
         configured = [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
         merged: list[str] = []
-        for origin in [*configured, *REQUIRED_LOCAL_ORIGINS]:
+        for origin in [*configured, *REQUIRED_LOCAL_ORIGINS, *PRODUCTION_ORIGINS]:
             if origin and origin not in merged:
                 merged.append(origin)
         return merged

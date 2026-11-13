@@ -42,3 +42,21 @@ def test_cors_headers_on_generate_post():
     )
     assert response.status_code == 200
     assert response.headers.get("access-control-allow-origin") == "http://localhost:5174"
+
+
+def test_cors_preflight_from_production_vercel():
+    origin = "https://travel-itinerary-planner-sage.vercel.app"
+    assert origin in settings.cors_origin_list
+
+    response = client.options(
+        "/api/itineraries/generate",
+        headers={
+            "Origin": origin,
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "content-type",
+        },
+    )
+    assert response.status_code in (200, 204)
+    assert response.headers.get("access-control-allow-origin") == origin
+    allow_methods = response.headers.get("access-control-allow-methods", "")
+    assert "POST" in allow_methods.upper()
